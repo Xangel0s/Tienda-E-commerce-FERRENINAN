@@ -12,7 +12,6 @@ export const PromoBanner = ({ onExplore }) => {
 
         <div className="space-y-3 max-w-xl z-10 text-left">
           <div className="inline-flex items-center gap-2 bg-yellow-400 text-gray-950 font-black text-xs px-3 py-1 rounded-full uppercase tracking-wider shadow">
-            <Sparkles className="w-3.5 h-3.5" />
             <span>Exclusivo para Maestros de Obra y Contratistas</span>
           </div>
 

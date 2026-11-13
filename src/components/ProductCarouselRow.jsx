@@ -35,9 +35,8 @@ export const ProductCarouselRow = ({ title, subtitle, products, categoryPills, o
         {/* Cabecera de la Sección y Pills Estilo Promart (Imagen 3) */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
           <div>
-            <h2 className="text-xl sm:text-2xl font-black text-gray-900 tracking-tight flex items-center gap-2">
-              <span>{title}</span>
-              <Sparkles className="w-5 h-5 text-yellow-400" />
+            <h2 className="text-xl sm:text-2xl font-black text-gray-900 tracking-tight">
+              {title}
             </h2>
             {subtitle && (
               <p className="text-xs text-gray-500 mt-0.5">{subtitle}</p>
@@ -97,8 +96,8 @@ export const ProductCarouselRow = ({ title, subtitle, products, categoryPills, o
                   {/* Badge y Logo FERRENINAN pequeño arriba */}
                   <div>
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-[10px] font-black uppercase text-brand-500 tracking-wider flex items-center gap-1">
-                        <span>▲</span> FERRENINAN
+                      <span className="text-[10px] font-black uppercase text-brand-500 tracking-wider">
+                        FERRENINAN
                       </span>
                       {product.badge && (
                         <span className="text-[9px] font-black uppercase px-2 py-0.5 rounded bg-yellow-400 text-gray-900 shadow-xs">

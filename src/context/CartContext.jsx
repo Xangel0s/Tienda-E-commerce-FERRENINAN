@@ -14,7 +14,8 @@ export const CartProvider = ({ children }) => {
     }
   });
 
-  const [isCartOpen, setIsCartOpen] = useState(false);
+  // 'home' o 'cart' para que el carrito sea una página independiente
+  const [currentView, setCurrentView] = useState('home');
   const [isComplaintsBookOpen, setIsComplaintsBookOpen] = useState(false);
 
   useEffect(() => {
@@ -37,7 +38,8 @@ export const CartProvider = ({ children }) => {
       }
       return [...prev, { ...product, quantity }];
     });
-    setIsCartOpen(true);
+    // Navegar directamente a la página del carrito
+    setCurrentView('cart');
   };
 
   const removeFromCart = (id) => {
@@ -70,60 +72,60 @@ export const CartProvider = ({ children }) => {
   const hasQuoteItems = cartItems.some(item => item.price === null);
 
   /**
-   * Genera el enlace de WhatsApp preconfigurado con el desglose exacto
+   * Genera el enlace de WhatsApp sin emojis, con formato limpio y profesional
    */
   const getWhatsAppOrderUrl = (customerData = {}) => {
     if (cartItems.length === 0) return '';
 
-    let message = `*¡Hola ${COMPANY_INFO.name}!* Deseo realizar un pedido desde la tienda web:\n\n`;
-    message += `🛒 *DETALLE DEL PEDIDO:*\n`;
+    let message = `*PEDIDO WEB - ${COMPANY_INFO.name}*\n\n`;
+    message += `DETALLE DEL PEDIDO:\n`;
     message += `------------------------------------\n`;
 
     cartItems.forEach((item, index) => {
       if (item.price !== null) {
         const itemTotal = (item.price * item.quantity).toFixed(2);
-        message += `${index + 1}. *${item.quantity}x* ${item.name}\n`;
-        message += `    Precio unit: S/ ${item.price.toFixed(2)} | Subtotal: S/ ${itemTotal}\n`;
+        message += `[${index + 1}] ${item.quantity}x ${item.name}\n`;
+        message += `    Precio unitario: S/ ${item.price.toFixed(2)} | Subtotal: S/ ${itemTotal}\n`;
       } else {
-        message += `${index + 1}. *${item.quantity}x* ${item.name}\n`;
-        message += `    *Precio:* (A cotizar por mayor/menor)\n`;
+        message += `[${index + 1}] ${item.quantity}x ${item.name}\n`;
+        message += `    Precio: A cotizar por mayor / menor\n`;
       }
     });
 
     message += `------------------------------------\n`;
     if (totalPrice > 0) {
-      message += `💰 *TOTAL ESTIMADO:* S/ ${totalPrice.toFixed(2)}\n`;
+      message += `TOTAL ESTIMADO PRODUCTOS: S/ ${totalPrice.toFixed(2)}\n`;
     }
     if (hasQuoteItems) {
-      message += `ℹ️ *Nota:* Incluye productos sujetos a cotización inmediata.\n`;
+      message += `Nota: Incluye materiales sujetos a cotización inmediata.\n`;
     }
 
-    message += `\n📍 *DATOS DE ENTREGA:*\n`;
-    message += `👤 *Cliente:* ${customerData.name ? customerData.name.trim() : 'Por coordinar'}\n`;
-    message += `📱 *Teléfono:* ${customerData.phone ? customerData.phone.trim() : 'Por coordinar'}\n`;
-    message += `📌 *Dirección / Distrito:* ${customerData.address ? customerData.address.trim() : 'Por coordinar'}\n`;
+    message += `\nDATOS DE DESPACHO:\n`;
+    message += `• Cliente: ${customerData.name ? customerData.name.trim() : 'Por coordinar'}\n`;
+    message += `• Telefono: ${customerData.phone ? customerData.phone.trim() : 'Por coordinar'}\n`;
+    message += `• Direccion / Obra: ${customerData.address ? customerData.address.trim() : 'Por coordinar'}\n`;
     if (customerData.notes && customerData.notes.trim()) {
-      message += `📝 *Observaciones:* ${customerData.notes.trim()}\n`;
+      message += `• Observaciones: ${customerData.notes.trim()}\n`;
     }
 
-    message += `\n¿Me confirman disponibilidad y costo de flete/despacho a obra? ¡Muchas gracias!`;
+    message += `\nFavor de confirmar disponibilidad de stock y fecha de despacho. Muchas gracias.`;
 
     return COMPANY_INFO.whatsappUrl(message);
   };
 
   /**
-   * Consulta directa para un producto específico
+   * Consulta directa para un producto específico (sin emojis)
    */
   const getWhatsAppProductInquiryUrl = (product) => {
-    let message = `*¡Hola ${COMPANY_INFO.name}!* Me interesa cotizar el siguiente producto visto en su web:\n\n`;
-    message += `📦 *Producto:* ${product.name}\n`;
-    message += `📁 *Categoría:* ${product.category}\n`;
+    let message = `*CONSULTA DE PRODUCTO - ${COMPANY_INFO.name}*\n\n`;
+    message += `Producto: ${product.name}\n`;
+    message += `Categoria: ${product.category}\n`;
     if (product.price !== null) {
-      message += `💲 *Precio web:* S/ ${product.price.toFixed(2)} por ${product.unit}\n`;
+      message += `Precio web referencial: S/ ${product.price.toFixed(2)} por ${product.unit}\n`;
     } else {
-      message += `💲 *Condición:* Precio a cotizar por mayor / menor\n`;
+      message += `Condicion: Precio a cotizar por mayor y menor\n`;
     }
-    message += `\n¿Tienen stock disponible y cuál es el precio para despacho a obra?`;
+    message += `\nSolicito informacion sobre stock disponible y costo de envio a obra. Gracias.`;
     return COMPANY_INFO.whatsappUrl(message);
   };
 
@@ -138,8 +140,8 @@ export const CartProvider = ({ children }) => {
         totalCount,
         totalPrice,
         hasQuoteItems,
-        isCartOpen,
-        setIsCartOpen,
+        currentView,
+        setCurrentView,
         isComplaintsBookOpen,
         setIsComplaintsBookOpen,
         getWhatsAppOrderUrl,

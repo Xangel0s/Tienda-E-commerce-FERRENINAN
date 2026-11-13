@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, Tag, Sparkles, Send, ArrowRight } from 'lucide-react';
+import { X, Send, ShieldCheck, Check } from 'lucide-react';
 import { COMPANY_INFO } from '../data/products';
 import { useCart } from '../context/CartContext';
 
@@ -8,13 +8,12 @@ export const PromoModal = () => {
   const { addToCart } = useCart();
 
   useEffect(() => {
-    // Mostrar la publicidad después de 4 segundos si no la ha cerrado
     const timer = setTimeout(() => {
       const dismissed = sessionStorage.getItem('ferreninan_promo_dismissed');
       if (!dismissed) {
         setIsOpen(true);
       }
-    }, 4000);
+    }, 4500);
     return () => clearTimeout(timer);
   }, []);
 
@@ -39,7 +38,7 @@ export const PromoModal = () => {
   return (
     <div className="fixed inset-0 z-50 overflow-hidden bg-black/75 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-300">
       
-      {/* Contenedor del Popup estilo Promart Imagen 2 */}
+      {/* Contenedor del Popup estilo Promart Imagen 1 */}
       <div className="relative bg-gradient-to-br from-brand-dark via-gray-900 to-black text-white rounded-2xl shadow-2xl max-w-2xl w-full border border-gray-700 overflow-hidden flex flex-col md:flex-row">
         
         {/* Botón Cerrar */}
@@ -51,7 +50,7 @@ export const PromoModal = () => {
           <X className="w-5 h-5" />
         </button>
 
-        {/* Lado Izquierdo: Imagen del Producto con Iluminación Neón (estilo Imagen 2) */}
+        {/* Lado Izquierdo: Imagen del Producto sin emojis */}
         <div className="w-full md:w-1/2 relative bg-gradient-to-tr from-brand-900/80 via-black to-blue-950/40 p-6 flex flex-col items-center justify-center min-h-[220px]">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-brand-500/20 via-transparent to-transparent pointer-events-none"></div>
           
@@ -61,22 +60,22 @@ export const PromoModal = () => {
             className="w-48 h-48 object-cover rounded-xl shadow-2xl border border-white/10 z-10 hover:scale-105 transition-transform duration-300"
           />
 
-          <span className="mt-3 text-[11px] font-bold text-gray-300 tracking-wide z-10 flex items-center gap-1">
-            <Sparkles className="w-3.5 h-3.5 text-yellow-400" />
+          <span className="mt-3 text-[11px] font-semibold text-gray-300 tracking-wide z-10 flex items-center gap-1.5">
+            <Check className="w-3.5 h-3.5 text-green-400" />
             Stock disponible para entrega inmediata
           </span>
         </div>
 
-        {/* Lado Derecho: Contenido de Oferta y Cupón Naranja/Rojo (estilo Imagen 2) */}
+        {/* Lado Derecho: Contenido con dominio .com (sin emojis) */}
         <div className="w-full md:w-1/2 bg-brand-500 p-6 flex flex-col justify-between text-white relative">
           
           <div className="space-y-3">
             <div className="flex items-center gap-2">
               <span className="text-[11px] font-black uppercase tracking-wider text-yellow-300">
-                Exclusivo en
+                EXCLUSIVO EN
               </span>
               <span className="text-sm font-black tracking-tight bg-white text-brand-dark px-2 py-0.5 rounded">
-                FERRENINAN.pe
+                FERRENINAN.com
               </span>
             </div>
 
@@ -99,7 +98,7 @@ export const PromoModal = () => {
             <div className="bg-white text-gray-900 rounded-xl p-3 shadow-lg flex items-center justify-between gap-3 border-2 border-dashed border-gray-300">
               <div className="text-left">
                 <span className="block text-[10px] uppercase font-bold text-gray-500">
-                  Llévate
+                  LLEVATE
                 </span>
                 <span className="text-base font-black text-brand-600 leading-none">
                   10% DSCTO
@@ -110,7 +109,7 @@ export const PromoModal = () => {
               </div>
 
               <div className="bg-brand-dark text-white rounded-lg px-3 py-2 text-center">
-                <span className="block text-[9px] text-gray-400 uppercase font-semibold">Usa el cupón:</span>
+                <span className="block text-[9px] text-gray-400 uppercase font-semibold">USA EL CUPON:</span>
                 <span className="text-xs font-black tracking-widest text-yellow-400">FERRE10</span>
               </div>
             </div>
@@ -128,7 +127,7 @@ export const PromoModal = () => {
               Añadir 10 Bolsas al Carrito
             </button>
             <a
-              href={`https://wa.me/${COMPANY_INFO.phoneClean}?text=${encodeURIComponent('¡Hola FERRENINAN! Vi la promoción del Cemento Sol con el cupón FERRE10 en su web. ¿Tienen stock para enviar a mi obra?')}`}
+              href={`https://wa.me/${COMPANY_INFO.phoneClean}?text=${encodeURIComponent('Hola FERRENINAN, deseo consultar sobre la promocion de Cemento Sol con el cupon FERRE10 para despacho a obra.')}`}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-green-600 hover:bg-green-700 text-white font-bold text-xs py-2.5 px-3 rounded-lg flex items-center justify-center transition-colors"

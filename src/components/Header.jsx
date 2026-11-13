@@ -4,7 +4,7 @@ import { useCart } from '../context/CartContext';
 import { COMPANY_INFO, CATEGORIES } from '../data/products';
 
 export const Header = ({ searchTerm, setSearchTerm, selectedCategory, setSelectedCategory }) => {
-  const { totalCount, totalPrice, setIsCartOpen } = useCart();
+  const { totalCount, totalPrice, setCurrentView } = useCart();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -149,11 +149,11 @@ export const Header = ({ searchTerm, setSearchTerm, selectedCategory, setSelecte
               <span>Cotizar Obra</span>
             </a>
 
-            {/* Carrito de Compras Estilo Promart */}
+            {/* Carrito de Compras Estilo Promart (Abre página de Carrito) */}
             <button
-              onClick={() => setIsCartOpen(true)}
+              onClick={() => setCurrentView('cart')}
               className="relative flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-white px-3 sm:px-4 py-2 rounded-xl transition-all shadow-md hover:shadow-lg group"
-              aria-label="Abrir Carrito"
+              aria-label="Abrir Carrito de Compras"
             >
               <div className="relative">
                 <ShoppingCart className="w-5 h-5 sm:w-6 sm:h-6 transition-transform group-hover:scale-110" />
