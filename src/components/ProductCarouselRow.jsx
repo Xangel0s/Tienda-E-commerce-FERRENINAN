@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { ChevronLeft, ChevronRight, ShoppingCart, MessageCircle, Sparkles, Check } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ShoppingCart, MessageCircle, Check, Truck } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 
 export const ProductCarouselRow = ({ title, subtitle, products, categoryPills, onSelectCategory }) => {
@@ -87,80 +87,92 @@ export const ProductCarouselRow = ({ title, subtitle, products, categoryPills, o
             {displayProducts.map((product) => {
               const hasPrice = product.price !== null && !isNaN(product.price);
               const isAdded = addedId === product.id;
+              const discountPercent = product.regularPrice && hasPrice
+                ? Math.round(((product.regularPrice - product.price) / product.regularPrice) * 100)
+                : 0;
 
               return (
                 <div
                   key={product.id}
-                  className="flex-shrink-0 w-64 sm:w-72 bg-white rounded-xl border border-gray-200 p-4 hover:shadow-card-hover hover:border-brand-300 transition-all flex flex-col justify-between snap-start group relative"
+                  className="flex-shrink-0 w-64 sm:w-72 bg-white rounded-2xl border border-gray-200 p-4 hover:shadow-xl hover:border-brand-500 hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between snap-start group relative"
                 >
-                  {/* Badge y Logo FERRENINAN pequeño arriba */}
                   <div>
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-[10px] font-black uppercase text-brand-500 tracking-wider">
-                        FERRENINAN
+                    {/* Cabecera de la Tarjeta */}
+                    <div className="flex items-center justify-between gap-1 mb-2">
+                      <span className="text-[10px] font-black uppercase tracking-wider text-gray-500 bg-gray-100 px-2 py-0.5 rounded truncate max-w-[130px]">
+                        {product.brand || 'FERRENINAN'}
                       </span>
+
                       {product.badge && (
-                        <span className="text-[9px] font-black uppercase px-2 py-0.5 rounded bg-yellow-400 text-gray-900 shadow-xs">
+                        <span className="text-[9px] font-black uppercase px-2 py-0.5 rounded bg-brand-500 text-white shadow-xs">
                           {product.badge}
                         </span>
                       )}
                     </div>
 
                     {/* Imagen del Producto */}
-                    <div className="w-full h-40 rounded-lg overflow-hidden bg-gray-50 flex items-center justify-center p-2 mb-3">
+                    <div className="w-full h-40 rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center p-2.5 mb-3 border border-gray-100 group-hover:bg-white transition-colors">
                       <img
                         src={product.image}
                         alt={product.name}
-                        className="w-full h-full object-contain mix-blend-multiply group-hover:scale-108 transition-transform duration-300"
+                        className="w-full h-full object-contain mix-blend-multiply group-hover:scale-106 transition-transform duration-300"
                         loading="lazy"
                       />
                     </div>
 
-                    {/* Nombre y Categoría */}
+                    {/* Nombre y Unidad */}
                     <span className="text-[10px] uppercase font-bold text-gray-400 block mb-0.5">
                       {product.category}
                     </span>
-                    <h3 className="text-xs font-bold text-gray-900 line-clamp-2 min-h-[34px] group-hover:text-brand-600 transition-colors leading-snug">
+                    <h3 className="text-xs sm:text-sm font-bold text-gray-900 line-clamp-2 min-h-[38px] group-hover:text-brand-600 transition-colors leading-snug">
                       {product.name}
                     </h3>
+                    <span className="text-[11px] text-gray-500 mt-1 block">
+                      Presentación: <strong>{product.unit}</strong>
+                    </span>
                   </div>
 
-                  {/* Precios Estilo Promart con Caja Cyan (Imagen 3 & 4) */}
+                  {/* Precios Estilo Promart */}
                   <div className="mt-3 pt-3 border-t border-gray-100">
                     {hasPrice ? (
-                      <div className="space-y-1">
+                      <div className="space-y-1 mb-3">
                         <div className="flex items-center gap-2">
-                          {/* Precio Oferta en Cyan / Rojo Promart */}
                           <div className="bg-cyan-50 border border-cyan-200 text-cyan-800 font-black text-sm px-2 py-0.5 rounded">
                             S/ {product.price.toFixed(2)}
                           </div>
                           {product.regularPrice && (
-                            <span className="text-[11px] text-gray-400 line-through">
+                            <span className="text-xs text-gray-400 line-through">
                               S/ {product.regularPrice.toFixed(2)}
+                            </span>
+                          )}
+                          {discountPercent > 0 && (
+                            <span className="text-[10px] font-bold text-red-600 bg-red-50 px-1 py-0.5 rounded border border-red-200">
+                              -{discountPercent}%
                             </span>
                           )}
                         </div>
                         <span className="block text-[10px] text-gray-500 font-medium">
-                          Por {product.unit} • Despacho a obra
+                          Despacho directo a pie de obra
                         </span>
                       </div>
                     ) : (
-                      <div className="space-y-1">
-                        <span className="inline-block bg-blue-50 text-blue-700 text-[11px] font-bold px-2 py-0.5 rounded border border-blue-200">
-                          Precio a Cotizar
+                      <div className="mb-3 p-2 bg-blue-50/70 border border-blue-100 rounded-xl">
+                        <span className="text-xs font-black text-blue-900 block">
+                          Precio al por mayor y menor
                         </span>
-                        <span className="block text-[10px] text-gray-400">
-                          Venta por mayor y menor
+                        <span className="text-[10px] text-blue-700">
+                          Cotiza según volumen para despacho
                         </span>
                       </div>
                     )}
 
                     {/* Botón de Acción */}
-                    <div className="mt-3">
+                    <div>
                       {hasPrice ? (
                         <button
+                          type="button"
                           onClick={() => handleAdd(product)}
-                          className={`w-full py-2 px-3 rounded-lg text-xs font-black flex items-center justify-center gap-1.5 transition-all shadow-xs ${
+                          className={`w-full py-2.5 px-3 rounded-xl text-xs font-black flex items-center justify-center gap-1.5 transition-all shadow-xs ${
                             isAdded
                               ? 'bg-green-600 text-white'
                               : 'bg-brand-500 hover:bg-brand-600 text-white active:scale-95'
@@ -169,7 +181,7 @@ export const ProductCarouselRow = ({ title, subtitle, products, categoryPills, o
                           {isAdded ? (
                             <>
                               <Check className="w-3.5 h-3.5" />
-                              <span>¡En Carrito!</span>
+                              <span>En Carrito</span>
                             </>
                           ) : (
                             <>
@@ -183,10 +195,10 @@ export const ProductCarouselRow = ({ title, subtitle, products, categoryPills, o
                           href={getWhatsAppProductInquiryUrl(product)}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-full py-2 px-3 rounded-lg text-xs font-bold bg-green-500 hover:bg-green-600 text-white flex items-center justify-center gap-1.5 transition-colors shadow-xs"
+                          className="w-full py-2.5 px-3 rounded-xl text-xs font-bold bg-green-500 hover:bg-green-600 text-white flex items-center justify-center gap-1.5 transition-colors shadow-xs"
                         >
                           <MessageCircle className="w-3.5 h-3.5" />
-                          <span>Cotizar WhatsApp</span>
+                          <span>Cotizar por WhatsApp</span>
                         </a>
                       )}
                     </div>
