@@ -151,6 +151,10 @@ export const CartDrawer = () => {
                         src={item.image}
                         alt={item.name}
                         className="w-16 h-16 sm:w-20 sm:h-20 object-contain rounded-lg bg-gray-50 p-1.5 border border-gray-200 flex-shrink-0"
+                        onError={(e) => {
+                          e.currentTarget.onerror = null;
+                          e.currentTarget.src = '/images/product-placeholder.svg';
+                        }}
                       />
 
                       <div className="flex-1 min-w-0">

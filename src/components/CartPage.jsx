@@ -165,6 +165,10 @@ export const CartPage = () => {
                         src={item.image}
                         alt={item.name}
                         className="w-20 h-20 object-contain rounded-xl bg-gray-50 p-2 border border-gray-200 flex-shrink-0"
+                        onError={(e) => {
+                          e.currentTarget.onerror = null;
+                          e.currentTarget.src = '/images/product-placeholder.svg';
+                        }}
                       />
 
                       <div className="flex-1 min-w-0">

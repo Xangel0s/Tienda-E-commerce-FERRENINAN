@@ -57,6 +57,10 @@ export const ProductCard = ({ product }) => {
             alt={product.name}
             className="w-full h-full object-contain mix-blend-multiply group-hover:scale-106 transition-transform duration-300"
             loading="lazy"
+            onError={(e) => {
+              e.currentTarget.onerror = null;
+              e.currentTarget.src = '/images/product-placeholder.svg';
+            }}
           />
         </div>
 

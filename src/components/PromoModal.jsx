@@ -58,6 +58,10 @@ export const PromoModal = () => {
             src={promoProduct.image}
             alt={promoProduct.name}
             className="w-48 h-48 object-cover rounded-xl shadow-2xl border border-white/10 z-10 hover:scale-105 transition-transform duration-300"
+            onError={(e) => {
+              e.currentTarget.onerror = null;
+              e.currentTarget.src = '/images/product-placeholder.svg';
+            }}
           />
 
           <span className="mt-3 text-[11px] font-semibold text-gray-300 tracking-wide z-10 flex items-center gap-1.5">
