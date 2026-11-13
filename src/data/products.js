@@ -848,7 +848,7 @@ export const COMPANY_INFO = {
   telLines: '3308644 / 948 574 964',
   addressMain: 'Av. General Garzón Nro. 1091, Jesús María, Lima',
   addressWarehouse: 'Jr. General Felipe Varela 1855, Urb. Azcona, Breña, Lima',
-  email: 'ventas@ferreninan.com',
+  email: 'Ferreterianinanyasac1@hotmail.com',
   workingHours: 'Lunes a Sábado: 7:30 AM - 6:30 PM | Domingos: 8:00 AM - 1:00 PM',
   whatsappUrl: (msg) => `https://wa.me/51908747531?text=${encodeURIComponent(msg)}`
 };

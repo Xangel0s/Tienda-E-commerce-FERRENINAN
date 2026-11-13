@@ -1,68 +1,109 @@
-import React from 'react';
-import { Search, ShoppingCart, MessageCircle, MapPin, Store } from 'lucide-react';
+import React, { useState, useRef, useEffect } from 'react';
+import { Search, ShoppingCart, MessageCircle, Store, ChevronDown, Check, Sparkles } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { COMPANY_INFO, CATEGORIES } from '../data/products';
 
 export const Header = ({ searchTerm, setSearchTerm, selectedCategory, setSelectedCategory }) => {
   const { totalCount, totalPrice, setIsCartOpen } = useCart();
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  // Cerrar dropdown al hacer click fuera
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
+    const el = document.getElementById('seccion-ofertas');
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
+
+  const activeCategory = CATEGORIES.find(c => c.id === selectedCategory) || CATEGORIES[0];
 
   return (
     <header className="bg-white border-b border-gray-200 sticky top-0 z-40 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 py-3">
-        <div className="flex items-center justify-between gap-4">
+      <div className="max-w-7xl mx-auto px-4 py-2.5">
+        <div className="flex items-center justify-between gap-3 md:gap-6">
           
-          {/* Logo FERRENINAN */}
-          <div className="flex items-center gap-3">
-            <a href="/" className="flex items-center gap-2 group">
+          {/* Logo FERRENINAN Transparente sin bordes blancos */}
+          <div className="flex items-center gap-3 flex-shrink-0">
+            <a href="/" className="flex items-center gap-2 group py-1">
               <img
                 src="/logo.png"
-                alt="FERRENINAN Logo"
-                className="h-12 md:h-14 w-auto object-contain transition-transform group-hover:scale-105"
-                onError={(e) => {
-                  // Fallback textual si no carga la imagen
-                  e.target.style.display = 'none';
-                  e.target.nextSibling.style.display = 'block';
-                }}
+                alt="FERRENINAN"
+                className="h-11 md:h-13 w-auto object-contain transition-transform group-hover:scale-105"
               />
-              <div className="hidden">
-                <span className="text-2xl font-black tracking-tight text-brand-500">
-                  FERRE<span className="text-brand-dark">NINAN</span>
-                </span>
-                <span className="block text-[10px] uppercase font-bold text-gray-500 tracking-wider">
-                  Materiales de Construcción
-                </span>
-              </div>
             </a>
           </div>
 
-          {/* Buscador Promart Style */}
+          {/* Buscador Promart Style con Dropdown Animado Personalizado */}
           <form
             onSubmit={handleSearchSubmit}
-            className="flex-1 max-w-2xl hidden md:flex items-center border-2 border-brand-500 rounded-lg overflow-hidden focus-within:ring-2 focus-within:ring-brand-300 transition-all bg-white"
+            className="flex-1 max-w-2xl hidden md:flex items-center border-2 border-brand-500 rounded-xl bg-white shadow-sm focus-within:ring-2 focus-within:ring-brand-300 transition-all relative"
           >
-            <select
-              value={selectedCategory}
-              onChange={(e) => setSelectedCategory(e.target.value)}
-              className="bg-gray-50 text-xs text-gray-700 px-3 py-2.5 border-r border-gray-200 outline-none hover:bg-gray-100 cursor-pointer max-w-[170px] truncate"
-            >
-              {CATEGORIES.map((cat) => (
-                <option key={cat.id} value={cat.id}>
-                  {cat.name}
-                </option>
-              ))}
-            </select>
+            {/* Custom Animated Category Dropdown */}
+            <div className="relative" ref={dropdownRef}>
+              <button
+                type="button"
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                className="flex items-center gap-2 bg-gray-50 hover:bg-gray-100 text-xs font-bold text-gray-700 px-3.5 py-2.5 rounded-l-lg border-r border-gray-200 transition-colors cursor-pointer select-none max-w-[190px]"
+              >
+                <span className="truncate">{activeCategory.name}</span>
+                <ChevronDown
+                  className={`w-3.5 h-3.5 text-gray-500 flex-shrink-0 transition-transform duration-200 ${
+                    isDropdownOpen ? 'rotate-180 text-brand-500' : ''
+                  }`}
+                />
+              </button>
 
+              {/* Menú Desplegable con Animación Fluida */}
+              {isDropdownOpen && (
+                <div className="absolute top-full left-0 mt-1.5 w-64 bg-white rounded-xl shadow-2xl border border-gray-200 py-1.5 z-50 animate-in fade-in slide-in-from-top-2 duration-200 overflow-hidden">
+                  <div className="px-3 py-1.5 text-[10px] font-black text-gray-400 uppercase tracking-wider border-b border-gray-100">
+                    Seleccionar Categoría
+                  </div>
+                  <div className="max-h-72 overflow-y-auto py-1">
+                    {CATEGORIES.map((cat) => {
+                      const isSelected = selectedCategory === cat.id;
+                      return (
+                        <button
+                          key={cat.id}
+                          type="button"
+                          onClick={() => {
+                            setSelectedCategory(cat.id);
+                            setIsDropdownOpen(false);
+                          }}
+                          className={`w-full text-left px-3.5 py-2 text-xs font-semibold flex items-center justify-between transition-colors ${
+                            isSelected
+                              ? 'bg-brand-50 text-brand-600 font-bold border-l-4 border-brand-500'
+                              : 'text-gray-700 hover:bg-gray-50 hover:text-brand-600'
+                          }`}
+                        >
+                          <span className="truncate">{cat.name}</span>
+                          {isSelected && <Check className="w-3.5 h-3.5 text-brand-500 flex-shrink-0" />}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Input de Búsqueda */}
             <div className="relative flex-1">
               <input
                 type="text"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 placeholder="¿Qué estás buscando? (Ej. Cemento Sol, Drywall 1/2, Ladrillo, Thinner...)"
-                className="w-full px-4 py-2 text-sm outline-none placeholder-gray-400"
+                className="w-full px-4 py-2 text-xs sm:text-sm outline-none placeholder-gray-400 bg-transparent"
               />
               {searchTerm && (
                 <button
@@ -75,19 +116,20 @@ export const Header = ({ searchTerm, setSearchTerm, selectedCategory, setSelecte
               )}
             </div>
 
+            {/* Botón Buscar */}
             <button
               type="submit"
-              className="bg-brand-500 hover:bg-brand-600 text-white px-5 py-2.5 transition-colors flex items-center justify-center"
+              className="bg-brand-500 hover:bg-brand-600 text-white px-5 py-2.5 transition-colors rounded-r-lg flex items-center justify-center font-bold"
               aria-label="Buscar"
             >
-              <Search className="w-5 h-5" />
+              <Search className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
           </form>
 
           {/* Acciones Derecha */}
-          <div className="flex items-center gap-3 sm:gap-4">
+          <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
             
-            {/* Ubicación / Sedes */}
+            {/* Sedes */}
             <div className="hidden lg:flex items-center gap-2 text-left text-xs text-gray-700 bg-gray-50 px-3 py-1.5 rounded-lg border border-gray-200">
               <Store className="w-4 h-4 text-brand-500 flex-shrink-0" />
               <div>
@@ -101,7 +143,7 @@ export const Header = ({ searchTerm, setSearchTerm, selectedCategory, setSelecte
               href={`https://wa.me/${COMPANY_INFO.phoneClean}?text=${encodeURIComponent('¡Hola FERRENINAN! Deseo hacer una consulta sobre materiales de construcción.')}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white text-xs font-bold px-3 py-2 rounded-lg transition-colors shadow-sm"
+              className="hidden sm:flex items-center gap-1.5 bg-green-500 hover:bg-green-600 text-white text-xs font-bold px-3 py-2 rounded-lg transition-colors shadow-sm"
             >
               <MessageCircle className="w-4 h-4" />
               <span>Cotizar Obra</span>
@@ -110,7 +152,7 @@ export const Header = ({ searchTerm, setSearchTerm, selectedCategory, setSelecte
             {/* Carrito de Compras Estilo Promart */}
             <button
               onClick={() => setIsCartOpen(true)}
-              className="relative flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-white px-3 sm:px-4 py-2 rounded-lg transition-all shadow-md hover:shadow-lg group"
+              className="relative flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-white px-3 sm:px-4 py-2 rounded-xl transition-all shadow-md hover:shadow-lg group"
               aria-label="Abrir Carrito"
             >
               <div className="relative">
@@ -122,9 +164,9 @@ export const Header = ({ searchTerm, setSearchTerm, selectedCategory, setSelecte
                 )}
               </div>
               <div className="text-left hidden sm:block">
-                <span className="block text-[10px] uppercase font-bold tracking-wider text-red-100">Mi Pedido</span>
+                <span className="block text-[10px] uppercase font-bold tracking-wider text-red-100">Mi Carrito</span>
                 <span className="text-xs font-black text-white">
-                  {totalPrice > 0 ? `S/ ${totalPrice.toFixed(2)}` : 'Ver Carrito'}
+                  {totalPrice > 0 ? `S/ ${totalPrice.toFixed(2)}` : 'Ver Pedido'}
                 </span>
               </div>
             </button>
@@ -132,7 +174,7 @@ export const Header = ({ searchTerm, setSearchTerm, selectedCategory, setSelecte
           </div>
         </div>
 
-        {/* Buscador Mobile (visible solo en celulares) */}
+        {/* Buscador Mobile */}
         <div className="mt-2.5 md:hidden">
           <form
             onSubmit={handleSearchSubmit}
