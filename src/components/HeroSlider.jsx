@@ -54,13 +54,15 @@ const SLIDES = [
 
 export const HeroSlider = ({ onSelectCategory }) => {
   const [current, setCurrent] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
+    if (isPaused) return;
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % SLIDES.length);
     }, 7000);
     return () => clearInterval(timer);
-  }, []);
+  }, [current, isPaused]);
 
   const prevSlide = () => setCurrent((prev) => (prev === 0 ? SLIDES.length - 1 : prev - 1));
   const nextSlide = () => setCurrent((prev) => (prev + 1) % SLIDES.length);
@@ -68,7 +70,11 @@ export const HeroSlider = ({ onSelectCategory }) => {
   const slide = SLIDES[current];
 
   return (
-    <div className="relative overflow-hidden bg-gray-950 text-white">
+    <div
+      className="relative overflow-hidden bg-gray-950 text-white"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
       
       {/* Contenedor del Slide Activo */}
       <div className="relative min-h-[380px] md:min-h-[460px] flex items-center transition-all duration-700">

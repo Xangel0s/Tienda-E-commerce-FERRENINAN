@@ -28,7 +28,7 @@ export const PRODUCTS = [
     regularPrice: 34.50,
     unit: 'Bolsa 42.5kg',
     badge: 'OFERTA OBRA',
-    image: 'https://images.unsplash.com/photo-1590486803833-1c5dc8ddd4c8?auto=format&fit=crop&w=600&q=80',
+    image: '/images/products/saco_cemento_real.jpg',
     description: 'Cemento Portland Tipo I de alta resistencia inicial para columnas, vigas y losas aligeradas.',
     inStock: true
   },
@@ -41,7 +41,7 @@ export const PRODUCTS = [
     regularPrice: 32.50,
     unit: 'Bolsa 42.5kg',
     badge: 'SUPER PRECIO',
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80',
+    image: '/images/products/cemento_apu.jpg',
     description: 'Cemento económico de máxima trabajabilidad para asentado de ladrillos y tarrajeos.',
     inStock: true
   },
@@ -54,7 +54,7 @@ export const PRODUCTS = [
     regularPrice: 37.00,
     unit: 'Bolsa 42.5kg',
     badge: 'ALTA DURABILIDAD',
-    image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80',
+    image: '/images/products/cemento_andino.jpg',
     description: 'Cemento de resistencia superior para estructuras expuestas y obras de envergadura.',
     inStock: true
   },
@@ -69,7 +69,7 @@ export const PRODUCTS = [
     regularPrice: 3.80,
     unit: 'Bolsa',
     badge: 'TOP VENTAS',
-    image: 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=600&q=80',
+    image: '/images/products/arena_fina.jpg',
     description: 'Arena fina cernida para tarrajeo fino de muros interiores y exteriores.',
     inStock: true
   },
@@ -82,7 +82,7 @@ export const PRODUCTS = [
     regularPrice: 3.80,
     unit: 'Bolsa',
     badge: 'TOP VENTAS',
-    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80',
+    image: '/images/products/arena_gruesa.jpg',
     description: 'Arena gruesa de cantera lavada para mezclas de concreto y asentado de ladrillos.',
     inStock: true
   },
@@ -95,7 +95,7 @@ export const PRODUCTS = [
     regularPrice: 6.00,
     unit: 'Bolsa',
     badge: null,
-    image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80',
+    image: '/images/products/confitillo.jpg',
     description: 'Piedra menuda tipo confitillo para filtros, vaciados especiales y solados.',
     inStock: true
   },
@@ -108,7 +108,7 @@ export const PRODUCTS = [
     regularPrice: 5.00,
     unit: 'Bolsa',
     badge: null,
-    image: 'https://images.unsplash.com/photo-1590486803833-1c5dc8ddd4c8?auto=format&fit=crop&w=600&q=80',
+    image: '/images/products/piedra_chancada.jpg',
     description: 'Piedra chancada de 1/2 pulgada para vaciado de columnas, techos y cimientos.',
     inStock: true
   },
@@ -121,7 +121,7 @@ export const PRODUCTS = [
     regularPrice: 5.00,
     unit: 'Bolsa',
     badge: null,
-    image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80',
+    image: '/images/products/confitillo.jpg',
     description: 'Material granular compactable para relleno y nivelación de falsos pisos.',
     inStock: true
   },
@@ -149,7 +149,7 @@ export const PRODUCTS = [
     regularPrice: 1.20,
     unit: 'Unidad',
     badge: 'PRECIO X MILLAR',
-    image: 'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&w=600&q=80',
+    image: '/images/products/ladrillo_kingkong.jpg',
     description: 'Ladrillo de arcilla cocida para muros portantes sismorresistentes.',
     inStock: true
   },
@@ -162,7 +162,7 @@ export const PRODUCTS = [
     regularPrice: 1.15,
     unit: 'Unidad',
     badge: 'TABIQUERÍA',
-    image: 'https://images.unsplash.com/photo-1590069261209-f8e9b8642343?auto=format&fit=crop&w=600&q=80',
+    image: '/images/products/ladrillo_pandereta.jpg',
     description: 'Ladrillo liviano para muros divisorios y tabiquería de interiores.',
     inStock: true
   },
@@ -175,7 +175,7 @@ export const PRODUCTS = [
     regularPrice: 4.00,
     unit: 'Unidad',
     badge: null,
-    image: 'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&w=600&q=80',
+    image: '/images/products/ladrillo_techo.jpg',
     description: 'Ladrillo aligerado para techos de 20cm de espesor.',
     inStock: true
   },
@@ -188,7 +188,7 @@ export const PRODUCTS = [
     regularPrice: 3.90,
     unit: 'Unidad',
     badge: null,
-    image: 'https://images.unsplash.com/photo-1590069261209-f8e9b8642343?auto=format&fit=crop&w=600&q=80',
+    image: '/images/products/ladrillo_techo.jpg',
     description: 'Ladrillo aligerado para techos de 17cm de espesor.',
     inStock: true
   },
@@ -201,7 +201,7 @@ export const PRODUCTS = [
     regularPrice: 3.00,
     unit: 'Unidad',
     badge: null,
-    image: 'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&w=600&q=80',
+    image: '/images/products/ladrillo_pandereta.jpg',
     description: 'Ladrillo termoaislante para cobertura de techos y azoteas.',
     inStock: true
   },
@@ -216,7 +216,7 @@ export const PRODUCTS = [
     regularPrice: 14.50,
     unit: 'Varilla 9m',
     badge: 'OFERTA ACERO',
-    image: 'https://images.unsplash.com/photo-1535813547-99c456a41d4a?auto=format&fit=crop&w=600&q=80',
+    image: '/images/products/fierro_corrugado.jpg',
     description: 'Varilla de acero Grado 60 corrugada para estribos y refuerzos de concreto.',
     inStock: true
   },
@@ -228,7 +228,7 @@ export const PRODUCTS = [
     price: null,
     unit: 'Varilla 9m',
     badge: 'CONSULTAR STOCK',
-    image: 'https://images.unsplash.com/photo-1535813547-99c456a41d4a?auto=format&fit=crop&w=600&q=80',
+    image: '/images/products/fierro_corrugado.jpg',
     description: 'Barra de construcción estándar para vigas, columnas y losas armadas.',
     inStock: true
   },
@@ -240,7 +240,7 @@ export const PRODUCTS = [
     price: null,
     unit: 'Varilla 9m',
     badge: 'CONSULTAR STOCK',
-    image: 'https://images.unsplash.com/photo-1535813547-99c456a41d4a?auto=format&fit=crop&w=600&q=80',
+    image: '/images/products/fierro_corrugado.jpg',
     description: 'Acero de 12mm de alta ductilidad para cimientos y columnas principales.',
     inStock: true
   },
@@ -252,7 +252,7 @@ export const PRODUCTS = [
     price: null,
     unit: 'Varilla 9m',
     badge: 'CONSULTAR STOCK',
-    image: 'https://images.unsplash.com/photo-1535813547-99c456a41d4a?auto=format&fit=crop&w=600&q=80',
+    image: '/images/products/fierro_corrugado.jpg',
     description: 'Varilla de acero de 16mm para zapatas y estructuras de carga pesada.',
     inStock: true
   },
@@ -265,7 +265,7 @@ export const PRODUCTS = [
     regularPrice: 9.50,
     unit: 'Kilo',
     badge: null,
-    image: 'https://images.unsplash.com/photo-1516715094483-75da7dee9758?auto=format&fit=crop&w=600&q=80',
+    image: '/images/products/alambre_recocido.jpg',
     description: 'Alambre flexible para amarre de armaduras y estribos de construcción.',
     inStock: true
   },
@@ -278,7 +278,7 @@ export const PRODUCTS = [
     regularPrice: 9.50,
     unit: 'Kilo',
     badge: null,
-    image: 'https://images.unsplash.com/photo-1516715094483-75da7dee9758?auto=format&fit=crop&w=600&q=80',
+    image: '/images/products/alambre_recocido.jpg',
     description: 'Alambre grueso para sujeción de maderas de encofrado.',
     inStock: true
   },
@@ -291,7 +291,7 @@ export const PRODUCTS = [
     regularPrice: 9.00,
     unit: 'Kilo',
     badge: null,
-    image: 'https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=600&q=80',
+    image: '/images/products/hardware-screws-bolts.jpg',
     description: 'Clavos galvanizados para carpintería y encofrados de obra.',
     inStock: true
   },
@@ -306,7 +306,7 @@ export const PRODUCTS = [
     regularPrice: 38.00,
     unit: 'Plancha (1.22x2.44m)',
     badge: 'TOP VENTAS',
-    image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=600&q=80',
+    image: '/images/products/plancha_drywall.jpg',
     description: 'Plancha de yeso-cartón de 12.7mm para tabiques y falsos techos.',
     inStock: true
   },
@@ -319,7 +319,7 @@ export const PRODUCTS = [
     regularPrice: 37.00,
     unit: 'Plancha (1.22x2.44m)',
     badge: null,
-    image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=600&q=80',
+    image: '/images/products/plancha_drywall.jpg',
     description: 'Plancha delgada de 9.5mm para cielo raso y detalles decorativos.',
     inStock: true
   },
@@ -332,7 +332,7 @@ export const PRODUCTS = [
     regularPrice: 52.00,
     unit: 'Plancha (1.22x2.44m)',
     badge: 'RESISTENTE HUMEDAD',
-    image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=600&q=80',
+    image: '/images/products/plancha_drywall.jpg',
     description: 'Plancha con siliconas especiales para baños, cocinas y lavanderías.',
     inStock: true
   },
@@ -345,7 +345,7 @@ export const PRODUCTS = [
     regularPrice: 12.50,
     unit: 'Tira 3m',
     badge: null,
-    image: 'https://images.unsplash.com/photo-1535813547-99c456a41d4a?auto=format&fit=crop&w=600&q=80',
+    image: '/images/products/perfiles_drywall.jpg',
     description: 'Perfil vertical de acero zincado para tabiquería ligera.',
     inStock: true
   },
@@ -358,7 +358,7 @@ export const PRODUCTS = [
     regularPrice: 13.50,
     unit: 'Tira 3m',
     badge: null,
-    image: 'https://images.unsplash.com/photo-1535813547-99c456a41d4a?auto=format&fit=crop&w=600&q=80',
+    image: '/images/products/perfiles_drywall.jpg',
     description: 'Perfil para muros divisorios de 9cm con lana de vidrio.',
     inStock: true
   },
@@ -371,7 +371,7 @@ export const PRODUCTS = [
     regularPrice: 15.00,
     unit: 'Tira 3m',
     badge: null,
-    image: 'https://images.unsplash.com/photo-1535813547-99c456a41d4a?auto=format&fit=crop&w=600&q=80',
+    image: '/images/products/perfiles_drywall.jpg',
     description: 'Estructura pesada para muros de gran altura y fachadas.',
     inStock: true
   },
@@ -384,7 +384,7 @@ export const PRODUCTS = [
     regularPrice: 11.50,
     unit: 'Tira 3m',
     badge: null,
-    image: 'https://images.unsplash.com/photo-1535813547-99c456a41d4a?auto=format&fit=crop&w=600&q=80',
+    image: '/images/products/perfiles_drywall.jpg',
     description: 'Perfil en canal U horizontal para anclaje a piso y techo.',
     inStock: true
   },
@@ -397,7 +397,7 @@ export const PRODUCTS = [
     regularPrice: 12.50,
     unit: 'Tira 3m',
     badge: null,
-    image: 'https://images.unsplash.com/photo-1535813547-99c456a41d4a?auto=format&fit=crop&w=600&q=80',
+    image: '/images/products/perfiles_drywall.jpg',
     description: 'Canal riel para parantes de 64mm.',
     inStock: true
   },
@@ -410,7 +410,7 @@ export const PRODUCTS = [
     regularPrice: 13.50,
     unit: 'Tira 3m',
     badge: null,
-    image: 'https://images.unsplash.com/photo-1535813547-99c456a41d4a?auto=format&fit=crop&w=600&q=80',
+    image: '/images/products/perfiles_drywall.jpg',
     description: 'Canal riel para parantes de 89mm.',
     inStock: true
   },
@@ -423,7 +423,7 @@ export const PRODUCTS = [
     regularPrice: 13.50,
     unit: 'Tira 3m',
     badge: null,
-    image: 'https://images.unsplash.com/photo-1535813547-99c456a41d4a?auto=format&fit=crop&w=600&q=80',
+    image: '/images/products/perfiles_drywall.jpg',
     description: 'Perfil omega para cielo raso suspendido.',
     inStock: true
   },
@@ -436,7 +436,7 @@ export const PRODUCTS = [
     regularPrice: 48.00,
     unit: 'Balde 25kg',
     badge: 'OFERTA BALDE',
-    image: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=600&q=80',
+    image: '/images/products/drywall_instalacion.jpg',
     description: 'Pasta para tratamiento de juntas en drywall de fácil lijado y gran adherencia.',
     inStock: true
   },
@@ -474,7 +474,7 @@ export const PRODUCTS = [
     price: null,
     unit: 'Rollo',
     badge: 'A COTIZAR',
-    image: 'https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=600&q=80',
+    image: '/images/products/drywall_instalacion.jpg',
     description: 'Malla autoadhesiva para unión de juntas y grietas en placas.',
     inStock: true
   },
@@ -486,7 +486,7 @@ export const PRODUCTS = [
     price: null,
     unit: 'Ciento / Millar',
     badge: 'A COTIZAR',
-    image: 'https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=600&q=80',
+    image: '/images/products/hardware-screws-bolts.jpg',
     description: 'Tornillos fosfatizados negros 6x1" y wafer metal-metal.',
     inStock: true
   },
@@ -498,7 +498,7 @@ export const PRODUCTS = [
     price: null,
     unit: 'Rollo',
     badge: 'A COTIZAR',
-    image: 'https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=600&q=80',
+    image: '/images/products/drywall_instalacion.jpg',
     description: 'Cinta de papel con pliegue central para esquineros y uniones lisas.',
     inStock: true
   },
@@ -513,7 +513,7 @@ export const PRODUCTS = [
     regularPrice: 46.00,
     unit: 'Galón',
     badge: 'OFERTA',
-    image: 'https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=600&q=80',
+    image: '/images/products/pintura_latex.jpg',
     description: 'Pintura látex lavable de acabado mate uniforme para interiores y exteriores.',
     inStock: true
   },
@@ -526,7 +526,7 @@ export const PRODUCTS = [
     regularPrice: 92.00,
     unit: 'Galón',
     badge: 'CALIDAD PREMIUM',
-    image: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=600&q=80',
+    image: '/images/products/pintura_esmalte.jpg',
     description: 'Látex de máxima resistencia al lavado y protección contra la intemperie.',
     inStock: true
   },
@@ -539,7 +539,7 @@ export const PRODUCTS = [
     regularPrice: 129.00,
     unit: 'Galón',
     badge: 'TOP VENTAS',
-    image: 'https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=600&q=80',
+    image: '/images/products/paint-colors-brush.jpg',
     description: 'Pintura satinada 100% lavable con tacto de seda para ambientes elegantes.',
     inStock: true
   },
@@ -839,7 +839,9 @@ export const PRODUCTS = [
     price: null,
     unit: 'Servicio x Bolsa / Viaje',
     badge: 'SERVICIO RÁPIDO',
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80',
+    image: '/images/products/desmonte_volquete.jpg',
+    video: '/videos/desmonte-loop.mp4',
+    cardType: 'video',
     description: 'Recojo de escombros embolsados a domicilio o pie de obra con disposición autorizada.',
     inStock: true
   },
@@ -851,7 +853,9 @@ export const PRODUCTS = [
     price: null,
     unit: 'Volquete (m³)',
     badge: 'SERVICIO PESADO',
-    image: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=600&q=80',
+    image: '/images/products/desmonte_volquete.jpg',
+    video: '/videos/desmonte-loop.mp4',
+    cardType: 'video',
     description: 'Eliminación de desmonte a granel con volquetes de 8m³ y 15m³ para obras medianas y grandes.',
     inStock: true
   },
@@ -865,7 +869,7 @@ export const PRODUCTS = [
     price: null,
     unit: 'Unidad',
     badge: 'A COTIZAR',
-    image: 'https://images.unsplash.com/photo-1586864387789-628af9feed72?auto=format&fit=crop&w=600&q=80',
+    image: '/images/products/tools-hammer-tape.jpg',
     description: 'Pala de acero templado para mezcla de concreto y movimiento de tierra.',
     inStock: true
   },
@@ -877,10 +881,24 @@ export const PRODUCTS = [
     price: null,
     unit: 'Unidad',
     badge: 'A COTIZAR',
-    image: 'https://images.unsplash.com/photo-1590486803833-1c5dc8ddd4c8?auto=format&fit=crop&w=600&q=80',
+    image: '/images/products/carretilla_obra.jpg',
     description: 'Carretilla de tolva estampada y llanta neumática para acarreo de arena y cemento.',
     inStock: true
   },
+  {
+    id: 'her-3',
+    name: 'Llanta Neumática para Carretilla 16" con Rin y Eje Reforzado',
+    brand: 'TRUPER / TRAMONTINA',
+    category: 'herramientas',
+    price: 38.00,
+    regularPrice: 45.00,
+    unit: 'Unidad',
+    badge: 'REPUESTO OBRA',
+    image: '/images/products/llanta-carretilla.png',
+    description: 'Llanta de caucho reforzada con cámara y rodamiento de alta resistencia para carretillas de obra.',
+    inStock: true
+  },
+
   {
     id: 'ele-1',
     name: 'Rollo de Cable Eléctrico Indeco THW 100m',
@@ -889,7 +907,7 @@ export const PRODUCTS = [
     price: null,
     unit: 'Rollo 100m',
     badge: 'A COTIZAR',
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&q=80',
+    image: '/images/products/cable_electrico.jpg',
     description: 'Conductor de cobre de 2.5mm y 4mm para cableado residencial y comercial.',
     inStock: true
   },
@@ -901,7 +919,7 @@ export const PRODUCTS = [
     price: null,
     unit: 'Tubo 3m / 5m',
     badge: 'A COTIZAR',
-    image: 'https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=600&q=80',
+    image: '/images/products/tubos_pvc.jpg',
     description: 'Tuberías y accesorios de desagüe y agua fría de 1/2", 2" y 4".',
     inStock: true
   }

@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { ChevronLeft, ChevronRight, ShoppingCart, MessageCircle, Check, Truck } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ShoppingCart, MessageCircle, Check, Truck, FileText } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 
 export const ProductCarouselRow = ({ title, subtitle, products, categoryPills, onSelectCategory }) => {
@@ -110,18 +110,50 @@ export const ProductCarouselRow = ({ title, subtitle, products, categoryPills, o
                       )}
                     </div>
 
-                    {/* Imagen del Producto */}
-                    <div className="w-full h-40 rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center p-2.5 mb-3 border border-gray-100 group-hover:bg-white transition-colors">
-                      <img
-                        src={product.image}
-                        alt={product.name}
-                        className="w-full h-full object-contain mix-blend-multiply group-hover:scale-106 transition-transform duration-300"
-                        loading="lazy"
-                        onError={(e) => {
-                          e.currentTarget.onerror = null;
-                          e.currentTarget.src = '/images/product-placeholder.svg';
-                        }}
-                      />
+                    {/* Imagen del Producto o Video/Plano si no tiene imagen */}
+                    <div className="w-full h-40 rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center relative mb-3 border border-gray-100 group-hover:bg-white transition-colors">
+                      {product.cardType === 'video' || product.video ? (
+                        <div className="relative w-full h-full bg-black overflow-hidden">
+                          <video
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            className="w-full h-full object-cover scale-105"
+                          >
+                            <source src={product.video || '/videos/desmonte-loop.mp4'} type="video/mp4" />
+                          </video>
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 pointer-events-none" />
+                          <span className="absolute top-2 right-2 z-10 text-[9px] font-bold px-2 py-0.5 rounded bg-black/60 backdrop-blur-xs text-white border border-white/20 flex items-center gap-1">
+                            <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+                            Video Obra
+                          </span>
+                        </div>
+                      ) : product.cardType === 'blueprint' ? (
+                        <div className="relative w-full h-full bg-blue-950 overflow-hidden flex items-center justify-center">
+                          <img
+                            src="/images/blueprint-bg.jpg"
+                            alt="Plano Arquitectónico"
+                            className="w-full h-full object-cover opacity-80 mix-blend-screen group-hover:scale-108 transition-transform duration-500"
+                          />
+                          <div className="absolute inset-0 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:12px_12px] opacity-40 pointer-events-none" />
+                          <span className="absolute top-2 right-2 z-10 text-[9px] font-bold px-2 py-0.5 rounded bg-blue-900/80 backdrop-blur-xs text-cyan-200 border border-cyan-400/30 flex items-center gap-1">
+                            <FileText className="w-3 h-3 text-cyan-300" />
+                            Plano CAD
+                          </span>
+                        </div>
+                      ) : (
+                        <img
+                          src={product.image}
+                          alt={product.name}
+                          className="w-full h-full object-contain p-2 mix-blend-multiply group-hover:scale-106 transition-transform duration-300"
+                          loading="lazy"
+                          onError={(e) => {
+                            e.currentTarget.onerror = null;
+                            e.currentTarget.src = '/images/product-placeholder.svg';
+                          }}
+                        />
+                      )}
                     </div>
 
                     {/* Nombre y Unidad */}
