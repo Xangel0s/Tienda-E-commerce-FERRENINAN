@@ -20,6 +20,7 @@ import {
 } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { PRODUCTS, CATEGORIES, COMPANY_INFO } from '../data/products';
+import { ProductCard } from './ProductCard';
 
 const DISTRICTS = [
   { name: 'Jesús María', price: 15.00 },
@@ -638,59 +639,11 @@ export const ProductPage = () => {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {relatedProducts.map((rel) => {
-                const relHasPrice = rel.price !== null && !isNaN(rel.price);
-                return (
-                  <div
-                    key={rel.id}
-                    onClick={() => navigateToProduct(rel.id)}
-                    className="bg-white rounded-2xl border border-gray-200 p-4 hover:shadow-lg hover:border-brand-500 transition-all cursor-pointer flex flex-col justify-between group"
-                  >
-                    <div>
-                      <div className="flex items-center justify-between text-[10px] font-bold text-gray-500 mb-2">
-                        <span className="uppercase text-gray-400 font-mono">SKU: {rel.sku || rel.id}</span>
-                        <span className="text-brand-600 bg-brand-50 px-2 py-0.5 rounded">{rel.brand || 'FERRENINAN'}</span>
-                      </div>
-
-                      <div className="w-full h-36 rounded-xl bg-gray-50 p-2 mb-3 flex items-center justify-center border border-gray-100 group-hover:bg-white transition-colors">
-                        <img
-                          src={rel.image}
-                          alt={rel.name}
-                          className="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform"
-                          onError={(e) => {
-                            e.currentTarget.onerror = null;
-                            e.currentTarget.src = '/images/product-placeholder.svg';
-                          }}
-                        />
-                      </div>
-
-                      <h4 className="text-xs font-bold text-gray-900 group-hover:text-brand-600 transition-colors line-clamp-2 min-h-[32px]">
-                        {rel.name}
-                      </h4>
-                    </div>
-
-                    <div className="mt-3 pt-2.5 border-t border-gray-100 flex items-baseline justify-between">
-                      <div>
-                        {relHasPrice ? (
-                          <div className="flex items-baseline gap-1">
-                            <span className="text-xs font-black text-brand-600">S/</span>
-                            <span className="text-lg font-black text-brand-600">
-                              {rel.price.toFixed(2)}
-                            </span>
-                            <span className="text-[10px] text-gray-400">/ {rel.unit}</span>
-                          </div>
-                        ) : (
-                          <span className="text-xs font-bold text-blue-700">A cotizar</span>
-                        )}
-                      </div>
-
-                      <span className="text-xs font-bold text-brand-500 group-hover:translate-x-0.5 transition-transform">
-                        Ver ficha →
-                      </span>
-                    </div>
-                  </div>
-                );
-              })}
+              {relatedProducts.map((rel) => (
+                <div key={rel.id} className="h-full">
+                  <ProductCard product={rel} />
+                </div>
+              ))}
             </div>
           </section>
         )}

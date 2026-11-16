@@ -1,235 +1,149 @@
 import React, { useState } from 'react';
-import { ShoppingCart, MessageCircle, Plus, Minus, Check, Truck, ShieldCheck, FileText, Play } from 'lucide-react';
+import { ShoppingCart, MessageCircle, Check } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 
 export const ProductCard = ({ product }) => {
   const { addToCart, getWhatsAppProductInquiryUrl, navigateToProduct } = useCart();
-  const [quantity, setQuantity] = useState(1);
   const [isAdded, setIsAdded] = useState(false);
 
   const handleAdd = () => {
-    addToCart(product, quantity);
+    addToCart(product, 1);
     setIsAdded(true);
     setTimeout(() => setIsAdded(false), 1200);
   };
 
-  const handleIncrement = () => setQuantity(q => q + 1);
-  const handleDecrement = () => setQuantity(q => (q > 1 ? q - 1 : 1));
-
   const hasPrice = product.price !== null && !isNaN(product.price);
-  const savings = product.regularPrice && hasPrice ? (product.regularPrice - product.price) : 0;
   const discountPercent = product.regularPrice && hasPrice
     ? Math.round(((product.regularPrice - product.price) / product.regularPrice) * 100)
     : 0;
 
+  // Formato Promart de precio: S/ [Entero]^[Decimales]
+  const priceParts = hasPrice ? product.price.toFixed(2).split('.') : ['0', '00'];
+  const intPart = priceParts[0];
+  const decPart = priceParts[1];
+
   return (
-    <div className="bg-white rounded-2xl border border-gray-200 p-4 hover:shadow-xl hover:border-brand-500 hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between group relative">
-      
+    <div
+      onClick={() => navigateToProduct(product)}
+      className="bg-white rounded-xl border border-gray-200 p-3 sm:p-4 hover:shadow-md hover:border-gray-300 transition-all duration-200 flex flex-col justify-between cursor-pointer group h-full select-none"
+    >
       <div>
-        {/* Cabecera de la Tarjeta: Tag de Stock y Marca */}
-        <div className="flex items-center justify-between gap-2 mb-2">
-          {hasPrice ? (
-            <span className="text-[10px] font-bold text-green-700 bg-green-50 border border-green-200 px-2 py-0.5 rounded-full flex items-center gap-1">
-              <Truck className="w-3 h-3 text-green-600" />
-              <span>Despacho a obra</span>
-            </span>
-          ) : (
-            <span className="text-[10px] font-bold text-blue-700 bg-blue-50 border border-blue-200 px-2 py-0.5 rounded-full">
-              Precio a Cotizar
-            </span>
-          )}
+        {/* Imagen del Producto sobre fondo blanco limpio */}
+        <div className="w-full h-44 sm:h-48 flex items-center justify-center p-2 mb-2 bg-white overflow-hidden">
+          <img
+            src={product.image}
+            alt={product.name}
+            className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
+            loading="lazy"
+            onError={(e) => {
+              e.currentTarget.onerror = null;
+              e.currentTarget.src = '/images/product-placeholder.svg';
+            }}
+          />
+        </div>
 
-          <span className="text-[10px] font-black uppercase tracking-wider text-gray-500 bg-gray-100 px-2 py-0.5 rounded truncate max-w-[120px]">
-            {product.brand || 'FERRENINAN'}
+        {/* Insignia Retail Estilo Promart (Techo Naranja + FERRENINAN) */}
+        <div className="flex items-center gap-1 text-[#f97316] font-bold text-[11px] tracking-tight mb-0.5">
+          <svg className="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24">
+            <path d="M12 4L3 12h3v8h12v-8h3L12 4z" />
+          </svg>
+          <span className="uppercase tracking-wider font-extrabold text-[10px]">
+            FERRENINAN
           </span>
         </div>
 
-        {/* Zona Visual del Producto */}
-        <div
-          onClick={() => navigateToProduct(product)}
-          className="w-full h-44 rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center relative mb-3 border border-gray-100 group-hover:bg-white transition-colors cursor-pointer"
-        >
-          {product.badge && (
-            <span className="absolute top-2 left-2 z-10 text-[9px] font-black uppercase px-2 py-0.5 rounded shadow-xs bg-brand-500 text-white">
-              {product.badge}
-            </span>
-          )}
-
-          {product.cardType === 'video' || product.video ? (
-            <div className="relative w-full h-full bg-black overflow-hidden">
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full h-full object-cover scale-105"
-              >
-                <source src={product.video || '/videos/desmonte-loop.mp4'} type="video/mp4" />
-              </video>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 pointer-events-none" />
-              <span className="absolute top-2 right-2 z-10 text-[9px] font-bold px-2 py-0.5 rounded bg-black/60 backdrop-blur-xs text-white border border-white/20 flex items-center gap-1">
-                <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                Video Obra
-              </span>
-            </div>
-          ) : product.cardType === 'blueprint' ? (
-            <div className="relative w-full h-full bg-blue-950 overflow-hidden flex items-center justify-center">
-              <img
-                src="/images/blueprint-bg.jpg"
-                alt="Plano Arquitectónico"
-                className="w-full h-full object-cover opacity-80 mix-blend-screen group-hover:scale-108 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:12px_12px] opacity-40 pointer-events-none" />
-              <span className="absolute top-2 right-2 z-10 text-[9px] font-bold px-2 py-0.5 rounded bg-blue-900/80 backdrop-blur-xs text-cyan-200 border border-cyan-400/30 flex items-center gap-1">
-                <FileText className="w-3 h-3 text-cyan-300" />
-                Plano CAD
-              </span>
-            </div>
-          ) : (
-            <img
-              src={product.image}
-              alt={product.name}
-              className="w-full h-full object-contain p-2 mix-blend-multiply group-hover:scale-106 transition-transform duration-300"
-              loading="lazy"
-              onError={(e) => {
-                e.currentTarget.onerror = null;
-                e.currentTarget.src = '/images/product-placeholder.svg';
-              }}
-            />
-          )}
+        {/* Marca Oficial (SOL, APU, GYPLAC, PIRÁMIDE, etc.) */}
+        <div className="text-[12px] sm:text-[13px] font-black text-gray-900 tracking-tight uppercase leading-tight">
+          {product.brand || 'FERRENINAN'}
         </div>
 
-        {/* Información del Producto */}
-        <div>
-          <span className="text-[10px] font-black uppercase tracking-wider text-gray-400 block mb-0.5">
-            {product.category}
-          </span>
-          <h3
-            onClick={() => navigateToProduct(product)}
-            className="text-xs sm:text-sm font-bold text-gray-900 group-hover:text-brand-600 transition-colors line-clamp-2 min-h-[38px] leading-snug cursor-pointer"
-          >
-            {product.name}
-          </h3>
-          <span className="text-[11px] text-gray-500 mt-1 block">
-            Unidad: <strong className="text-gray-700">{product.unit}</strong>
-          </span>
-        </div>
+        {/* Nombre / Título del Producto */}
+        <h3 className="text-[13px] sm:text-[14px] text-gray-800 font-normal line-clamp-2 leading-snug mt-1 min-h-[38px] group-hover:text-brand-600 transition-colors">
+          {product.name}
+        </h3>
+
+        {/* Presentación / Unidad */}
+        <span className="text-[11px] text-gray-400 block mt-0.5">
+          {product.unit}
+        </span>
       </div>
 
-      {/* Bloque Inferior: Precios y Acciones */}
-      <div className="mt-4 pt-3 border-t border-gray-100">
-        
-        {/* Precios Estilo Promart */}
+      {/* Bloque de Precios y Acción */}
+      <div className="mt-3 pt-2">
         {hasPrice ? (
-          <div className="space-y-1 mb-3">
-            {product.regularPrice && (
-              <div className="flex items-center gap-2">
-                <span className="text-xs text-gray-400 line-through">
-                  S/ {product.regularPrice.toFixed(2)}
-                </span>
-                {discountPercent > 0 && (
-                  <span className="text-[10px] font-bold text-red-600 bg-red-50 px-1.5 py-0.2 rounded border border-red-200">
-                    -{discountPercent}%
-                  </span>
-                )}
-              </div>
-            )}
-            <div className="flex items-baseline gap-1">
-              <span className="text-xs font-black text-brand-600">S/</span>
-              <span className="text-2xl font-black text-brand-600 tracking-tight">
-                {product.price.toFixed(2)}
+          <div>
+            {/* Precio Promart s/ 30.90 con decimales en superíndice */}
+            <div className="flex items-baseline">
+              <span className="text-xs font-bold text-gray-900 mr-1 self-baseline">s/</span>
+              <span className="text-2xl sm:text-[26px] font-black text-gray-950 tracking-tight leading-none">
+                {intPart}
               </span>
-              <span className="text-[10px] text-gray-500 font-medium ml-1">
-                / {product.unit}
+              <span className="text-xs sm:text-sm font-bold text-gray-950 -top-1.5 relative">
+                .{decPart}
               </span>
             </div>
+
+            {/* Precio Regular y Descuento */}
+            {product.regularPrice && discountPercent > 0 && (
+              <div className="flex items-center gap-1.5 mt-0.5">
+                <span className="text-[11px] text-gray-400 line-through">
+                  s/ {product.regularPrice.toFixed(2)}
+                </span>
+                <span className="text-[10px] font-bold text-red-600 bg-red-50 border border-red-200 px-1 py-0.2 rounded">
+                  -{discountPercent}%
+                </span>
+              </div>
+            )}
           </div>
         ) : (
-          <div className="mb-3 p-2 bg-blue-50/70 border border-blue-100 rounded-xl">
-            <span className="text-xs font-black text-blue-900 block">
-              Precio al por mayor y menor
-            </span>
-            <span className="text-[10px] text-blue-700">
-              Cotiza según volumen para despacho a obra
+          <div className="py-1">
+            <span className="inline-block text-[11px] font-bold text-brand-600 bg-red-50 border border-red-100 px-2 py-0.5 rounded">
+              Precio a Cotizar
             </span>
           </div>
         )}
 
-        {/* Controles de Compra */}
-        {hasPrice ? (
-          <div className="space-y-2">
-            <div className="flex items-center gap-2">
-              {/* Stepper numérico */}
-              <div className="flex items-center border border-gray-300 rounded-xl overflow-hidden bg-gray-50">
-                <button
-                  type="button"
-                  onClick={handleDecrement}
-                  className="px-2.5 py-1.5 text-gray-600 hover:bg-gray-200 transition-colors"
-                  aria-label="Disminuir"
-                >
-                  <Minus className="w-3.5 h-3.5" />
-                </button>
-                <span className="w-7 text-center text-xs font-bold text-gray-900">
-                  {quantity}
-                </span>
-                <button
-                  type="button"
-                  onClick={handleIncrement}
-                  className="px-2.5 py-1.5 text-gray-600 hover:bg-gray-200 transition-colors"
-                  aria-label="Aumentar"
-                >
-                  <Plus className="w-3.5 h-3.5" />
-                </button>
-              </div>
-
-              {/* Botón Añadir al Carrito Promart Rojo */}
-              <button
-                type="button"
-                onClick={handleAdd}
-                className={`flex-1 py-2 px-3 rounded-xl text-xs font-black flex items-center justify-center gap-1.5 transition-all shadow-sm ${
-                  isAdded
-                    ? 'bg-green-600 text-white'
-                    : 'bg-brand-500 hover:bg-brand-600 text-white active:scale-95'
-                }`}
-              >
-                {isAdded ? (
-                  <>
-                    <Check className="w-3.5 h-3.5" />
-                    <span>Agregado</span>
-                  </>
-                ) : (
-                  <>
-                    <ShoppingCart className="w-3.5 h-3.5" />
-                    <span>Agregar</span>
-                  </>
-                )}
-              </button>
-            </div>
-          </div>
-        ) : (
-          <div className="space-y-1.5">
+        {/* Botón de Acción Estilo Promart */}
+        <div className="mt-3">
+          {hasPrice ? (
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                handleAdd();
+              }}
+              className={`w-full py-2 px-3 rounded-lg text-xs font-bold flex items-center justify-center gap-1.5 transition-all shadow-xs ${
+                isAdded
+                  ? 'bg-green-600 text-white'
+                  : 'bg-brand-500 hover:bg-brand-600 text-white active:scale-98'
+              }`}
+            >
+              {isAdded ? (
+                <>
+                  <Check className="w-3.5 h-3.5" />
+                  <span>En Carrito</span>
+                </>
+              ) : (
+                <>
+                  <ShoppingCart className="w-3.5 h-3.5" />
+                  <span>Añadir</span>
+                </>
+              )}
+            </button>
+          ) : (
             <a
               href={getWhatsAppProductInquiryUrl(product)}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full bg-green-500 hover:bg-green-600 text-white font-bold text-xs py-2.5 px-3 rounded-xl flex items-center justify-center gap-1.5 transition-colors shadow-xs"
+              onClick={(e) => e.stopPropagation()}
+              className="w-full py-2 px-3 rounded-lg text-xs font-bold bg-green-500 hover:bg-green-600 text-white flex items-center justify-center gap-1.5 transition-colors shadow-xs"
             >
-              <MessageCircle className="w-4 h-4" />
-              <span>Cotizar por WhatsApp</span>
+              <MessageCircle className="w-3.5 h-3.5" />
+              <span>Cotizar</span>
             </a>
-
-            <button
-              type="button"
-              onClick={handleAdd}
-              className="w-full text-center text-[10px] font-semibold text-gray-500 hover:text-brand-600 py-1 transition-colors"
-            >
-              + Añadir a lista de cotización
-            </button>
-          </div>
-        )}
-
+          )}
+        </div>
       </div>
-
     </div>
   );
 };
