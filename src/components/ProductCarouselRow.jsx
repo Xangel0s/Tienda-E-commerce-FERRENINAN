@@ -5,7 +5,7 @@ import { useCart } from '../context/CartContext';
 export const ProductCarouselRow = ({ title, subtitle, products, categoryPills, onSelectCategory }) => {
   const scrollRef = useRef(null);
   const [activePill, setActivePill] = useState(categoryPills ? categoryPills[0]?.id : null);
-  const { addToCart, getWhatsAppProductInquiryUrl } = useCart();
+  const { addToCart, getWhatsAppProductInquiryUrl, openProductDetail } = useCart();
   const [addedId, setAddedId] = useState(null);
 
   const scroll = (direction) => {
@@ -111,7 +111,10 @@ export const ProductCarouselRow = ({ title, subtitle, products, categoryPills, o
                     </div>
 
                     {/* Imagen del Producto o Video/Plano si no tiene imagen */}
-                    <div className="w-full h-40 rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center relative mb-3 border border-gray-100 group-hover:bg-white transition-colors">
+                    <div
+                      onClick={() => openProductDetail && openProductDetail(product)}
+                      className="w-full h-40 rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center relative mb-3 border border-gray-100 group-hover:bg-white transition-colors cursor-pointer"
+                    >
                       {product.cardType === 'video' || product.video ? (
                         <div className="relative w-full h-full bg-black overflow-hidden">
                           <video
@@ -160,7 +163,10 @@ export const ProductCarouselRow = ({ title, subtitle, products, categoryPills, o
                     <span className="text-[10px] uppercase font-bold text-gray-400 block mb-0.5">
                       {product.category}
                     </span>
-                    <h3 className="text-xs sm:text-sm font-bold text-gray-900 line-clamp-2 min-h-[38px] group-hover:text-brand-600 transition-colors leading-snug">
+                    <h3
+                      onClick={() => openProductDetail && openProductDetail(product)}
+                      className="text-xs sm:text-sm font-bold text-gray-900 line-clamp-2 min-h-[38px] group-hover:text-brand-600 transition-colors leading-snug cursor-pointer"
+                    >
                       {product.name}
                     </h3>
                     <span className="text-[11px] text-gray-500 mt-1 block">

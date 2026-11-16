@@ -10,13 +10,14 @@ import { PromoBanner } from './components/PromoBanner';
 import { PromoModal } from './components/PromoModal';
 import { ProductGrid } from './components/ProductGrid';
 import { CartPage } from './components/CartPage';
+import { ProductDetailModal } from './components/ProductDetailModal';
 import { ComplaintsBookModal } from './components/ComplaintsBookModal';
 import { Footer } from './components/Footer';
 import { PRODUCTS, CATEGORIES } from './data/products';
 import { ArrowRight } from 'lucide-react';
 
 function StoreContent() {
-  const { currentView, setCurrentView } = useCart();
+  const { currentView, setCurrentView, detailProduct, closeProductDetail } = useCart();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('todos');
   const [showFullCatalog, setShowFullCatalog] = useState(false);
@@ -168,7 +169,16 @@ function StoreContent() {
                     key={p.id}
                     className="border border-gray-100 rounded-xl p-3 bg-gray-50/50 hover:bg-white hover:shadow-md hover:border-brand-200 transition-all flex flex-col justify-between"
                   >
-                    <img src={p.image} alt={p.name} className="w-full h-32 object-contain mix-blend-multiply mb-2" />
+                    <img
+                      src={p.image}
+                      alt={p.name}
+                      className="w-full h-32 object-contain mix-blend-multiply mb-2 cursor-pointer hover:scale-105 transition-transform"
+                      onClick={() => openProductDetail ? openProductDetail(p) : null}
+                      onError={(e) => {
+                        e.currentTarget.onerror = null;
+                        e.currentTarget.src = '/images/product-placeholder.svg';
+                      }}
+                    />
                     <div>
                       <h4 className="text-xs font-bold text-gray-900 truncate">{p.name}</h4>
                       <div className="mt-1 flex items-baseline gap-2">
@@ -203,6 +213,14 @@ function StoreContent() {
           </div>
 
         </main>
+      )}
+
+      {/* Modal de Detalle / Vista Rápida de Producto Estilo Promart */}
+      {detailProduct && (
+        <ProductDetailModal
+          product={detailProduct}
+          onClose={closeProductDetail}
+        />
       )}
 
       {/* Publicidad Flotante Automática Estilo Promart (Imagen 2) */}

@@ -3,7 +3,7 @@ import { ShoppingCart, MessageCircle, Plus, Minus, Check, Truck, ShieldCheck, Fi
 import { useCart } from '../context/CartContext';
 
 export const ProductCard = ({ product }) => {
-  const { addToCart, getWhatsAppProductInquiryUrl } = useCart();
+  const { addToCart, getWhatsAppProductInquiryUrl, openProductDetail } = useCart();
   const [quantity, setQuantity] = useState(1);
   const [isAdded, setIsAdded] = useState(false);
 
@@ -45,7 +45,10 @@ export const ProductCard = ({ product }) => {
         </div>
 
         {/* Zona Visual del Producto */}
-        <div className="w-full h-44 rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center relative mb-3 border border-gray-100 group-hover:bg-white transition-colors">
+        <div
+          onClick={() => openProductDetail && openProductDetail(product)}
+          className="w-full h-44 rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center relative mb-3 border border-gray-100 group-hover:bg-white transition-colors cursor-pointer"
+        >
           {product.badge && (
             <span className="absolute top-2 left-2 z-10 text-[9px] font-black uppercase px-2 py-0.5 rounded shadow-xs bg-brand-500 text-white">
               {product.badge}
@@ -101,7 +104,10 @@ export const ProductCard = ({ product }) => {
           <span className="text-[10px] font-black uppercase tracking-wider text-gray-400 block mb-0.5">
             {product.category}
           </span>
-          <h3 className="text-xs sm:text-sm font-bold text-gray-900 group-hover:text-brand-600 transition-colors line-clamp-2 min-h-[38px] leading-snug">
+          <h3
+            onClick={() => openProductDetail && openProductDetail(product)}
+            className="text-xs sm:text-sm font-bold text-gray-900 group-hover:text-brand-600 transition-colors line-clamp-2 min-h-[38px] leading-snug cursor-pointer"
+          >
             {product.name}
           </h3>
           <span className="text-[11px] text-gray-500 mt-1 block">

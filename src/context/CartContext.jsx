@@ -17,6 +17,10 @@ export const CartProvider = ({ children }) => {
   // 'home' o 'cart' para que el carrito sea una página independiente
   const [currentView, setCurrentView] = useState('home');
   const [isComplaintsBookOpen, setIsComplaintsBookOpen] = useState(false);
+  const [detailProduct, setDetailProduct] = useState(null);
+
+  const openProductDetail = (product) => setDetailProduct(product);
+  const closeProductDetail = () => setDetailProduct(null);
 
   useEffect(() => {
     try {
@@ -144,6 +148,9 @@ export const CartProvider = ({ children }) => {
         setCurrentView,
         isComplaintsBookOpen,
         setIsComplaintsBookOpen,
+        detailProduct,
+        openProductDetail,
+        closeProductDetail,
         getWhatsAppOrderUrl,
         getWhatsAppProductInquiryUrl
       }}
