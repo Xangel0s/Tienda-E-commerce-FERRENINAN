@@ -74,27 +74,28 @@ export const PromoModal = () => {
         <div className="w-full md:w-1/2 bg-brand-500 p-6 flex flex-col justify-between text-white relative">
           
           <div className="space-y-3">
-            <div className="flex items-center gap-2">
-              <span className="text-[11px] font-black uppercase tracking-wider text-yellow-300">
-                EXCLUSIVO EN
-              </span>
-              <span className="text-sm font-black tracking-tight bg-white text-brand-dark px-2 py-0.5 rounded">
-                FERRENINAN.com
-              </span>
+            <div className="inline-flex items-center gap-1.5 bg-black/25 backdrop-blur-sm border border-white/20 px-2.5 py-1 rounded-full text-[11px] font-black tracking-wide w-fit">
+              <span className="text-yellow-300">EXCLUSIVO EN</span>
+              <span className="text-white font-black">FERRENINAN.com</span>
             </div>
 
             <h3 className="text-lg font-black leading-tight text-white">
               {promoProduct.name}
             </h3>
 
-            {/* Caja de Precio Azul/Cyan Promart */}
-            <div className="flex items-baseline gap-2">
-              <div className="bg-cyan-400 text-gray-950 font-black px-3 py-1 rounded-md text-2xl shadow">
-                S/ 31<span className="text-sm">.50</span>
+            {/* Caja de Precio Retail Alta Conversión (Amarillo Dorado Promart) */}
+            <div className="flex items-center gap-3">
+              <div className="bg-yellow-400 text-gray-950 font-black px-3.5 py-1 rounded-lg text-2xl sm:text-3xl shadow-md border-b-2 border-yellow-600/30 tracking-tight flex items-baseline gap-0.5">
+                <span>S/ 31</span>
+                <span className="text-base font-extrabold">.50</span>
               </div>
               <div className="text-xs">
-                <span className="text-red-100 line-through block">Precio regular: S/ 34.50</span>
-                <span className="text-yellow-200 font-bold text-[10px]">Ahorras S/ 3.00 x bolsa</span>
+                <span className="text-red-100 line-through block text-[11px] font-medium">
+                  Precio regular: S/ 34.50
+                </span>
+                <span className="inline-block bg-black/25 text-yellow-300 font-bold text-[10px] px-2 py-0.5 rounded-full mt-0.5">
+                  Ahorras S/ 3.00 x bolsa
+                </span>
               </div>
             </div>
 

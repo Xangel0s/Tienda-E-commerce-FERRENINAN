@@ -27,7 +27,7 @@ export const Footer = ({ onSelectCategory }) => {
             </div>
             
             <p className="text-xs text-gray-400 leading-relaxed">
-              <strong>{COMPANY_INFO.legalName}</strong> - Empresa líder en la distribución y comercialización de materiales de construcción, agregados, drywall, pinturas y servicio integral de eliminación de desmonte en Lima.
+              <strong>{COMPANY_INFO.legalName}</strong> (RUC: {COMPANY_INFO.ruc}) - Empresa líder en la distribución y comercialización de materiales de construcción, agregados, drywall, pinturas y servicio integral de eliminación de desmonte en Lima.
             </p>
 
             <div className="text-xs space-y-1.5 pt-1 text-gray-300">
@@ -133,7 +133,7 @@ export const Footer = ({ onSelectCategory }) => {
         {/* Barra Inferior Legal */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-gray-500">
           <p>
-            © {new Date().getFullYear()} <strong>{COMPANY_INFO.legalName}</strong> (FERRENINAN). Todos los derechos reservados.
+            © {new Date().getFullYear()} <strong>{COMPANY_INFO.legalName}</strong> (RUC: {COMPANY_INFO.ruc} - FERRENINAN). Todos los derechos reservados.
           </p>
           <div className="flex items-center space-x-4">
             <span>Precios incluyen I.G.V.</span>

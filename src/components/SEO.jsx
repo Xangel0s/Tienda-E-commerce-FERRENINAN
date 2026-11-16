@@ -102,6 +102,8 @@ export const SEO = ({
       '@type': ['HardwareStore', 'WholesaleStore'],
       'name': COMPANY_INFO.name,
       'legalName': COMPANY_INFO.legalName,
+      'taxID': COMPANY_INFO.ruc,
+      'vatID': COMPANY_INFO.ruc,
       'slogan': 'El mejor proveedor y distribuidor mayorista de materiales de construcción en Lima',
       'description': finalDesc,
       'url': SITE_URL,

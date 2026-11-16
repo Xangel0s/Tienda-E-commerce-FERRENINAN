@@ -158,7 +158,7 @@ export const ComplaintsBookModal = () => {
             </div>
             <div>
               <span className="font-bold text-gray-900">RUC: </span>
-              <span>20600000000</span>
+              <span>{COMPANY_INFO.ruc}</span>
             </div>
             <div>
               <span className="font-bold text-gray-900">Correo de Atención: </span>

@@ -7,6 +7,7 @@ Este documento define la arquitectura, normas de codificación, convenciones de 
 ## 1. Visión General del Proyecto
 - **Nombre Comercial**: FERRENINAN
 - **Razón Social**: FERRENINANYA S.A.C.
+- **RUC**: 20600819594
 - **Canal de Pedidos**: WhatsApp (+51 908 747 531) con mensaje preconfigurado y desglose de items.
 - **Inspiración de Diseño**: Promart.pe (arquitectura de navegación, búsqueda en tiempo real, badges, drawer de carrito y megamenú) adaptado a la identidad de FERRENINAN.
 - **Colores Principales**: Rojo FERRENINAN (`#FE0000` / `#DC2626`), Negro Carbón (`#111827`) y Blanco (`#FFFFFF`).
