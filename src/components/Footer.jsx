@@ -126,21 +126,6 @@ export const Footer = ({ onSelectCategory }) => {
                 </div>
               </div>
             </div>
-
-            {/* Formas de Pago */}
-            <div className="pt-2">
-              <span className="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-2">
-                Medios de Pago Aceptados
-              </span>
-              <div className="flex flex-wrap gap-2 text-[10px] font-bold">
-                <span className="bg-purple-900/60 text-purple-200 border border-purple-700 px-2 py-1 rounded">Yape</span>
-                <span className="bg-cyan-900/60 text-cyan-200 border border-cyan-700 px-2 py-1 rounded">Plin</span>
-                <span className="bg-blue-900/60 text-blue-200 border border-blue-700 px-2 py-1 rounded">BCP</span>
-                <span className="bg-blue-950 text-blue-200 border border-blue-800 px-2 py-1 rounded">BBVA</span>
-                <span className="bg-green-900/60 text-green-200 border border-green-700 px-2 py-1 rounded">Contra Entrega</span>
-              </div>
-            </div>
-
           </div>
 
         </div>
