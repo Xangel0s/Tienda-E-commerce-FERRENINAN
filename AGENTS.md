@@ -12,6 +12,7 @@ Este documento define la arquitectura, normas de codificación, convenciones de 
 - **Inspiración de Diseño**: Promart.pe (arquitectura de navegación, búsqueda en tiempo real, badges, drawer de carrito y megamenú) adaptado a la identidad de FERRENINAN.
 - **Colores Principales**: Rojo FERRENINAN (`#FE0000` / `#DC2626`), Negro Carbón (`#111827`) y Blanco (`#FFFFFF`).
 - **Cumplimiento Legal**: Libro de Reclamaciones Virtual conforme a la Ley N° 29571 (INDECOPI) con código correlativo e impresión/descarga de constancia.
+- **Tarifario Oficial de Despacho**: Jesús María, Breña y Pueblo Libre (S/ 30.00); San Miguel, Magdalena del Mar, Lince y Cercado de Lima (S/ 40.00); Otros Distritos de Lima (S/ 50.00). Centralizado en `SHIPPING_DISTRICTS` (`products.js`).
 
 ---
 

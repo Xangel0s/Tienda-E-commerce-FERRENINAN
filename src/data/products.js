@@ -1134,3 +1134,14 @@ export const COMPANY_INFO = {
   workingHours: 'Lunes a Sábado: 7:30 AM - 6:30 PM | Domingos: 8:00 AM - 1:00 PM',
   whatsappUrl: (msg) => `https://wa.me/51908747531?text=${encodeURIComponent(msg)}`
 };
+
+export const SHIPPING_DISTRICTS = [
+  { id: 'Jesus Maria', name: 'Jesús María', cost: 30.00, price: 30.00 },
+  { id: 'Brena', name: 'Breña', cost: 30.00, price: 30.00 },
+  { id: 'Pueblo Libre', name: 'Pueblo Libre', cost: 30.00, price: 30.00 },
+  { id: 'San Miguel', name: 'San Miguel', cost: 40.00, price: 40.00 },
+  { id: 'Magdalena', name: 'Magdalena del Mar', cost: 40.00, price: 40.00 },
+  { id: 'Lince', name: 'Lince', cost: 40.00, price: 40.00 },
+  { id: 'Cercado de Lima', name: 'Cercado de Lima', cost: 40.00, price: 40.00 },
+  { id: 'Otros Distritos', name: 'Otros Distritos de Lima', cost: 50.00, price: 50.00 }
+];

@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Trash2, Plus, Minus, ShoppingBag, Send, ShieldCheck, Truck, Check, ArrowLeft, ChevronDown } from 'lucide-react';
 import { useCart } from '../context/CartContext';
-import { COMPANY_INFO } from '../data/products';
+import { COMPANY_INFO, SHIPPING_DISTRICTS } from '../data/products';
 
 export const CartPage = () => {
   const {
@@ -23,16 +23,7 @@ export const CartPage = () => {
   const [couponError, setCouponError] = useState('');
 
   // Selector de distrito personalizado (con animación, sin select nativo)
-  const districts = [
-    { id: 'Jesus Maria', name: 'Jesús María', cost: 15.00 },
-    { id: 'Brena', name: 'Breña', cost: 15.00 },
-    { id: 'Pueblo Libre', name: 'Pueblo Libre', cost: 15.00 },
-    { id: 'San Miguel', name: 'San Miguel', cost: 20.00 },
-    { id: 'Magdalena', name: 'Magdalena del Mar', cost: 20.00 },
-    { id: 'Lince', name: 'Lince', cost: 20.00 },
-    { id: 'Cercado de Lima', name: 'Cercado de Lima', cost: 20.00 },
-    { id: 'Otros Distritos', name: 'Otros Distritos de Lima', cost: 30.00 }
-  ];
+  const districts = SHIPPING_DISTRICTS;
 
   const [selectedDistrict, setSelectedDistrict] = useState(districts[0]);
   const [isDistrictDropdownOpen, setIsDistrictDropdownOpen] = useState(false);

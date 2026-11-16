@@ -19,20 +19,11 @@ import {
   ChevronDown
 } from 'lucide-react';
 import { useCart } from '../context/CartContext';
-import { PRODUCTS, CATEGORIES, COMPANY_INFO } from '../data/products';
+import { PRODUCTS, CATEGORIES, COMPANY_INFO, SHIPPING_DISTRICTS } from '../data/products';
 import { ProductCard } from './ProductCard';
 import { SEO } from './SEO';
 
-const DISTRICTS = [
-  { name: 'Jesús María', price: 15.00 },
-  { name: 'Breña', price: 15.00 },
-  { name: 'Pueblo Libre', price: 15.00 },
-  { name: 'San Miguel', price: 20.00 },
-  { name: 'Magdalena del Mar', price: 20.00 },
-  { name: 'Lince', price: 20.00 },
-  { name: 'Cercado de Lima', price: 20.00 },
-  { name: 'Otros Distritos de Lima', price: 30.00 },
-];
+const DISTRICTS = SHIPPING_DISTRICTS;
 
 export const ProductPage = () => {
   const {

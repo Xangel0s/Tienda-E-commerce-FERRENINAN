@@ -25,7 +25,7 @@ export const CartDrawer = () => {
 
   // Selector de distrito de despacho
   const [selectedDistrict, setSelectedDistrict] = useState('Jesus Maria');
-  const [shippingCost, setShippingCost] = useState(15.00);
+  const [shippingCost, setShippingCost] = useState(30.00);
 
   // Datos del cliente
   const [customerData, setCustomerData] = useState({
@@ -52,11 +52,11 @@ export const CartDrawer = () => {
     const district = e.target.value;
     setSelectedDistrict(district);
     if (['Jesus Maria', 'Brena', 'Pueblo Libre'].includes(district)) {
-      setShippingCost(15.00);
+      setShippingCost(30.00);
     } else if (['San Miguel', 'Magdalena', 'Lince', 'Cercado de Lima'].includes(district)) {
-      setShippingCost(20.00);
+      setShippingCost(40.00);
     } else {
-      setShippingCost(30.00); // Otros distritos de Lima
+      setShippingCost(50.00); // Otros distritos de Lima
     }
   };
 
@@ -252,14 +252,14 @@ export const CartDrawer = () => {
                     onChange={handleDistrictChange}
                     className="w-full text-xs p-2 border border-gray-300 rounded-lg outline-none focus:border-brand-500 bg-white"
                   >
-                    <option value="Jesus Maria">Jesús María (S/ 15.00)</option>
-                    <option value="Brena">Breña (S/ 15.00)</option>
-                    <option value="Pueblo Libre">Pueblo Libre (S/ 15.00)</option>
-                    <option value="San Miguel">San Miguel (S/ 20.00)</option>
-                    <option value="Magdalena">Magdalena del Mar (S/ 20.00)</option>
-                    <option value="Lince">Lince (S/ 20.00)</option>
-                    <option value="Cercado de Lima">Cercado de Lima (S/ 20.00)</option>
-                    <option value="Otros Distritos">Otros Distritos de Lima (S/ 30.00)</option>
+                    <option value="Jesus Maria">Jesús María (S/ 30.00)</option>
+                    <option value="Brena">Breña (S/ 30.00)</option>
+                    <option value="Pueblo Libre">Pueblo Libre (S/ 30.00)</option>
+                    <option value="San Miguel">San Miguel (S/ 40.00)</option>
+                    <option value="Magdalena">Magdalena del Mar (S/ 40.00)</option>
+                    <option value="Lince">Lince (S/ 40.00)</option>
+                    <option value="Cercado de Lima">Cercado de Lima (S/ 40.00)</option>
+                    <option value="Otros Distritos">Otros Distritos de Lima (S/ 50.00)</option>
                   </select>
                 </div>
 
