@@ -60,6 +60,7 @@ Ferre/
 - **Manejo de Productos**:
   - Productos con precio: Visualización en S/ con formato `S/ XX.XX` y cálculo automático en carrito.
   - Productos sin precio (a cotizar): Etiqueta `"Precio a Cotizar"`, botón `"Consultar Precio por WhatsApp"` que envía el mensaje directo con el producto seleccionado.
+  - Imágenes Oficiales de Catálogo: Extraídas y sincronizadas directamente del catálogo oficial de Promart.pe en resolución 1000x1000 con fondo blanco limpio y marcas peruanas certificadas (Cemento Sol, Cemento Apu, Cemento Andino, Ladrillos Pirámide, Gyplac, Aceros Arequipa, Prodac, CPP, Truper, Pavco, Indeco).
 - **Reglas de Git y Commits**:
   - Usar conventional commits: `feat:`, `fix:`, `docs:`, `refactor:`, `style:`.
   - Crear commits tras cada tarea completada.

@@ -31,7 +31,7 @@ export const PromoModal = () => {
     price: 31.50,
     regularPrice: 34.50,
     unit: 'Bolsa',
-    image: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=800&q=80',
+    image: '/images/products/cemento_sol.jpg',
     description: 'Cemento Portland Tipo I de alta resistencia con descuento especial para obra.'
   };
 
