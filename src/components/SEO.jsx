@@ -4,8 +4,8 @@ import { COMPANY_INFO } from '../data/products';
 const SITE_URL = 'https://ferreninan.com';
 const DEFAULT_IMAGE = `${SITE_URL}/logo.png`;
 const DEFAULT_TITLE = 'FERRENINAN | El Mejor Proveedor y Distribuidor Mayorista de Materiales de Construcción en Lima';
-const DEFAULT_DESCRIPTION = 'FERRENINAN (FERRENINANYA S.A.C.) es el mejor proveedor y distribuidor mayorista de materiales de construcción en Lima. Suministro oficial de Cemento Sol, Apu, Andino, Drywall Gyplac, Ladrillos Pirámide, Fierros Aceros Arequipa, Pinturas y servicio autorizado de eliminación de desmonte con despacho inmediato a pie de obra en Jesús María, Breña y todo Lima Metropolitana.';
-const DEFAULT_KEYWORDS = 'mejor proveedor de materiales de construccion lima, proveedor para obras y contratistas, distribuidor mayorista materiales de construccion, proveedor oficial cemento sol lima, distribuidor cemento apu lima, proveedor drywall gyplac por mayor, servicio de eliminacion de desmonte autorizado lima, suministro para obras de construccion lima, ferreteria mayorista jesus maria breña, despacho de materiales a pie de obra, venta por volumen para constructoras';
+const DEFAULT_DESCRIPTION = 'FERRENINAN (FERRENINANYA S.A.C.) es el mejor proveedor y distribuidor mayorista de materiales de construcción y líder en servicios de limpieza de desmonte, recojo de escombros, demolición y transporte en camiones volquetes en Lima. Suministro oficial de Cemento Sol, Apu, Andino, Drywall Gyplac, Ladrillos Pirámide, Fierros Aceros Arequipa, Agregados y herramientas con despacho inmediato a pie de obra en Jesús María, Breña y todo Lima Metropolitana.';
+const DEFAULT_KEYWORDS = 'limpieza de desmonte lima, recojo de escombros lima, retiro de desmonte embolsado y a granel, eliminacion de desmonte autorizada, volquetes para desmonte en lima, limpieza de obras y terrenos, demolicion y desmonte lima, botaderos autorizados lima, peones para carguio de desmonte, sacos para desmonte, limpieza profunda de obra, mejor proveedor de materiales de construccion lima, proveedor para obras y contratistas, distribuidor mayorista materiales de construccion, proveedor oficial cemento sol lima, distribuidor cemento apu lima, proveedor drywall gyplac por mayor, suministro para obras de construccion lima, ferreteria mayorista jesus maria breña, despacho de materiales a pie de obra, venta por volumen para constructoras';
 
 /**
  * Helper para actualizar o crear una etiqueta meta en el <head>
@@ -119,10 +119,15 @@ export const SEO = ({
       },
       'knowsAbout': [
         'Materiales de Construcción',
-        'Suministro a Contratistas y Obras',
-        'Distribución Mayorista de Cemento',
+        'Limpieza de Desmonte y Escombros',
+        'Recojo de Desmonte Embolsado y a Granel',
+        'Limpieza de Obras y Terrenos',
+        'Demoliciones Menores y Retiro de Materiales',
+        'Camiones Volquetes de 8m³ y 15m³',
+        'Disposición en Botaderos Autorizados',
+        'Suministro a Contratistas y Constructoras',
+        'Distribución Mayorista de Cemento Sol y Apu',
         'Sistema Drywall Gyplac',
-        'Eliminación de Desmonte Autorizada',
         'Fierros Aceros Arequipa',
         'Ladrillos Pirámide',
         'Logística y Despacho a Pie de Obra'
@@ -154,8 +159,8 @@ export const SEO = ({
           },
           {
             '@type': 'OfferCatalog',
-            'name': 'Servicio Oficial Autorizado de Eliminación de Desmonte',
-            'description': 'Recojo de desmonte embolsado y a granel con camiones volquetes y certificado de disposición final.'
+            'name': 'Servicio Oficial de Limpieza de Desmonte y Recojo de Escombros',
+            'description': 'Limpieza de obra, recojo de desmonte embolsado y a granel con camiones volquetes, carguío y botaderos autorizados.'
           },
           {
             '@type': 'OfferCatalog',
@@ -227,18 +232,19 @@ export const SEO = ({
         {
           '@type': 'Service',
           '@id': `${SITE_URL}/#servicio-eliminacion-desmonte`,
-          'name': 'Servicio Autorizado de Eliminación de Desmonte con Camiones Volquetes',
+          'name': 'Servicio Autorizado de Limpieza de Desmonte, Recojo de Escombros y Volquetes',
           'provider': {
             '@type': 'WholesaleStore',
             'name': COMPANY_INFO.legalName
           },
           'areaServed': 'Lima Metropolitana',
-          'serviceType': 'Recojo y Disposición Final de Residuos de Obra',
-          'description': 'Recojo legal de escombros de construcción en bolsas y a granel con flota de volquetes autorizados y botaderos certificados.',
+          'serviceType': 'Limpieza de Obra, Recojo de Escombros y Retiro de Desmonte',
+          'description': 'Servicio integral y certificado de limpieza de desmonte, retiro de escombros embolsados o a granel con flota de volquetes autorizados, peones para carguío y botaderos oficiales en Lima.',
           'offers': {
             '@type': 'Offer',
             'priceCurrency': 'PEN',
-            'availability': 'https://schema.org/InStock'
+            'availability': 'https://schema.org/InStock',
+            'description': 'Tarifas por m³, por bolsa o por viaje completo de camión volquete.'
           }
         },
         {

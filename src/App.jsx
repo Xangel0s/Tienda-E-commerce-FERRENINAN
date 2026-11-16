@@ -79,12 +79,14 @@ function StoreContent() {
     const isDesmonte = selectedCategory === 'desmonte';
     seoProps = {
       title: isDesmonte
-        ? 'Servicio Oficial de Eliminación de Desmonte en Lima | Volquetes y Embolsado | FERRENINAN'
+        ? 'Limpieza de Desmonte, Recojo de Escombros y Volquetes en Lima | FERRENINAN'
         : `Proveedor Mayorista de ${activeCategoryName} en Lima | Precios Distribuidor | FERRENINAN`,
       description: isDesmonte
-        ? 'Servicio autorizado y certificado de recojo de desmonte de obra en Lima Metropolitana. Modalidad embolsada o a granel con camiones volquetes.'
+        ? 'Servicio oficial de limpieza de desmonte, recojo de escombros embolsados o a granel con camiones volquetes en Lima Metropolitana. Cuadrillas de carguío y botaderos autorizados.'
         : `El mejor proveedor de ${activeCategoryName} en Lima con precios directos de distribuidor mayorista para contratistas y maestros de obra. Despacho inmediato a pie de obra en Jesús María, Breña y todo Lima.`,
-      keywords: `${activeCategoryName.toLowerCase()}, proveedor de ${activeCategoryName.toLowerCase()} lima, distribuidor mayorista ${activeCategoryName.toLowerCase()}, materiales de construccion lima, ferreteria jesus maria breña, precios distribuidor`,
+      keywords: isDesmonte
+        ? 'limpieza de desmonte, recojo de escombros lima, retiro de desmonte embolsado, volquetes para desmonte lima, limpieza de obras y terrenos, botaderos autorizados lima, peones de carguio desmonte'
+        : `${activeCategoryName.toLowerCase()}, proveedor de ${activeCategoryName.toLowerCase()} lima, distribuidor mayorista ${activeCategoryName.toLowerCase()}, materiales de construccion lima, ferreteria jesus maria breña, precios distribuidor`,
       canonicalUrl: `https://ferreninan.com/?cat=${selectedCategory}`,
       noindex: false
     };

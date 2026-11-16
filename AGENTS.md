@@ -85,6 +85,17 @@ Ferre/
     - `Service`: Esquema especializado para Suministro Mayorista a Pie de Obra, Eliminación Autorizada de Desmonte con Camiones Volquetes y Asesoría Técnica por Metrado de Planos CAD.
     - `Product`: Para cada PDP con precio en PEN, disponibilidad InStock, marca, SKU, vendedor mayorista y valoración.
     - `BreadcrumbList`: Jerarquía de navegación para snippets enriquecidos en Google.
-  - **Posicionamiento como el Mejor Proveedor del Rubro**:
+  - **Posicionamiento como el Mejor Proveedor del Rubro y Limpieza de Desmonte**:
     - Meta títulos y descripciones orientados a contratistas, empresas constructoras y maestros de obra.
-    - Palabras clave prioritarias: `"mejor proveedor de materiales de construccion lima"`, `"proveedor para obras y contratistas"`, `"distribuidor mayorista cemento sol lima"`, `"servicio de eliminacion de desmonte autorizado"`, `"despacho a pie de obra"`.
+    - Palabras clave prioritarias: `"limpieza de desmonte lima"`, `"recojo de escombros"`, `"volquetes para desmonte en lima"`, `"mejor proveedor de materiales de construccion lima"`, `"proveedor para obras y contratistas"`, `"distribuidor mayorista cemento sol lima"`, `"servicio de eliminacion de desmonte autorizado"`, `"despacho a pie de obra"`.
+
+---
+
+## 5. Despliegue Continuo con GitHub Actions y Dominio Personalizado
+- **Workflow**: `.github/workflows/deploy.yml` configurado para compilar y desplegar automáticamente en **GitHub Pages** en cada push a la rama `main`.
+- **Dominio Personalizado**: `public/CNAME` configurado con `ferreninan.com`, emitiendo `dist/CNAME` en cada compilación para mantener activo el enrutamiento DNS del dominio oficial.
+- **Pipeline de Build**:
+  1. `actions/checkout@v4` y `actions/setup-node@v4`.
+  2. `npm ci`: Instalación determinista de dependencias.
+  3. `npm run build`: Generación de sitemap con 71 productos/servicios y empaquetado optimizado con Vite.
+  4. `actions/deploy-pages@v4`: Publicación directa en los servidores de GitHub Pages.
