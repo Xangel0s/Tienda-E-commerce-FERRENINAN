@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Search, ShoppingCart, MessageCircle, Store, ChevronDown, Check, Sparkles } from 'lucide-react';
+import { Search, ShoppingCart, Store, ChevronDown, Check } from 'lucide-react';
 import { useCart } from '../context/CartContext';
-import { COMPANY_INFO, CATEGORIES } from '../data/products';
+import { CATEGORIES } from '../data/products';
 
 export const Header = ({ searchTerm, setSearchTerm, selectedCategory, setSelectedCategory }) => {
   const { totalCount, totalPrice, setCurrentView } = useCart();
@@ -127,7 +127,7 @@ export const Header = ({ searchTerm, setSearchTerm, selectedCategory, setSelecte
           </form>
 
           {/* Acciones Derecha */}
-          <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+          <div className="flex items-center gap-2 sm:gap-4 flex-shrink-0">
             
             {/* Sedes */}
             <div className="hidden lg:flex items-center gap-2 text-left text-xs text-gray-700 bg-gray-50 px-3 py-1.5 rounded-lg border border-gray-200">
@@ -138,21 +138,10 @@ export const Header = ({ searchTerm, setSearchTerm, selectedCategory, setSelecte
               </div>
             </div>
 
-            {/* Asesor WhatsApp Rápido */}
-            <a
-              href={`https://wa.me/${COMPANY_INFO.phoneClean}?text=${encodeURIComponent('¡Hola FERRENINAN! Deseo hacer una consulta sobre materiales de construcción.')}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden sm:flex items-center gap-1.5 bg-green-500 hover:bg-green-600 text-white text-xs font-bold px-3 py-2 rounded-lg transition-colors shadow-sm"
-            >
-              <MessageCircle className="w-4 h-4" />
-              <span>Cotizar Obra</span>
-            </a>
-
             {/* Carrito de Compras Estilo Promart (Abre página de Carrito) */}
             <button
               onClick={() => setCurrentView('cart')}
-              className="relative flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-white px-3 sm:px-4 py-2 rounded-xl transition-all shadow-md hover:shadow-lg group"
+              className="relative flex items-center gap-2.5 bg-brand-500 hover:bg-brand-600 text-white px-3.5 sm:px-5 py-2.5 rounded-xl transition-all shadow-md hover:shadow-lg group"
               aria-label="Abrir Carrito de Compras"
             >
               <div className="relative">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, MapPin, Truck, BookOpen } from 'lucide-react';
+import { MapPin, Truck, BookOpen } from 'lucide-react';
 import { COMPANY_INFO } from '../data/products';
 import { useCart } from '../context/CartContext';
 
@@ -26,21 +26,15 @@ export const TopBar = () => {
           </span>
         </div>
 
-        {/* Canales y Libro */}
+        {/* Confianza Fiscal y Libro de Reclamaciones */}
         <div className="flex items-center space-x-4">
-          <a
-            href={`https://wa.me/${COMPANY_INFO.phoneClean}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1.5 hover:text-green-400 font-medium transition-colors"
-          >
-            <Phone className="w-3.5 h-3.5 text-green-400" />
-            WhatsApp: <span className="text-white font-bold">{COMPANY_INFO.phone}</span>
-          </a>
-          <span className="text-gray-600">|</span>
+          <span className="hidden sm:inline-block text-gray-400">
+            RUC: <strong className="text-gray-200">{COMPANY_INFO.ruc}</strong>
+          </span>
+          <span className="hidden sm:inline-block text-gray-600">|</span>
           <button
             onClick={() => setIsComplaintsBookOpen(true)}
-            className="flex items-center gap-1 hover:text-brand-300 transition-colors text-gray-300"
+            className="flex items-center gap-1.5 hover:text-brand-300 transition-colors text-gray-300 font-medium cursor-pointer"
             title="Libro de Reclamaciones Virtual"
           >
             <BookOpen className="w-3.5 h-3.5 text-brand-500" />
