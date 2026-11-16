@@ -19,7 +19,11 @@ Este documento define la arquitectura, normas de codificación, convenciones de 
 Ferre/
 ├── public/                 # Assets públicos, logos optimizados, favicon
 │   ├── images/             # Blueprints, SVG fallbacks e imágenes de productos locales
-│   └── videos/             # Bucles de video CC0 MP4 (construcción y demolición)
+│   ├── videos/             # Bucles de video CC0 MP4 (construcción y demolición)
+│   ├── robots.txt          # Directivas para Googlebot, Bingbot, WhatsApp y Sitemap
+│   └── sitemap.xml         # Mapa del sitio XML con 69 productos, categorías y fotos
+├── scripts/
+│   └── generate-sitemap.js # Generador dinámico de sitemap.xml a partir del catálogo
 ├── src/
 │   ├── assets/             # Recursos estáticos
 │   ├── components/         # Componentes modulares UI
@@ -37,6 +41,7 @@ Ferre/
 │   │   ├── CartDrawer.jsx          # Drawer lateral rápido de carrito
 │   │   ├── CartPage.jsx            # Página independiente de Checkout y cálculo de flete
 │   │   ├── ComplaintsBookModal.jsx # Libro de Reclamaciones INDECOPI
+│   │   ├── SEO.jsx                 # Gestor dinámico de meta tags, Open Graph y JSON-LD
 │   │   └── Footer.jsx              # Pie de página con datos fiscales y enlaces
 │   ├── context/
 │   │   └── CartContext.jsx         # Estado global del carrito, vista actual y WhatsApp
@@ -66,3 +71,16 @@ Ferre/
   - Usar conventional commits: `feat:`, `fix:`, `docs:`, `refactor:`, `style:`.
   - Crear commits tras cada tarea completada.
   - No modificar `.env` ni archivos de credenciales.
+
+---
+
+## 4. Estrategia y Estándares de SEO
+- **robots.txt**: Configurado con directivas para Googlebot, Googlebot-Image, Bingbot y rastreadores de previsualización de Open Graph (WhatsApp, Facebook, Twitter). Bloqueo de URLs duplicadas por parámetros de búsqueda y carrito.
+- **sitemap.xml**: Generación automática mediante script (`npm run sitemap` / `npm run build`), indexando portada (prioridad 1.0), categorías (0.85) y los 69 productos individuales (0.80) con etiquetas `image:image` para Google Imágenes.
+- **SEO Dinámico en Cliente (SEO.jsx)**:
+  - Actualización de `document.title` por página y producto con formato `[Producto] | [Marca] - Precio Distribuidor Lima | FERRENINAN`.
+  - Meta tags dinámicas: description, keywords, canonical, `og:title`, `og:description`, `og:image`, `og:url` y Twitter cards.
+  - Datos Estructurados JSON-LD (`schema.org`):
+    - `HardwareStore` / `LocalBusiness`: Con RUC, teléfonos, geo-coordenadas y sedes en Jesús María y Breña.
+    - `Product`: Para cada PDP con precio en PEN, disponibilidad InStock, marca y SKU.
+    - `BreadcrumbList`: Jerarquía de navegación para snippets enriquecidos en Google.

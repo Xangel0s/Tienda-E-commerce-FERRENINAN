@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import {
   ChevronRight,
   Truck,
@@ -21,6 +21,7 @@ import {
 import { useCart } from '../context/CartContext';
 import { PRODUCTS, CATEGORIES, COMPANY_INFO } from '../data/products';
 import { ProductCard } from './ProductCard';
+import { SEO } from './SEO';
 
 const DISTRICTS = [
   { name: 'Jesús María', price: 15.00 },
@@ -48,8 +49,23 @@ export const ProductPage = () => {
   const [selectedDistrict, setSelectedDistrict] = useState(DISTRICTS[0]);
   const [isDistrictOpen, setIsDistrictOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('specs');
-  const [selectedMedia, setSelectedMedia] = useState('main'); // 'main' | 'blueprint' | 'video'
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [copiedSku, setCopiedSku] = useState(false);
+
+  // Reiniciar imagen al cambiar de producto
+  useEffect(() => {
+    setActiveImageIndex(0);
+  }, [product?.id]);
+
+  const galleryImages = useMemo(() => {
+    if (!product) return [];
+    if (product.images && Array.isArray(product.images) && product.images.length > 0) {
+      return product.images;
+    }
+    return [product.image];
+  }, [product]);
+
+  const currentDisplayImage = galleryImages[activeImageIndex] || product?.image;
 
   if (!product) {
     return (
@@ -156,6 +172,22 @@ export const ProductPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 py-6 sm:py-8">
+      {/* Componente SEO Dinámico para Página de Producto */}
+      <SEO
+        title={`${product.name} | ${product.brand || 'FERRENINAN'} - Precio Distribuidor Lima`}
+        description={`${product.name} [SKU: ${product.sku || product.id}]. ${product.description || ''} ${hasPrice ? `Precio oficial: S/ ${product.price.toFixed(2)} por ${product.unit}.` : 'Precio especial a cotizar por volumen.'} Despacho a pie de obra en Jesús María, Breña y todo Lima Metropolitana.`}
+        keywords={`${product.name}, ${product.brand}, ${product.sku}, ${categoryName}, comprar ${product.name} lima, ferreteria lima, materiales de construccion`}
+        image={product.image}
+        canonicalUrl={`https://ferreninan.com/?p=${product.id}`}
+        type="product"
+        product={product}
+        breadcrumbs={[
+          { name: 'Inicio', url: '/' },
+          { name: categoryName, url: `/?cat=${product.category}` },
+          { name: product.name, url: `/?p=${product.id}` }
+        ]}
+      />
+
       <div className="max-w-7xl mx-auto px-4">
 
         {/* 1. Miga de Pan (Breadcrumbs Promart Style) */}
@@ -183,102 +215,59 @@ export const ProductPage = () => {
         <div className="bg-white rounded-3xl border border-gray-200 shadow-xs p-6 sm:p-10 mb-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
 
-            {/* COLUMNA IZQUIERDA: Galería Visual y Vistas de Obra (5 cols) */}
+            {/* COLUMNA IZQUIERDA: Galería Visual Estilo Promart Oficial (5 cols) */}
             <div className="lg:col-span-5 space-y-4">
               
-              {/* Visor Visual Principal */}
-              <div className="w-full h-80 sm:h-96 rounded-2xl overflow-hidden bg-gray-50 border border-gray-200 flex items-center justify-center p-4 relative group">
+              <div className="flex flex-col-reverse sm:flex-row gap-3 sm:gap-4 items-start">
                 
-                {selectedMedia === 'video' || product.cardType === 'video' ? (
-                  <div className="relative w-full h-full bg-black overflow-hidden rounded-xl">
-                    <video
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      className="w-full h-full object-cover scale-105"
-                    >
-                      <source src={product.video || '/videos/desmonte-loop.mp4'} type="video/mp4" />
-                    </video>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 pointer-events-none" />
-                    <span className="absolute top-3 left-3 text-[10px] font-bold px-2.5 py-1 rounded bg-black/70 backdrop-blur-xs text-white border border-white/20 flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                      Video en Obra
-                    </span>
+                {/* Thumbnails verticales a la izquierda (Imagen 8 - Promart) */}
+                {galleryImages.length > 1 && (
+                  <div className="flex sm:flex-col gap-2.5 overflow-x-auto sm:overflow-y-auto max-h-96 w-full sm:w-20 shrink-0 py-1">
+                    {galleryImages.map((imgUrl, idx) => (
+                      <button
+                        key={idx}
+                        type="button"
+                        onClick={() => setActiveImageIndex(idx)}
+                        onMouseEnter={() => setActiveImageIndex(idx)}
+                        className={`w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden border-2 bg-white p-1 transition-all flex items-center justify-center shrink-0 cursor-pointer ${
+                          activeImageIndex === idx
+                            ? 'border-brand-500 shadow-sm ring-1 ring-brand-500'
+                            : 'border-gray-200 hover:border-gray-400 opacity-70 hover:opacity-100'
+                        }`}
+                        aria-label={`Ver imagen ${idx + 1}`}
+                      >
+                        <img
+                          src={imgUrl}
+                          alt={`${product.name} ángulo ${idx + 1}`}
+                          className="w-full h-full object-contain"
+                          onError={(e) => {
+                            e.currentTarget.onerror = null;
+                            e.currentTarget.src = '/images/product-placeholder.svg';
+                          }}
+                        />
+                      </button>
+                    ))}
                   </div>
-                ) : selectedMedia === 'blueprint' || product.cardType === 'blueprint' ? (
-                  <div className="relative w-full h-full bg-blue-950 overflow-hidden rounded-xl flex items-center justify-center">
-                    <img
-                      src="/images/blueprint-bg.jpg"
-                      alt="Plano Arquitectónico"
-                      className="w-full h-full object-cover opacity-85 mix-blend-screen"
-                    />
-                    <div className="absolute inset-0 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:14px_14px] opacity-40 pointer-events-none" />
-                    <span className="absolute top-3 left-3 text-[10px] font-bold px-2.5 py-1 rounded bg-blue-900/80 backdrop-blur-xs text-cyan-200 border border-cyan-400/30 flex items-center gap-1.5">
-                      <FileText className="w-3.5 h-3.5 text-cyan-300" />
-                      Plano CAD Técnico
-                    </span>
-                  </div>
-                ) : (
+                )}
+
+                {/* Visor Visual Principal (Fondo blanco limpio Promart) */}
+                <div className="flex-1 w-full h-80 sm:h-96 rounded-2xl overflow-hidden bg-white border border-gray-200 flex items-center justify-center p-6 relative group shadow-2xs">
                   <img
-                    src={product.image}
+                    src={currentDisplayImage}
                     alt={product.name}
-                    className="w-full h-full object-contain mix-blend-multiply group-hover:scale-108 transition-transform duration-300"
+                    className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
                     onError={(e) => {
                       e.currentTarget.onerror = null;
                       e.currentTarget.src = '/images/product-placeholder.svg';
                     }}
                   />
-                )}
 
-                {product.badge && (
-                  <span className="absolute top-3 right-3 text-[10px] font-black uppercase px-2.5 py-1 rounded shadow-xs bg-brand-500 text-white">
-                    {product.badge}
-                  </span>
-                )}
-              </div>
-
-              {/* Selector de Vistas / Thumbnails (Foto, Plano CAD, Video) */}
-              <div className="flex items-center gap-3">
-                <button
-                  type="button"
-                  onClick={() => setSelectedMedia('main')}
-                  className={`w-20 h-20 rounded-xl overflow-hidden border-2 bg-gray-50 p-1 transition-all ${
-                    selectedMedia === 'main' ? 'border-brand-500 shadow-sm' : 'border-gray-200 hover:border-gray-400 opacity-70 hover:opacity-100'
-                  }`}
-                >
-                  <img
-                    src={product.image}
-                    alt="Foto producto"
-                    className="w-full h-full object-contain mix-blend-multiply"
-                    onError={(e) => {
-                      e.currentTarget.onerror = null;
-                      e.currentTarget.src = '/images/product-placeholder.svg';
-                    }}
-                  />
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => setSelectedMedia('blueprint')}
-                  className={`w-20 h-20 rounded-xl overflow-hidden border-2 bg-blue-950 p-1 flex flex-col items-center justify-center text-center transition-all ${
-                    selectedMedia === 'blueprint' ? 'border-cyan-400 shadow-sm' : 'border-gray-200 hover:border-gray-400 opacity-70 hover:opacity-100'
-                  }`}
-                >
-                  <FileText className="w-5 h-5 text-cyan-400 mb-1" />
-                  <span className="text-[9px] font-black text-cyan-200 uppercase leading-tight">Plano CAD</span>
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => setSelectedMedia('video')}
-                  className={`w-20 h-20 rounded-xl overflow-hidden border-2 bg-gray-900 p-1 flex flex-col items-center justify-center text-center transition-all ${
-                    selectedMedia === 'video' ? 'border-green-500 shadow-sm' : 'border-gray-200 hover:border-gray-400 opacity-70 hover:opacity-100'
-                  }`}
-                >
-                  <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse mb-1"></span>
-                  <span className="text-[9px] font-black text-white uppercase leading-tight">Obra Viva</span>
-                </button>
+                  {product.badge && (
+                    <span className="absolute top-3 right-3 text-[10px] font-black uppercase px-2.5 py-1 rounded shadow-xs bg-brand-500 text-white">
+                      {product.badge}
+                    </span>
+                  )}
+                </div>
               </div>
 
               {/* Propuestas de Valor Promart */}

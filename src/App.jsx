@@ -13,6 +13,7 @@ import { CartPage } from './components/CartPage';
 import { ProductPage } from './components/ProductPage';
 import { ComplaintsBookModal } from './components/ComplaintsBookModal';
 import { Footer } from './components/Footer';
+import { SEO } from './components/SEO';
 import { PRODUCTS, CATEGORIES } from './data/products';
 import { ArrowRight } from 'lucide-react';
 
@@ -48,8 +49,45 @@ function StoreContent() {
 
   const isBrowsingAll = searchTerm.trim().length > 0 || selectedCategory !== 'todos' || showFullCatalog;
 
+  // Configuración de SEO Dinámico según la vista actual
+  const activeCategoryObj = CATEGORIES.find(c => c.id === selectedCategory);
+  const activeCategoryName = activeCategoryObj ? activeCategoryObj.name : '';
+
+  let seoProps = {
+    title: 'Materiales de Construcción, Ferretería y Acabados en Lima',
+    description: 'FERRENINAN (FERRENINANYA S.A.C.) - Distribuidor mayorista de Cemento Sol, Apu, Drywall Gyplac, Ladrillos Pirámide, Fierros y Pinturas en Lima. Despacho a obra en Jesús María y Breña.',
+    canonicalUrl: 'https://ferreninan.com/',
+    noindex: false
+  };
+
+  if (currentView === 'cart') {
+    seoProps = {
+      title: 'Mi Carrito de Compras y Cotización | FERRENINAN',
+      description: 'Revisa tu lista de materiales de construcción y solicita tu cotización inmediata con flete por WhatsApp.',
+      canonicalUrl: 'https://ferreninan.com/?view=cart',
+      noindex: true
+    };
+  } else if (searchTerm.trim().length > 0) {
+    seoProps = {
+      title: `Búsqueda: "${searchTerm}" | FERRENINAN Lima`,
+      description: `Resultados de búsqueda para materiales y herramientas relacionadas con "${searchTerm}".`,
+      canonicalUrl: 'https://ferreninan.com/',
+      noindex: true
+    };
+  } else if (selectedCategory !== 'todos' && activeCategoryName) {
+    seoProps = {
+      title: `${activeCategoryName} a Precio Distribuidor | FERRENINAN Lima`,
+      description: `Catálogo de ${activeCategoryName} con precios por mayor y menor para contratistas y maestros de obra. Entregas en Jesús María, Breña y todo Lima.`,
+      keywords: `${activeCategoryName.toLowerCase()}, materiales de construccion lima, ferreteria jesus maria, precios distribuidor`,
+      canonicalUrl: `https://ferreninan.com/?cat=${selectedCategory}`,
+      noindex: false
+    };
+  }
+
   return (
     <div className="min-h-screen flex flex-col bg-gray-100 font-sans text-gray-900">
+      {/* Componente SEO Universal para Vistas Generales */}
+      {currentView !== 'product' && <SEO {...seoProps} />}
       
       {/* Barra superior de anuncios y beneficios */}
       <TopBar />
@@ -178,7 +216,7 @@ function StoreContent() {
                       src={p.image}
                       alt={p.name}
                       className="w-full h-32 object-contain mix-blend-multiply mb-2 cursor-pointer hover:scale-105 transition-transform"
-                      onClick={() => openProductDetail ? openProductDetail(p) : null}
+                      onClick={() => navigateToProduct(p)}
                       onError={(e) => {
                         e.currentTarget.onerror = null;
                         e.currentTarget.src = '/images/product-placeholder.svg';
@@ -213,7 +251,7 @@ function StoreContent() {
               onClick={() => setShowFullCatalog(true)}
               className="bg-brand-500 hover:bg-brand-600 text-white font-black text-sm px-8 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5"
             >
-              Ver Catálogo Completo (68 Productos y Servicios)
+              Ver Catálogo Completo ({PRODUCTS.length} Productos y Servicios)
             </button>
           </div>
 

@@ -29,6 +29,11 @@ export const PRODUCTS = [
     unit: 'Bolsa 42.5kg',
     badge: 'OFERTA OBRA',
     image: '/images/products/cemento_sol.jpg',
+    images: [
+      '/images/products/cemento_sol.jpg',
+      '/images/products/cemento_sol_2.jpg',
+      '/images/products/cemento_sol_3.jpg'
+    ],
     description: 'Cemento Portland Tipo I de alta resistencia inicial para columnas, vigas y losas aligeradas.',
     inStock: true,
     sku: 'CEM-SOL-425',
@@ -44,6 +49,11 @@ export const PRODUCTS = [
     unit: 'Bolsa 42.5kg',
     badge: 'SUPER PRECIO',
     image: '/images/products/cemento_apu.jpg',
+    images: [
+      '/images/products/cemento_apu.jpg',
+      '/images/products/cemento_apu_2.jpg',
+      '/images/products/cemento_apu_3.jpg'
+    ],
     description: 'Cemento económico de máxima trabajabilidad para asentado de ladrillos y tarrajeos.',
     inStock: true,
     sku: 'CEM-APU-425',
@@ -228,6 +238,10 @@ export const PRODUCTS = [
     unit: 'Unidad',
     badge: null,
     image: '/images/products/ladrillo_pastelero.jpg',
+    images: [
+      '/images/products/ladrillo_pastelero.jpg',
+      '/images/products/ladrillo_pastelero_2.jpg'
+    ],
     description: 'Ladrillo termoaislante para cobertura de techos y azoteas.',
     inStock: true,
     sku: 'LAD-PAS-05',
@@ -499,6 +513,10 @@ export const PRODUCTS = [
     unit: 'Balde 25kg',
     badge: 'OFERTA BALDE',
     image: '/images/products/masilla_gyplac_20kg.jpg',
+    images: [
+      '/images/products/masilla_gyplac_20kg.jpg',
+      '/images/products/masilla_gyplac_20kg_2.jpg'
+    ],
     description: 'Pasta para tratamiento de juntas en drywall de fácil lijado y gran adherencia.',
     inStock: true,
     sku: 'DRY-MAS25-11',
@@ -514,6 +532,10 @@ export const PRODUCTS = [
     unit: 'Bolsa 5kg',
     badge: null,
     image: '/images/products/masilla_gyplac_20kg.jpg',
+    images: [
+      '/images/products/masilla_gyplac_20kg.jpg',
+      '/images/products/masilla_gyplac_20kg_2.jpg'
+    ],
     description: 'Masilla lista para usar en reparaciones y uniones de placas.',
     inStock: true,
     sku: 'DRY-L-012',
@@ -529,6 +551,10 @@ export const PRODUCTS = [
     unit: 'Kilo',
     badge: null,
     image: '/images/products/masilla_gyplac_20kg.jpg',
+    images: [
+      '/images/products/masilla_gyplac_20kg.jpg',
+      '/images/products/masilla_gyplac_20kg_2.jpg'
+    ],
     description: 'Porción fraccionada de masilla para retoques de tornillos.',
     inStock: true,
     sku: 'DRY-G-013',

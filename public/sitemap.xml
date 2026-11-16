@@ -1,0 +1,852 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- ========================================== -->
+  <!-- 1. PÁGINA PRINCIPAL / HOME                 -->
+  <!-- ========================================== -->
+  <url>
+    <loc>https://ferreninan.com/</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- ========================================== -->
+  <!-- 2. CATEGORÍAS PRINCIPALES DEL CATÁLOGO    -->
+  <!-- ========================================== -->
+  <url>
+    <loc>https://ferreninan.com/?cat=agregados</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?cat=cementos</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?cat=pinturas</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?cat=drywall</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?cat=quimicos</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?cat=fierros</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?cat=desmonte</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?cat=herramientas</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?cat=electricidad</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?cat=gasfiteria</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- ========================================== -->
+  <!-- 3. CATÁLOGO DE PRODUCTOS INDIVIDUALES (PDP) -->
+  <!-- ========================================== -->
+  <url>
+    <loc>https://ferreninan.com/?p=cem-1</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/cemento_sol.jpg</image:loc>
+      <image:title>Cemento Sol Tipo I (Bolsa 42.5 kg) - CEMENTO SOL</image:title>
+      <image:caption>Precio distribuidor Cemento Sol Tipo I (Bolsa 42.5 kg) en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=cem-2</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/cemento_apu.jpg</image:loc>
+      <image:title>Cemento Apu Portland Tipo ICo - CEMENTO APU</image:title>
+      <image:caption>Precio distribuidor Cemento Apu Portland Tipo ICo en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=cem-3</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/cemento_andino.jpg</image:loc>
+      <image:title>Cemento Andino Tipo I - CEMENTO ANDINO</image:title>
+      <image:caption>Precio distribuidor Cemento Andino Tipo I en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=agr-1</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/arena_fina.jpg</image:loc>
+      <image:title>Arena Fina x Bolsa Seleccionada - AGREGADOS LIMA</image:title>
+      <image:caption>Precio distribuidor Arena Fina x Bolsa Seleccionada en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=agr-2</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/arena_gruesa.jpg</image:loc>
+      <image:title>Arena Gruesa x Bolsa Zarandeada - AGREGADOS LIMA</image:title>
+      <image:caption>Precio distribuidor Arena Gruesa x Bolsa Zarandeada en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=agr-3</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/confitillo.jpg</image:loc>
+      <image:title>Confitillo x Bolsa - AGREGADOS LIMA</image:title>
+      <image:caption>Precio distribuidor Confitillo x Bolsa en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=agr-4</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/piedra_chancada.jpg</image:loc>
+      <image:title>Piedra Chancada 1/2&quot; x Bolsa - AGREGADOS LIMA</image:title>
+      <image:caption>Precio distribuidor Piedra Chancada 1/2&quot; x Bolsa en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=agr-5</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/confitillo.jpg</image:loc>
+      <image:title>Afirmado Granular x Bolsa - AGREGADOS LIMA</image:title>
+      <image:caption>Precio distribuidor Afirmado Granular x Bolsa en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=agr-6</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/tierra_chacra.jpg</image:loc>
+      <image:title>Tierra de Chacra Negra Vegetal - JARDINERÍA</image:title>
+      <image:caption>Precio distribuidor Tierra de Chacra Negra Vegetal en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=lad-1</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/ladrillo_kingkong.jpg</image:loc>
+      <image:title>Ladrillo King Kong 18 Huecos Estructural - PIRÁMIDE / LARK</image:title>
+      <image:caption>Precio distribuidor Ladrillo King Kong 18 Huecos Estructural en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=lad-2</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/ladrillo_pandereta.jpg</image:loc>
+      <image:title>Ladrillo Pandereta 6 Huecos - PIRÁMIDE / LARK</image:title>
+      <image:caption>Precio distribuidor Ladrillo Pandereta 6 Huecos en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=lad-3</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/ladrillo_techo_15.jpg</image:loc>
+      <image:title>Ladrillo Hueco Techo 15 x 30 x 30 - PIRÁMIDE / LARK</image:title>
+      <image:caption>Precio distribuidor Ladrillo Hueco Techo 15 x 30 x 30 en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=lad-4</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/ladrillo_techo.jpg</image:loc>
+      <image:title>Ladrillo Hueco Techo 12 x 30 x 30 - PIRÁMIDE / LARK</image:title>
+      <image:caption>Precio distribuidor Ladrillo Hueco Techo 12 x 30 x 30 en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=lad-5</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/ladrillo_pastelero.jpg</image:loc>
+      <image:title>Ladrillo Pastelero de Arcilla - PIRÁMIDE / LARK</image:title>
+      <image:caption>Precio distribuidor Ladrillo Pastelero de Arcilla en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=fie-1</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/fierro_corrugado.jpg</image:loc>
+      <image:title>Fierro de Construcción Corrugado 1/4&quot; (9m) - ACEROS AREQUIPA</image:title>
+      <image:caption>Precio distribuidor Fierro de Construcción Corrugado 1/4&quot; (9m) en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=fie-2</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/fierro_corrugado.jpg</image:loc>
+      <image:title>Fierro de Construcción Corrugado 3/8&quot; (9m) - ACEROS AREQUIPA</image:title>
+      <image:caption>Precio distribuidor Fierro de Construcción Corrugado 3/8&quot; (9m) en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=fie-3</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/fierro_corrugado.jpg</image:loc>
+      <image:title>Fierro de Construcción Corrugado 1/2&quot; (9m) - ACEROS AREQUIPA</image:title>
+      <image:caption>Precio distribuidor Fierro de Construcción Corrugado 1/2&quot; (9m) en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=fie-4</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/fierro_corrugado.jpg</image:loc>
+      <image:title>Fierro de Construcción Corrugado 5/8&quot; (9m) - ACEROS AREQUIPA</image:title>
+      <image:caption>Precio distribuidor Fierro de Construcción Corrugado 5/8&quot; (9m) en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=fie-5</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/alambre_recocido_16.jpg</image:loc>
+      <image:title>Alambre Negro Recocido #16 x Kilo - PRODAC</image:title>
+      <image:caption>Precio distribuidor Alambre Negro Recocido #16 x Kilo en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=fie-6</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/alambre_recocido_8.jpg</image:loc>
+      <image:title>Alambre Negro Recocido #8 x Kilo - PRODAC</image:title>
+      <image:caption>Precio distribuidor Alambre Negro Recocido #8 x Kilo en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=fie-7</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/clavos_prodac.jpg</image:loc>
+      <image:title>Clavos de Acero con Cabeza 2&quot;, 3&quot;, 4&quot; - PRODAC</image:title>
+      <image:caption>Precio distribuidor Clavos de Acero con Cabeza 2&quot;, 3&quot;, 4&quot; en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=dry-1</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/plancha_gyplac_standard.jpg</image:loc>
+      <image:title>Plancha Drywall Standard 1/2&quot; Gyplac - GYPLAC</image:title>
+      <image:caption>Precio distribuidor Plancha Drywall Standard 1/2&quot; Gyplac en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=dry-2</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/plancha_gyplac_standard.jpg</image:loc>
+      <image:title>Plancha Drywall Standard 3/8&quot; Gyplac - GYPLAC</image:title>
+      <image:caption>Precio distribuidor Plancha Drywall Standard 3/8&quot; Gyplac en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=dry-3</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/plancha_gyplac_rh.jpg</image:loc>
+      <image:title>Plancha Drywall R.H 1/2&quot; Verde Antihumedad - GYPLAC</image:title>
+      <image:caption>Precio distribuidor Plancha Drywall R.H 1/2&quot; Verde Antihumedad en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=dry-4</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/perfiles_drywall.jpg</image:loc>
+      <image:title>Parante Galvanizado 38 x 3mt (0.45mm) - TUPEMESA</image:title>
+      <image:caption>Precio distribuidor Parante Galvanizado 38 x 3mt (0.45mm) en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=dry-5</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/perfiles_drywall.jpg</image:loc>
+      <image:title>Parante Galvanizado 64 x 3mt (0.45mm) - TUPEMESA</image:title>
+      <image:caption>Precio distribuidor Parante Galvanizado 64 x 3mt (0.45mm) en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=dry-6</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/perfiles_drywall.jpg</image:loc>
+      <image:title>Parante Galvanizado 89 x 3mt (0.45mm) - TUPEMESA</image:title>
+      <image:caption>Precio distribuidor Parante Galvanizado 89 x 3mt (0.45mm) en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=dry-7</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/perfiles_drywall.jpg</image:loc>
+      <image:title>Riel Galvanizado 39 x 3mt - TUPEMESA</image:title>
+      <image:caption>Precio distribuidor Riel Galvanizado 39 x 3mt en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=dry-8</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/perfiles_drywall.jpg</image:loc>
+      <image:title>Riel Galvanizado 65 x 3mt - TUPEMESA</image:title>
+      <image:caption>Precio distribuidor Riel Galvanizado 65 x 3mt en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=dry-9</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/perfiles_drywall.jpg</image:loc>
+      <image:title>Riel Galvanizado 90 x 3mt - TUPEMESA</image:title>
+      <image:caption>Precio distribuidor Riel Galvanizado 90 x 3mt en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=dry-10</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/perfil_omega.jpg</image:loc>
+      <image:title>Perfil Omega Galvanizado 3mt - TUPEMESA</image:title>
+      <image:caption>Precio distribuidor Perfil Omega Galvanizado 3mt en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=dry-11</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/masilla_gyplac_20kg.jpg</image:loc>
+      <image:title>Masilla en Pasta para Drywall x 25 Kilos - GYPLAC</image:title>
+      <image:caption>Precio distribuidor Masilla en Pasta para Drywall x 25 Kilos en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=dry-12</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/masilla_gyplac_20kg.jpg</image:loc>
+      <image:title>Masilla Losaro en Pasta x 5 Kilos - LOSARO</image:title>
+      <image:caption>Precio distribuidor Masilla Losaro en Pasta x 5 Kilos en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=dry-13</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/masilla_gyplac_20kg.jpg</image:loc>
+      <image:title>Masilla Drywall Fraccionada x Kilo - GYPLAC</image:title>
+      <image:caption>Precio distribuidor Masilla Drywall Fraccionada x Kilo en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=dry-14</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/cinta_malla.jpg</image:loc>
+      <image:title>Cinta Malla Autoadhesiva de Fibra de Vidrio - FIBERGLASS</image:title>
+      <image:caption>Precio distribuidor Cinta Malla Autoadhesiva de Fibra de Vidrio en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=dry-15</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/tornillo_drywall.jpg</image:loc>
+      <image:title>Tornillos y Pernos para Drywall (Wafer / Punta Broca) - FASTENERS</image:title>
+      <image:caption>Precio distribuidor Tornillos y Pernos para Drywall (Wafer / Punta Broca) en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=dry-16</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/cinta_papel_gyplac.jpg</image:loc>
+      <image:title>Cinta Papel Microperforada para Drywall - GYPLAC</image:title>
+      <image:caption>Precio distribuidor Cinta Papel Microperforada para Drywall en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=pin-1</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/pintura_latex_pato.jpg</image:loc>
+      <image:title>Látex Pato x Galón - PINTURAS PATO</image:title>
+      <image:caption>Precio distribuidor Látex Pato x Galón en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=pin-2</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/pintura_latex.jpg</image:loc>
+      <image:title>Vencelátex Látex Acrílico x Galón - VENCEDOR</image:title>
+      <image:caption>Precio distribuidor Vencelátex Látex Acrílico x Galón en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=pin-3</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/pintura_american_colors.jpg</image:loc>
+      <image:title>American Colors Látex Satinado Galón - AMERICAN COLORS</image:title>
+      <image:caption>Precio distribuidor American Colors Látex Satinado Galón en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=pin-4</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/temple_majestad.jpg</image:loc>
+      <image:title>Temple Majestad Fino x 5 Kilos - MAJESTAD</image:title>
+      <image:caption>Precio distribuidor Temple Majestad Fino x 5 Kilos en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=pin-5</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/temple_majestad.jpg</image:loc>
+      <image:title>Temple Majestad Saco x 25 Kilos - MAJESTAD</image:title>
+      <image:caption>Precio distribuidor Temple Majestad Saco x 25 Kilos en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=pin-6</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/temple_majestad.jpg</image:loc>
+      <image:title>Yeso Cerámico Fino x Kilo - CERÁMICO</image:title>
+      <image:caption>Precio distribuidor Yeso Cerámico Fino x Kilo en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=pin-7</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/temple_majestad.jpg</image:loc>
+      <image:title>Yeso Cerámico Saco x 20 Kilos - CERÁMICO</image:title>
+      <image:caption>Precio distribuidor Yeso Cerámico Saco x 20 Kilos en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=pin-8</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/sellador_cpp.jpg</image:loc>
+      <image:title>Galón Sellador Concentrado CPP - CPP</image:title>
+      <image:caption>Precio distribuidor Galón Sellador Concentrado CPP en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=pin-9</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/sellador_majestad.jpg</image:loc>
+      <image:title>Galón Sellador Majestad - MAJESTAD</image:title>
+      <image:caption>Precio distribuidor Galón Sellador Majestad en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=pin-10</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/sellador_cpp.jpg</image:loc>
+      <image:title>Galón Sellador Losaro - LOSARO</image:title>
+      <image:caption>Precio distribuidor Galón Sellador Losaro en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=pin-11</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/pintura_latex.jpg</image:loc>
+      <image:title>Látex Losaro Blanco x Galón - LOSARO</image:title>
+      <image:caption>Precio distribuidor Látex Losaro Blanco x Galón en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=qui-1</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/thinner_solvente.jpg</image:loc>
+      <image:title>Thinner Estándar Losaro 1/4 - LOSARO</image:title>
+      <image:caption>Precio distribuidor Thinner Estándar Losaro 1/4 en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=qui-2</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/thinner_solvente.jpg</image:loc>
+      <image:title>Thinner Estándar Losaro 1/2 Litro - LOSARO</image:title>
+      <image:caption>Precio distribuidor Thinner Estándar Losaro 1/2 Litro en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=qui-3</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/thinner_solvente.jpg</image:loc>
+      <image:title>Thinner Estándar Losaro 1 Litro - LOSARO</image:title>
+      <image:caption>Precio distribuidor Thinner Estándar Losaro 1 Litro en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=qui-4</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/thinner_solvente.jpg</image:loc>
+      <image:title>Galón Thinner Estándar Losaro - LOSARO</image:title>
+      <image:caption>Precio distribuidor Galón Thinner Estándar Losaro en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=qui-5</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/bencina_solvente.jpg</image:loc>
+      <image:title>Bencina Limpiadora Losaro 1/4 - LOSARO</image:title>
+      <image:caption>Precio distribuidor Bencina Limpiadora Losaro 1/4 en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=qui-6</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/bencina_solvente.jpg</image:loc>
+      <image:title>Bencina Limpiadora Losaro 1/2 Litro - LOSARO</image:title>
+      <image:caption>Precio distribuidor Bencina Limpiadora Losaro 1/2 Litro en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=qui-7</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/bencina_solvente.jpg</image:loc>
+      <image:title>Bencina Limpiadora Losaro 1 Litro - LOSARO</image:title>
+      <image:caption>Precio distribuidor Bencina Limpiadora Losaro 1 Litro en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=qui-8</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/bencina_solvente.jpg</image:loc>
+      <image:title>Galón Bencina Limpiadora Losaro - LOSARO</image:title>
+      <image:caption>Precio distribuidor Galón Bencina Limpiadora Losaro en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=qui-9</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/aguarras_mineral.jpg</image:loc>
+      <image:title>Aguarrás Mineral Losaro 1/4 - LOSARO</image:title>
+      <image:caption>Precio distribuidor Aguarrás Mineral Losaro 1/4 en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=qui-10</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/aguarras_mineral.jpg</image:loc>
+      <image:title>Aguarrás Mineral Losaro 1/2 Litro - LOSARO</image:title>
+      <image:caption>Precio distribuidor Aguarrás Mineral Losaro 1/2 Litro en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=qui-11</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/aguarras_mineral.jpg</image:loc>
+      <image:title>Aguarrás Mineral Losaro 1 Litro - LOSARO</image:title>
+      <image:caption>Precio distribuidor Aguarrás Mineral Losaro 1 Litro en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=qui-12</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/aguarras_mineral.jpg</image:loc>
+      <image:title>Galón Aguarrás Mineral Losaro - LOSARO</image:title>
+      <image:caption>Precio distribuidor Galón Aguarrás Mineral Losaro en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=qui-13</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/thinner_solvente.jpg</image:loc>
+      <image:title>Galón Limpiatodo Industrial para Obra - QUÍMICOS LIMA</image:title>
+      <image:caption>Precio distribuidor Galón Limpiatodo Industrial para Obra en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=qui-14</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/thinner_solvente.jpg</image:loc>
+      <image:title>Galón Lejía Desinfectante Concentrada - QUÍMICOS LIMA</image:title>
+      <image:caption>Precio distribuidor Galón Lejía Desinfectante Concentrada en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=des-1</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/desmonte_volquete.jpg</image:loc>
+      <image:title>Eliminación de Desmonte Embolsado a Domicilio - FERRENINAN SERVICIOS</image:title>
+      <image:caption>Precio distribuidor Eliminación de Desmonte Embolsado a Domicilio en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=des-2</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/desmonte_volquete.jpg</image:loc>
+      <image:title>Eliminación de Desmonte a Granel (Camión Volquete) - FERRENINAN SERVICIOS</image:title>
+      <image:caption>Precio distribuidor Eliminación de Desmonte a Granel (Camión Volquete) en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=her-1</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/pala_carbonera_truper.jpg</image:loc>
+      <image:title>Pala Carbonera de Obra con Mango - TRAMONTINA</image:title>
+      <image:caption>Precio distribuidor Pala Carbonera de Obra con Mango en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=her-2</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/carretilla_obra.jpg</image:loc>
+      <image:title>Carretilla Buggy Reforzada 80 Litros (Llanta Neumática) - TRUPER / TRAMONTINA</image:title>
+      <image:caption>Precio distribuidor Carretilla Buggy Reforzada 80 Litros (Llanta Neumática) en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=her-3</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/llanta-carretilla.png</image:loc>
+      <image:title>Llanta Neumática para Carretilla 16&quot; con Rin y Eje Reforzado - TRUPER / TRAMONTINA</image:title>
+      <image:caption>Precio distribuidor Llanta Neumática para Carretilla 16&quot; con Rin y Eje Reforzado en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=ele-1</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/cable_thw_indeco.jpg</image:loc>
+      <image:title>Rollo de Cable Eléctrico Indeco THW 100m - INDECO</image:title>
+      <image:caption>Precio distribuidor Rollo de Cable Eléctrico Indeco THW 100m en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?p=gas-1</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/tubo_pvc_pavco.jpg</image:loc>
+      <image:title>Tubos y Accesorios PVC de Agua y Desagüe - PAVCO</image:title>
+      <image:caption>Precio distribuidor Tubos y Accesorios PVC de Agua y Desagüe en FERRENINAN Lima</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ========================================== -->
+  <!-- 4. PÁGINAS LEGALES E INSTITUCIONALES        -->
+  <!-- ========================================== -->
+  <url>
+    <loc>https://ferreninan.com/?view=reclamaciones</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.30</priority>
+  </url>
+
+</urlset>

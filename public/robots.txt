@@ -1,0 +1,58 @@
+# ==============================================================================
+# ROBOTS.TXT - FERRENINAN (FERRENINANYA S.A.C.)
+# Sitio Web Oficial: https://ferreninan.com
+# Contacto Técnico: Ferreterianinanyasac1@hotmail.com
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Reglas Generales para Todos los Motores de Búsqueda (Google, Bing, Yahoo)
+# ------------------------------------------------------------------------------
+User-agent: *
+# Permitir rastreo e indexación de la portada, categorías y páginas de productos
+Allow: /
+Allow: /?p=*
+Allow: /?cat=*
+Allow: /images/
+Allow: /images/products/
+Allow: /videos/
+Allow: /assets/
+
+# Bloquear URLs de parámetros de búsqueda interna y carritos para evitar contenido duplicado
+Disallow: /*?*searchTerm=
+Disallow: /*?*search=
+Disallow: /*&search=
+Disallow: /*?*view=cart
+Disallow: /cart
+Disallow: /*.json$
+
+# ------------------------------------------------------------------------------
+# 2. Rastreo Específico para Googlebot e Indexación de Imágenes (Google Images)
+# ------------------------------------------------------------------------------
+User-agent: Googlebot
+Allow: /
+Allow: /?p=*
+Allow: /?cat=*
+Allow: /images/products/
+
+User-agent: Googlebot-Image
+# Permitir que Google Imágenes indexe todos los sacos, ladrillos y herramientas oficiales
+Allow: /images/products/
+Allow: /images/
+Allow: /logo.png
+
+# ------------------------------------------------------------------------------
+# 3. Bots de Redes Sociales y Mensajería (Previsualización de Tarjetas Open Graph)
+# ------------------------------------------------------------------------------
+User-agent: WhatsApp
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+# ------------------------------------------------------------------------------
+# 4. Mapa del Sitio XML Oficial (Sitemap)
+# ------------------------------------------------------------------------------
+Sitemap: https://ferreninan.com/sitemap.xml
