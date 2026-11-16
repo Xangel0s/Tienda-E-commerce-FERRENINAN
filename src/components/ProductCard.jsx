@@ -3,7 +3,7 @@ import { ShoppingCart, MessageCircle, Plus, Minus, Check, Truck, ShieldCheck, Fi
 import { useCart } from '../context/CartContext';
 
 export const ProductCard = ({ product }) => {
-  const { addToCart, getWhatsAppProductInquiryUrl, openProductDetail } = useCart();
+  const { addToCart, getWhatsAppProductInquiryUrl, navigateToProduct } = useCart();
   const [quantity, setQuantity] = useState(1);
   const [isAdded, setIsAdded] = useState(false);
 
@@ -46,7 +46,7 @@ export const ProductCard = ({ product }) => {
 
         {/* Zona Visual del Producto */}
         <div
-          onClick={() => openProductDetail && openProductDetail(product)}
+          onClick={() => navigateToProduct(product)}
           className="w-full h-44 rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center relative mb-3 border border-gray-100 group-hover:bg-white transition-colors cursor-pointer"
         >
           {product.badge && (
@@ -105,7 +105,7 @@ export const ProductCard = ({ product }) => {
             {product.category}
           </span>
           <h3
-            onClick={() => openProductDetail && openProductDetail(product)}
+            onClick={() => navigateToProduct(product)}
             className="text-xs sm:text-sm font-bold text-gray-900 group-hover:text-brand-600 transition-colors line-clamp-2 min-h-[38px] leading-snug cursor-pointer"
           >
             {product.name}

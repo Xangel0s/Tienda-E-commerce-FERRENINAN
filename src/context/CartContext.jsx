@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { COMPANY_INFO } from '../data/products';
+import { COMPANY_INFO, PRODUCTS } from '../data/products';
 
 const CartContext = createContext();
 
@@ -14,13 +14,82 @@ export const CartProvider = ({ children }) => {
     }
   });
 
-  // 'home' o 'cart' para que el carrito sea una página independiente
+  // 'home' | 'cart' | 'product'
   const [currentView, setCurrentView] = useState('home');
+  const [currentProduct, setCurrentProduct] = useState(null);
   const [isComplaintsBookOpen, setIsComplaintsBookOpen] = useState(false);
-  const [detailProduct, setDetailProduct] = useState(null);
 
-  const openProductDetail = (product) => setDetailProduct(product);
-  const closeProductDetail = () => setDetailProduct(null);
+  // Navegar a la página de producto con SKU único y sincronizar historial del navegador
+  const navigateToProduct = (productOrId) => {
+    let prod = typeof productOrId === 'object' && productOrId !== null
+      ? productOrId
+      : PRODUCTS.find(p => p.id === productOrId || p.sku === productOrId);
+    
+    if (!prod) prod = PRODUCTS[0];
+    setCurrentProduct(prod);
+    setCurrentView('product');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Actualizar URL en barra de direcciones sin recarga completa
+    const url = new URL(window.location);
+    url.searchParams.set('p', prod.id);
+    url.searchParams.delete('view');
+    window.history.pushState({ view: 'product', productId: prod.id }, '', url);
+  };
+
+  // Navegar al Home
+  const navigateToHome = () => {
+    setCurrentView('home');
+    setCurrentProduct(null);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const url = new URL(window.location);
+    url.searchParams.delete('p');
+    url.searchParams.delete('view');
+    window.history.pushState({ view: 'home' }, '', url.pathname + (url.search ? url.search : ''));
+  };
+
+  // Navegar al Carrito
+  const navigateToCart = () => {
+    setCurrentView('cart');
+    setCurrentProduct(null);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const url = new URL(window.location);
+    url.searchParams.delete('p');
+    url.searchParams.set('view', 'cart');
+    window.history.pushState({ view: 'cart' }, '', url);
+  };
+
+  // Sincronización con el botón Atrás / Adelante del navegador (popstate) y deep linking inicial
+  useEffect(() => {
+    const handleLocationChange = () => {
+      const params = new URLSearchParams(window.location.search);
+      const prodId = params.get('p');
+      const view = params.get('view');
+
+      if (prodId) {
+        const prod = PRODUCTS.find(p => p.id === prodId || p.sku === prodId);
+        if (prod) {
+          setCurrentProduct(prod);
+          setCurrentView('product');
+          return;
+        }
+      }
+
+      if (view === 'cart') {
+        setCurrentView('cart');
+        setCurrentProduct(null);
+        return;
+      }
+
+      setCurrentView('home');
+      setCurrentProduct(null);
+    };
+
+    handleLocationChange();
+
+    window.addEventListener('popstate', handleLocationChange);
+    return () => window.removeEventListener('popstate', handleLocationChange);
+  }, []);
 
   useEffect(() => {
     try {
@@ -43,7 +112,7 @@ export const CartProvider = ({ children }) => {
       return [...prev, { ...product, quantity }];
     });
     // Navegar directamente a la página del carrito
-    setCurrentView('cart');
+    navigateToCart();
   };
 
   const removeFromCart = (id) => {
@@ -88,10 +157,10 @@ export const CartProvider = ({ children }) => {
     cartItems.forEach((item, index) => {
       if (item.price !== null) {
         const itemTotal = (item.price * item.quantity).toFixed(2);
-        message += `[${index + 1}] ${item.quantity}x ${item.name}\n`;
+        message += `[${index + 1}] ${item.quantity}x ${item.name} [SKU: ${item.sku || item.id}]\n`;
         message += `    Precio unitario: S/ ${item.price.toFixed(2)} | Subtotal: S/ ${itemTotal}\n`;
       } else {
-        message += `[${index + 1}] ${item.quantity}x ${item.name}\n`;
+        message += `[${index + 1}] ${item.quantity}x ${item.name} [SKU: ${item.sku || item.id}]\n`;
         message += `    Precio: A cotizar por mayor / menor\n`;
       }
     });
@@ -118,18 +187,22 @@ export const CartProvider = ({ children }) => {
   };
 
   /**
-   * Consulta directa para un producto específico (sin emojis)
+   * Consulta directa para un producto específico con SKU y cantidad (sin emojis)
    */
-  const getWhatsAppProductInquiryUrl = (product) => {
+  const getWhatsAppProductInquiryUrl = (product, quantity = 1) => {
     let message = `*CONSULTA DE PRODUCTO - ${COMPANY_INFO.name}*\n\n`;
     message += `Producto: ${product.name}\n`;
-    message += `Categoria: ${product.category}\n`;
+    message += `SKU: ${product.sku || product.id}\n`;
+    message += `Marca: ${product.brand || 'FERRENINAN'}\n`;
+    message += `Presentacion: ${product.unit}\n`;
+    message += `Cantidad requerida: ${quantity} ${product.unit}\n`;
     if (product.price !== null) {
-      message += `Precio web referencial: S/ ${product.price.toFixed(2)} por ${product.unit}\n`;
+      message += `Precio unitario ref.: S/ ${product.price.toFixed(2)}\n`;
+      message += `Subtotal estimado: S/ ${(product.price * quantity).toFixed(2)}\n`;
     } else {
-      message += `Condicion: Precio a cotizar por mayor y menor\n`;
+      message += `Condicion: Precio a cotizar por volumen para obra\n`;
     }
-    message += `\nSolicito informacion sobre stock disponible y costo de envio a obra. Gracias.`;
+    message += `\nSolicito confirmacion de stock inmediato y costo de despacho a pie de obra. Muchas gracias.`;
     return COMPANY_INFO.whatsappUrl(message);
   };
 
@@ -146,11 +219,12 @@ export const CartProvider = ({ children }) => {
         hasQuoteItems,
         currentView,
         setCurrentView,
+        currentProduct,
+        navigateToProduct,
+        navigateToHome,
+        navigateToCart,
         isComplaintsBookOpen,
         setIsComplaintsBookOpen,
-        detailProduct,
-        openProductDetail,
-        closeProductDetail,
         getWhatsAppOrderUrl,
         getWhatsAppProductInquiryUrl
       }}

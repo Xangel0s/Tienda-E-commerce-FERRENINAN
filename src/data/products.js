@@ -30,7 +30,9 @@ export const PRODUCTS = [
     badge: 'OFERTA OBRA',
     image: '/images/products/saco_cemento_real.jpg',
     description: 'Cemento Portland Tipo I de alta resistencia inicial para columnas, vigas y losas aligeradas.',
-    inStock: true
+    inStock: true,
+    sku: 'CEM-SOL-425',
+    relatedIds: ['agr-2', 'fie-3', 'lad-1', 'her-2'],
   },
   {
     id: 'cem-2',
@@ -43,7 +45,9 @@ export const PRODUCTS = [
     badge: 'SUPER PRECIO',
     image: '/images/products/cemento_apu.jpg',
     description: 'Cemento económico de máxima trabajabilidad para asentado de ladrillos y tarrajeos.',
-    inStock: true
+    inStock: true,
+    sku: 'CEM-APU-425',
+    relatedIds: ['agr-2', 'fie-3', 'lad-1', 'her-2'],
   },
   {
     id: 'cem-3',
@@ -56,7 +60,9 @@ export const PRODUCTS = [
     badge: 'ALTA DURABILIDAD',
     image: '/images/products/cemento_andino.jpg',
     description: 'Cemento de resistencia superior para estructuras expuestas y obras de envergadura.',
-    inStock: true
+    inStock: true,
+    sku: 'CEM-AND-425',
+    relatedIds: ['agr-2', 'fie-3', 'lad-1', 'her-2'],
   },
 
   // --- AGREGADOS Y CONSTRUCCIÓN ---
@@ -71,7 +77,9 @@ export const PRODUCTS = [
     badge: 'TOP VENTAS',
     image: '/images/products/arena_fina.jpg',
     description: 'Arena fina cernida para tarrajeo fino de muros interiores y exteriores.',
-    inStock: true
+    inStock: true,
+    sku: 'AGR-AFIN-01',
+    relatedIds: ['cem-1', 'lad-1', 'fie-3', 'her-2'],
   },
   {
     id: 'agr-2',
@@ -84,7 +92,9 @@ export const PRODUCTS = [
     badge: 'TOP VENTAS',
     image: '/images/products/arena_gruesa.jpg',
     description: 'Arena gruesa de cantera lavada para mezclas de concreto y asentado de ladrillos.',
-    inStock: true
+    inStock: true,
+    sku: 'AGR-AGRU-02',
+    relatedIds: ['cem-1', 'lad-1', 'fie-3', 'her-2'],
   },
   {
     id: 'agr-3',
@@ -97,7 +107,9 @@ export const PRODUCTS = [
     badge: null,
     image: '/images/products/confitillo.jpg',
     description: 'Piedra menuda tipo confitillo para filtros, vaciados especiales y solados.',
-    inStock: true
+    inStock: true,
+    sku: 'AGR-CONF-03',
+    relatedIds: ['cem-1', 'lad-1', 'fie-3', 'her-2'],
   },
   {
     id: 'agr-4',
@@ -110,7 +122,9 @@ export const PRODUCTS = [
     badge: null,
     image: '/images/products/piedra_chancada.jpg',
     description: 'Piedra chancada de 1/2 pulgada para vaciado de columnas, techos y cimientos.',
-    inStock: true
+    inStock: true,
+    sku: 'AGR-PCH12-04',
+    relatedIds: ['cem-1', 'lad-1', 'fie-3', 'her-2'],
   },
   {
     id: 'agr-5',
@@ -123,7 +137,9 @@ export const PRODUCTS = [
     badge: null,
     image: '/images/products/confitillo.jpg',
     description: 'Material granular compactable para relleno y nivelación de falsos pisos.',
-    inStock: true
+    inStock: true,
+    sku: 'AGR-AL-005',
+    relatedIds: ['cem-1', 'lad-1', 'fie-3', 'her-2'],
   },
   {
     id: 'agr-6',
@@ -136,7 +152,9 @@ export const PRODUCTS = [
     badge: null,
     image: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=600&q=80',
     description: 'Tierra vegetal negra para jardines, sembríos y áreas verdes residenciales.',
-    inStock: true
+    inStock: true,
+    sku: 'AGR-J-006',
+    relatedIds: ['cem-1', 'lad-1', 'fie-3', 'her-2'],
   },
 
   // --- LADRILLOS ---
@@ -151,7 +169,9 @@ export const PRODUCTS = [
     badge: 'PRECIO X MILLAR',
     image: '/images/products/ladrillo_kingkong.jpg',
     description: 'Ladrillo de arcilla cocida para muros portantes sismorresistentes.',
-    inStock: true
+    inStock: true,
+    sku: 'LAD-KK18-01',
+    relatedIds: ['agr-2', 'fie-3', 'her-2'],
   },
   {
     id: 'lad-2',
@@ -164,7 +184,9 @@ export const PRODUCTS = [
     badge: 'TABIQUERÍA',
     image: '/images/products/ladrillo_pandereta.jpg',
     description: 'Ladrillo liviano para muros divisorios y tabiquería de interiores.',
-    inStock: true
+    inStock: true,
+    sku: 'LAD-PAN06-02',
+    relatedIds: ['agr-2', 'fie-3', 'lad-1', 'her-2'],
   },
   {
     id: 'lad-3',
@@ -177,7 +199,9 @@ export const PRODUCTS = [
     badge: null,
     image: '/images/products/ladrillo_techo.jpg',
     description: 'Ladrillo aligerado para techos de 20cm de espesor.',
-    inStock: true
+    inStock: true,
+    sku: 'LAD-TEC15-03',
+    relatedIds: ['agr-2', 'fie-3', 'lad-1', 'her-2'],
   },
   {
     id: 'lad-4',
@@ -190,7 +214,9 @@ export const PRODUCTS = [
     badge: null,
     image: '/images/products/ladrillo_techo.jpg',
     description: 'Ladrillo aligerado para techos de 17cm de espesor.',
-    inStock: true
+    inStock: true,
+    sku: 'LAD-TEC12-04',
+    relatedIds: ['agr-2', 'fie-3', 'lad-1', 'her-2'],
   },
   {
     id: 'lad-5',
@@ -203,7 +229,9 @@ export const PRODUCTS = [
     badge: null,
     image: '/images/products/ladrillo_pandereta.jpg',
     description: 'Ladrillo termoaislante para cobertura de techos y azoteas.',
-    inStock: true
+    inStock: true,
+    sku: 'LAD-PAS-05',
+    relatedIds: ['agr-2', 'fie-3', 'lad-1', 'her-2'],
   },
 
   // --- FIERROS Y ALAMBRES ---
@@ -218,7 +246,9 @@ export const PRODUCTS = [
     badge: 'OFERTA ACERO',
     image: '/images/products/fierro_corrugado.jpg',
     description: 'Varilla de acero Grado 60 corrugada para estribos y refuerzos de concreto.',
-    inStock: true
+    inStock: true,
+    sku: 'FIE-AA14-01',
+    relatedIds: ['cem-1', 'agr-2', 'fie-5', 'fie-7'],
   },
   {
     id: 'fie-2',
@@ -230,7 +260,9 @@ export const PRODUCTS = [
     badge: 'CONSULTAR STOCK',
     image: '/images/products/fierro_corrugado.jpg',
     description: 'Barra de construcción estándar para vigas, columnas y losas armadas.',
-    inStock: true
+    inStock: true,
+    sku: 'FIE-AA38-02',
+    relatedIds: ['cem-1', 'agr-2', 'fie-5', 'fie-7'],
   },
   {
     id: 'fie-3',
@@ -242,7 +274,9 @@ export const PRODUCTS = [
     badge: 'CONSULTAR STOCK',
     image: '/images/products/fierro_corrugado.jpg',
     description: 'Acero de 12mm de alta ductilidad para cimientos y columnas principales.',
-    inStock: true
+    inStock: true,
+    sku: 'FIE-AA12-03',
+    relatedIds: ['cem-1', 'agr-2', 'fie-5', 'fie-7'],
   },
   {
     id: 'fie-4',
@@ -254,7 +288,9 @@ export const PRODUCTS = [
     badge: 'CONSULTAR STOCK',
     image: '/images/products/fierro_corrugado.jpg',
     description: 'Varilla de acero de 16mm para zapatas y estructuras de carga pesada.',
-    inStock: true
+    inStock: true,
+    sku: 'FIE-AA58-04',
+    relatedIds: ['cem-1', 'agr-2', 'fie-5', 'fie-7'],
   },
   {
     id: 'fie-5',
@@ -267,7 +303,9 @@ export const PRODUCTS = [
     badge: null,
     image: '/images/products/alambre_recocido.jpg',
     description: 'Alambre flexible para amarre de armaduras y estribos de construcción.',
-    inStock: true
+    inStock: true,
+    sku: 'FIE-ALAM16-05',
+    relatedIds: ['cem-1', 'agr-2', 'fie-7'],
   },
   {
     id: 'fie-6',
@@ -280,7 +318,9 @@ export const PRODUCTS = [
     badge: null,
     image: '/images/products/alambre_recocido.jpg',
     description: 'Alambre grueso para sujeción de maderas de encofrado.',
-    inStock: true
+    inStock: true,
+    sku: 'FIE-P-006',
+    relatedIds: ['cem-1', 'agr-2', 'fie-5', 'fie-7'],
   },
   {
     id: 'fie-7',
@@ -293,7 +333,9 @@ export const PRODUCTS = [
     badge: null,
     image: '/images/products/hardware-screws-bolts.jpg',
     description: 'Clavos galvanizados para carpintería y encofrados de obra.',
-    inStock: true
+    inStock: true,
+    sku: 'FIE-P-007',
+    relatedIds: ['cem-1', 'agr-2', 'fie-5'],
   },
 
   // --- DRYWALL Y PERFILES GYPLAC ---
@@ -308,7 +350,9 @@ export const PRODUCTS = [
     badge: 'TOP VENTAS',
     image: '/images/products/plancha_drywall.jpg',
     description: 'Plancha de yeso-cartón de 12.7mm para tabiques y falsos techos.',
-    inStock: true
+    inStock: true,
+    sku: 'DRY-GYP12-01',
+    relatedIds: ['dry-4', 'dry-7', 'dry-11', 'dry-15'],
   },
   {
     id: 'dry-2',
@@ -321,7 +365,9 @@ export const PRODUCTS = [
     badge: null,
     image: '/images/products/plancha_drywall.jpg',
     description: 'Plancha delgada de 9.5mm para cielo raso y detalles decorativos.',
-    inStock: true
+    inStock: true,
+    sku: 'DRY-GYP38-02',
+    relatedIds: ['dry-4', 'dry-7', 'dry-11', 'dry-15'],
   },
   {
     id: 'dry-3',
@@ -334,7 +380,9 @@ export const PRODUCTS = [
     badge: 'RESISTENTE HUMEDAD',
     image: '/images/products/plancha_drywall.jpg',
     description: 'Plancha con siliconas especiales para baños, cocinas y lavanderías.',
-    inStock: true
+    inStock: true,
+    sku: 'DRY-GYPRH-03',
+    relatedIds: ['dry-4', 'dry-7', 'dry-11', 'dry-15'],
   },
   {
     id: 'dry-4',
@@ -347,7 +395,9 @@ export const PRODUCTS = [
     badge: null,
     image: '/images/products/perfiles_drywall.jpg',
     description: 'Perfil vertical de acero zincado para tabiquería ligera.',
-    inStock: true
+    inStock: true,
+    sku: 'DRY-PAR38-04',
+    relatedIds: ['dry-7', 'dry-11', 'dry-15'],
   },
   {
     id: 'dry-5',
@@ -360,7 +410,9 @@ export const PRODUCTS = [
     badge: null,
     image: '/images/products/perfiles_drywall.jpg',
     description: 'Perfil para muros divisorios de 9cm con lana de vidrio.',
-    inStock: true
+    inStock: true,
+    sku: 'DRY-T-005',
+    relatedIds: ['dry-4', 'dry-7', 'dry-11', 'dry-15'],
   },
   {
     id: 'dry-6',
@@ -373,7 +425,9 @@ export const PRODUCTS = [
     badge: null,
     image: '/images/products/perfiles_drywall.jpg',
     description: 'Estructura pesada para muros de gran altura y fachadas.',
-    inStock: true
+    inStock: true,
+    sku: 'DRY-T-006',
+    relatedIds: ['dry-4', 'dry-7', 'dry-11', 'dry-15'],
   },
   {
     id: 'dry-7',
@@ -386,7 +440,9 @@ export const PRODUCTS = [
     badge: null,
     image: '/images/products/perfiles_drywall.jpg',
     description: 'Perfil en canal U horizontal para anclaje a piso y techo.',
-    inStock: true
+    inStock: true,
+    sku: 'DRY-T-007',
+    relatedIds: ['dry-4', 'dry-11', 'dry-15'],
   },
   {
     id: 'dry-8',
@@ -399,7 +455,9 @@ export const PRODUCTS = [
     badge: null,
     image: '/images/products/perfiles_drywall.jpg',
     description: 'Canal riel para parantes de 64mm.',
-    inStock: true
+    inStock: true,
+    sku: 'DRY-T-008',
+    relatedIds: ['dry-4', 'dry-7', 'dry-11', 'dry-15'],
   },
   {
     id: 'dry-9',
@@ -412,7 +470,9 @@ export const PRODUCTS = [
     badge: null,
     image: '/images/products/perfiles_drywall.jpg',
     description: 'Canal riel para parantes de 89mm.',
-    inStock: true
+    inStock: true,
+    sku: 'DRY-T-009',
+    relatedIds: ['dry-4', 'dry-7', 'dry-11', 'dry-15'],
   },
   {
     id: 'dry-10',
@@ -425,7 +485,9 @@ export const PRODUCTS = [
     badge: null,
     image: '/images/products/perfiles_drywall.jpg',
     description: 'Perfil omega para cielo raso suspendido.',
-    inStock: true
+    inStock: true,
+    sku: 'DRY-T-010',
+    relatedIds: ['dry-4', 'dry-7', 'dry-11', 'dry-15'],
   },
   {
     id: 'dry-11',
@@ -438,7 +500,9 @@ export const PRODUCTS = [
     badge: 'OFERTA BALDE',
     image: '/images/products/drywall_instalacion.jpg',
     description: 'Pasta para tratamiento de juntas en drywall de fácil lijado y gran adherencia.',
-    inStock: true
+    inStock: true,
+    sku: 'DRY-MAS25-11',
+    relatedIds: ['dry-4', 'dry-7', 'dry-15'],
   },
   {
     id: 'dry-12',
@@ -451,7 +515,9 @@ export const PRODUCTS = [
     badge: null,
     image: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=600&q=80',
     description: 'Masilla lista para usar en reparaciones y uniones de placas.',
-    inStock: true
+    inStock: true,
+    sku: 'DRY-L-012',
+    relatedIds: ['dry-4', 'dry-7', 'dry-11', 'dry-15'],
   },
   {
     id: 'dry-13',
@@ -464,7 +530,9 @@ export const PRODUCTS = [
     badge: null,
     image: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=600&q=80',
     description: 'Porción fraccionada de masilla para retoques de tornillos.',
-    inStock: true
+    inStock: true,
+    sku: 'DRY-G-013',
+    relatedIds: ['dry-4', 'dry-7', 'dry-11', 'dry-15'],
   },
   {
     id: 'dry-14',
@@ -476,7 +544,9 @@ export const PRODUCTS = [
     badge: 'A COTIZAR',
     image: '/images/products/drywall_instalacion.jpg',
     description: 'Malla autoadhesiva para unión de juntas y grietas en placas.',
-    inStock: true
+    inStock: true,
+    sku: 'DRY-F-014',
+    relatedIds: ['dry-4', 'dry-7', 'dry-11', 'dry-15'],
   },
   {
     id: 'dry-15',
@@ -488,7 +558,9 @@ export const PRODUCTS = [
     badge: 'A COTIZAR',
     image: '/images/products/hardware-screws-bolts.jpg',
     description: 'Tornillos fosfatizados negros 6x1" y wafer metal-metal.',
-    inStock: true
+    inStock: true,
+    sku: 'DRY-TORN-15',
+    relatedIds: ['dry-4', 'dry-7', 'dry-11'],
   },
   {
     id: 'dry-16',
@@ -500,7 +572,9 @@ export const PRODUCTS = [
     badge: 'A COTIZAR',
     image: '/images/products/drywall_instalacion.jpg',
     description: 'Cinta de papel con pliegue central para esquineros y uniones lisas.',
-    inStock: true
+    inStock: true,
+    sku: 'DRY-G-016',
+    relatedIds: ['dry-4', 'dry-7', 'dry-11', 'dry-15'],
   },
 
   // --- PINTURAS Y ACABADOS ---
@@ -515,7 +589,9 @@ export const PRODUCTS = [
     badge: 'OFERTA',
     image: '/images/products/pintura_latex.jpg',
     description: 'Pintura látex lavable de acabado mate uniforme para interiores y exteriores.',
-    inStock: true
+    inStock: true,
+    sku: 'PIN-PATO-01',
+    relatedIds: ['qui-4', 'dry-11', 'pin-8', 'dry-1'],
   },
   {
     id: 'pin-2',
@@ -528,7 +604,9 @@ export const PRODUCTS = [
     badge: 'CALIDAD PREMIUM',
     image: '/images/products/pintura_esmalte.jpg',
     description: 'Látex de máxima resistencia al lavado y protección contra la intemperie.',
-    inStock: true
+    inStock: true,
+    sku: 'PIN-VENC-02',
+    relatedIds: ['qui-4', 'dry-11', 'pin-8', 'dry-1'],
   },
   {
     id: 'pin-3',
@@ -541,7 +619,9 @@ export const PRODUCTS = [
     badge: 'TOP VENTAS',
     image: '/images/products/paint-colors-brush.jpg',
     description: 'Pintura satinada 100% lavable con tacto de seda para ambientes elegantes.',
-    inStock: true
+    inStock: true,
+    sku: 'PIN-AMER-03',
+    relatedIds: ['qui-4', 'dry-11', 'pin-8', 'dry-1'],
   },
   {
     id: 'pin-4',
@@ -554,7 +634,9 @@ export const PRODUCTS = [
     badge: null,
     image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80',
     description: 'Pasta en polvo para empastado y nivelado de muros nuevos.',
-    inStock: true
+    inStock: true,
+    sku: 'PIN-M-004',
+    relatedIds: ['qui-4', 'dry-11', 'pin-8', 'dry-1'],
   },
   {
     id: 'pin-5',
@@ -567,7 +649,9 @@ export const PRODUCTS = [
     badge: 'PRECIO X MAYOR',
     image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80',
     description: 'Saco de temple fino de gran rendimiento para áreas extensas.',
-    inStock: true
+    inStock: true,
+    sku: 'PIN-M-005',
+    relatedIds: ['qui-4', 'dry-11', 'pin-8', 'dry-1'],
   },
   {
     id: 'pin-6',
@@ -580,7 +664,9 @@ export const PRODUCTS = [
     badge: null,
     image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80',
     description: 'Yeso blanco de fraguado rápido para molduras y resanes.',
-    inStock: true
+    inStock: true,
+    sku: 'PIN-C-006',
+    relatedIds: ['qui-4', 'dry-11', 'pin-8', 'dry-1'],
   },
   {
     id: 'pin-7',
@@ -593,7 +679,9 @@ export const PRODUCTS = [
     badge: null,
     image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80',
     description: 'Saco de yeso cerámico para acabados finos y vaciados.',
-    inStock: true
+    inStock: true,
+    sku: 'PIN-C-007',
+    relatedIds: ['qui-4', 'dry-11', 'pin-8', 'dry-1'],
   },
   {
     id: 'pin-8',
@@ -606,7 +694,9 @@ export const PRODUCTS = [
     badge: null,
     image: 'https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=600&q=80',
     description: 'Sellador acrílico que neutraliza la alcalinidad y fija el color.',
-    inStock: true
+    inStock: true,
+    sku: 'PIN-C-008',
+    relatedIds: ['qui-4', 'dry-11', 'dry-1'],
   },
   {
     id: 'pin-9',
@@ -619,7 +709,9 @@ export const PRODUCTS = [
     badge: null,
     image: 'https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=600&q=80',
     description: 'Sellador de muros para interiores y exteriores.',
-    inStock: true
+    inStock: true,
+    sku: 'PIN-M-009',
+    relatedIds: ['qui-4', 'dry-11', 'pin-8', 'dry-1'],
   },
   {
     id: 'pin-10',
@@ -632,7 +724,9 @@ export const PRODUCTS = [
     badge: 'ECONÓMICO',
     image: 'https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=600&q=80',
     description: 'Sellador económico de buen rendimiento.',
-    inStock: true
+    inStock: true,
+    sku: 'PIN-L-010',
+    relatedIds: ['qui-4', 'dry-11', 'pin-8', 'dry-1'],
   },
   {
     id: 'pin-11',
@@ -645,7 +739,9 @@ export const PRODUCTS = [
     badge: 'ECONÓMICO',
     image: 'https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=600&q=80',
     description: 'Látex blanco ideal para techos y fondos de muro.',
-    inStock: true
+    inStock: true,
+    sku: 'PIN-L-011',
+    relatedIds: ['qui-4', 'dry-11', 'pin-8', 'dry-1'],
   },
 
   // --- QUÍMICOS Y SOLVENTES LOSARO ---
@@ -660,7 +756,9 @@ export const PRODUCTS = [
     badge: null,
     image: 'https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?auto=format&fit=crop&w=600&q=80',
     description: 'Solvente para limpieza de herramientas y dilución de pinturas.',
-    inStock: true
+    inStock: true,
+    sku: 'QUI-L-001',
+    relatedIds: ['pin-1', 'pin-2', 'qui-12', 'qui-13'],
   },
   {
     id: 'qui-2',
@@ -673,7 +771,9 @@ export const PRODUCTS = [
     badge: null,
     image: 'https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?auto=format&fit=crop&w=600&q=80',
     description: 'Diluyente de acción rápida para talleres y obra.',
-    inStock: true
+    inStock: true,
+    sku: 'QUI-L-002',
+    relatedIds: ['pin-1', 'pin-2', 'qui-12', 'qui-13'],
   },
   {
     id: 'qui-3',
@@ -686,7 +786,9 @@ export const PRODUCTS = [
     badge: 'MÁS VENDIDO',
     image: 'https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?auto=format&fit=crop&w=600&q=80',
     description: 'Thinner de alta pureza para acabados uniformes.',
-    inStock: true
+    inStock: true,
+    sku: 'QUI-L-003',
+    relatedIds: ['pin-1', 'pin-2', 'qui-12', 'qui-13'],
   },
   {
     id: 'qui-4',
@@ -699,7 +801,9 @@ export const PRODUCTS = [
     badge: 'SUPER PRECIO',
     image: 'https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?auto=format&fit=crop&w=600&q=80',
     description: 'Presentación industrial en galón de thinner Losaro.',
-    inStock: true
+    inStock: true,
+    sku: 'QUI-L-004',
+    relatedIds: ['pin-1', 'pin-2', 'qui-12', 'qui-13'],
   },
   {
     id: 'qui-5',
@@ -712,7 +816,9 @@ export const PRODUCTS = [
     badge: null,
     image: 'https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?auto=format&fit=crop&w=600&q=80',
     description: 'Bencina desengrasante para limpieza profunda.',
-    inStock: true
+    inStock: true,
+    sku: 'QUI-L-005',
+    relatedIds: ['pin-1', 'pin-2', 'qui-12', 'qui-13'],
   },
   {
     id: 'qui-6',
@@ -725,7 +831,9 @@ export const PRODUCTS = [
     badge: null,
     image: 'https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?auto=format&fit=crop&w=600&q=80',
     description: 'Remueve grasa, ceras y adhesivos sin dejar manchas.',
-    inStock: true
+    inStock: true,
+    sku: 'QUI-L-006',
+    relatedIds: ['pin-1', 'pin-2', 'qui-12', 'qui-13'],
   },
   {
     id: 'qui-7',
@@ -738,7 +846,9 @@ export const PRODUCTS = [
     badge: null,
     image: 'https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?auto=format&fit=crop&w=600&q=80',
     description: 'Bencina pura para aplicaciones técnicas y pintura.',
-    inStock: true
+    inStock: true,
+    sku: 'QUI-L-007',
+    relatedIds: ['pin-1', 'pin-2', 'qui-12', 'qui-13'],
   },
   {
     id: 'qui-8',
@@ -751,7 +861,9 @@ export const PRODUCTS = [
     badge: null,
     image: 'https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?auto=format&fit=crop&w=600&q=80',
     description: 'Galón de bencina Losaro para uso intensivo en obra.',
-    inStock: true
+    inStock: true,
+    sku: 'QUI-L-008',
+    relatedIds: ['pin-1', 'pin-2', 'qui-12', 'qui-13'],
   },
   {
     id: 'qui-9',
@@ -764,7 +876,9 @@ export const PRODUCTS = [
     badge: null,
     image: 'https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?auto=format&fit=crop&w=600&q=80',
     description: 'Solvente para esmaltes sintéticos, barnices y óleos.',
-    inStock: true
+    inStock: true,
+    sku: 'QUI-L-009',
+    relatedIds: ['pin-1', 'pin-2', 'qui-12', 'qui-13'],
   },
   {
     id: 'qui-10',
@@ -777,7 +891,9 @@ export const PRODUCTS = [
     badge: null,
     image: 'https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?auto=format&fit=crop&w=600&q=80',
     description: 'Diluyente mineral para pintura sintética y limpieza de brochas.',
-    inStock: true
+    inStock: true,
+    sku: 'QUI-L-010',
+    relatedIds: ['pin-1', 'pin-2', 'qui-12', 'qui-13'],
   },
   {
     id: 'qui-11',
@@ -790,7 +906,9 @@ export const PRODUCTS = [
     badge: null,
     image: 'https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?auto=format&fit=crop&w=600&q=80',
     description: 'Aguarrás puro de evaporación controlada.',
-    inStock: true
+    inStock: true,
+    sku: 'QUI-L-011',
+    relatedIds: ['pin-1', 'pin-2', 'qui-12', 'qui-13'],
   },
   {
     id: 'qui-12',
@@ -803,7 +921,9 @@ export const PRODUCTS = [
     badge: 'PRECIO X MAYOR',
     image: 'https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?auto=format&fit=crop&w=600&q=80',
     description: 'Galón de aguarrás mineral de alto rendimiento.',
-    inStock: true
+    inStock: true,
+    sku: 'QUI-L-012',
+    relatedIds: ['pin-1', 'pin-2', 'qui-13'],
   },
   {
     id: 'qui-13',
@@ -815,7 +935,9 @@ export const PRODUCTS = [
     badge: 'A COTIZAR',
     image: 'https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=600&q=80',
     description: 'Limpiador desengrasante multiusos para pisos y cerámicos.',
-    inStock: true
+    inStock: true,
+    sku: 'QUI-QL-013',
+    relatedIds: ['pin-1', 'pin-2', 'qui-12'],
   },
   {
     id: 'qui-14',
@@ -827,7 +949,9 @@ export const PRODUCTS = [
     badge: 'A COTIZAR',
     image: 'https://images.unsplash.com/photo-1584813470613-5b1c1cad3d69?auto=format&fit=crop&w=600&q=80',
     description: 'Hipoclorito de sodio al 5% para desinfección en obra y sanitarios.',
-    inStock: true
+    inStock: true,
+    sku: 'QUI-QL-014',
+    relatedIds: ['pin-1', 'pin-2', 'qui-12', 'qui-13'],
   },
 
   // --- SERVICIOS - ELIMINACIÓN DE DESMONTE ---
@@ -843,7 +967,9 @@ export const PRODUCTS = [
     video: '/videos/desmonte-loop.mp4',
     cardType: 'video',
     description: 'Recojo de escombros embolsados a domicilio o pie de obra con disposición autorizada.',
-    inStock: true
+    inStock: true,
+    sku: 'DES-EMB-01',
+    relatedIds: ['cem-1', 'lad-1', 'agr-2', 'her-2'],
   },
   {
     id: 'des-2',
@@ -857,7 +983,9 @@ export const PRODUCTS = [
     video: '/videos/desmonte-loop.mp4',
     cardType: 'video',
     description: 'Eliminación de desmonte a granel con volquetes de 8m³ y 15m³ para obras medianas y grandes.',
-    inStock: true
+    inStock: true,
+    sku: 'DES-VOLQ-02',
+    relatedIds: ['cem-1', 'lad-1', 'agr-2', 'her-2'],
   },
 
   // --- HERRAMIENTAS, ELECTRICIDAD & GASFITERÍA ---
@@ -871,7 +999,9 @@ export const PRODUCTS = [
     badge: 'A COTIZAR',
     image: '/images/products/tools-hammer-tape.jpg',
     description: 'Pala de acero templado para mezcla de concreto y movimiento de tierra.',
-    inStock: true
+    inStock: true,
+    sku: 'HER-PALA-01',
+    relatedIds: ['her-3', 'cem-1', 'agr-1', 'fie-3'],
   },
   {
     id: 'her-2',
@@ -883,7 +1013,9 @@ export const PRODUCTS = [
     badge: 'A COTIZAR',
     image: '/images/products/carretilla_obra.jpg',
     description: 'Carretilla de tolva estampada y llanta neumática para acarreo de arena y cemento.',
-    inStock: true
+    inStock: true,
+    sku: 'HER-BUGG80-02',
+    relatedIds: ['her-3', 'cem-1', 'agr-1', 'fie-3'],
   },
   {
     id: 'her-3',
@@ -896,7 +1028,9 @@ export const PRODUCTS = [
     badge: 'REPUESTO OBRA',
     image: '/images/products/llanta-carretilla.png',
     description: 'Llanta de caucho reforzada con cámara y rodamiento de alta resistencia para carretillas de obra.',
-    inStock: true
+    inStock: true,
+    sku: 'HER-LLAN16-03',
+    relatedIds: ['cem-1', 'agr-1', 'fie-3'],
   },
 
   {
@@ -909,7 +1043,9 @@ export const PRODUCTS = [
     badge: 'A COTIZAR',
     image: '/images/products/cable_electrico.jpg',
     description: 'Conductor de cobre de 2.5mm y 4mm para cableado residencial y comercial.',
-    inStock: true
+    inStock: true,
+    sku: 'ELE-IND100-01',
+    relatedIds: ['dry-1', 'gas-1', 'her-1'],
   },
   {
     id: 'gas-1',
@@ -921,7 +1057,9 @@ export const PRODUCTS = [
     badge: 'A COTIZAR',
     image: '/images/products/tubos_pvc.jpg',
     description: 'Tuberías y accesorios de desagüe y agua fría de 1/2", 2" y 4".',
-    inStock: true
+    inStock: true,
+    sku: 'GAS-PAV12-01',
+    relatedIds: ['cem-1', 'agr-1', 'her-1'],
   }
 ];
 

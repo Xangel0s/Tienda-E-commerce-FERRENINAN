@@ -8,16 +8,25 @@ if (PRODUCTS.length < 20) {
   throw new Error('Faltan productos en el catálogo');
 }
 
-// 2. Verificar categorías
+// 2. Verificar categorías y SKUs únicos
 const validCategoryIds = new Set(CATEGORIES.map(c => c.id));
+const skuSet = new Set();
 PRODUCTS.forEach((p, idx) => {
   if (!p.id || !p.name) {
     throw new Error(`Producto #${idx} carece de id o nombre`);
   }
+  if (!p.sku) {
+    throw new Error(`Producto #${idx} (${p.name}) carece de SKU único`);
+  }
+  if (skuSet.has(p.sku)) {
+    throw new Error(`SKU duplicado detectado: ${p.sku} en producto ${p.name}`);
+  }
+  skuSet.add(p.sku);
   if (!validCategoryIds.has(p.category)) {
     throw new Error(`Categoría inválida '${p.category}' en producto: ${p.name}`);
   }
 });
+console.log(`✓ Todos los ${PRODUCTS.length} productos cuentan con SKU único verificado`);
 console.log('✓ Todas las categorías de productos son válidas');
 
 // 3. Verificar productos con precio y a cotizar

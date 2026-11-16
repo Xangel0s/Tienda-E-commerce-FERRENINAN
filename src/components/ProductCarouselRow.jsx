@@ -5,7 +5,7 @@ import { useCart } from '../context/CartContext';
 export const ProductCarouselRow = ({ title, subtitle, products, categoryPills, onSelectCategory }) => {
   const scrollRef = useRef(null);
   const [activePill, setActivePill] = useState(categoryPills ? categoryPills[0]?.id : null);
-  const { addToCart, getWhatsAppProductInquiryUrl, openProductDetail } = useCart();
+  const { addToCart, getWhatsAppProductInquiryUrl, navigateToProduct } = useCart();
   const [addedId, setAddedId] = useState(null);
 
   const scroll = (direction) => {
@@ -112,7 +112,7 @@ export const ProductCarouselRow = ({ title, subtitle, products, categoryPills, o
 
                     {/* Imagen del Producto o Video/Plano si no tiene imagen */}
                     <div
-                      onClick={() => openProductDetail && openProductDetail(product)}
+                      onClick={() => navigateToProduct(product)}
                       className="w-full h-40 rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center relative mb-3 border border-gray-100 group-hover:bg-white transition-colors cursor-pointer"
                     >
                       {product.cardType === 'video' || product.video ? (
@@ -164,7 +164,7 @@ export const ProductCarouselRow = ({ title, subtitle, products, categoryPills, o
                       {product.category}
                     </span>
                     <h3
-                      onClick={() => openProductDetail && openProductDetail(product)}
+                      onClick={() => navigateToProduct(product)}
                       className="text-xs sm:text-sm font-bold text-gray-900 line-clamp-2 min-h-[38px] group-hover:text-brand-600 transition-colors leading-snug cursor-pointer"
                     >
                       {product.name}

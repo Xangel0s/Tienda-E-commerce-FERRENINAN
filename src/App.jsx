@@ -10,14 +10,14 @@ import { PromoBanner } from './components/PromoBanner';
 import { PromoModal } from './components/PromoModal';
 import { ProductGrid } from './components/ProductGrid';
 import { CartPage } from './components/CartPage';
-import { ProductDetailModal } from './components/ProductDetailModal';
+import { ProductPage } from './components/ProductPage';
 import { ComplaintsBookModal } from './components/ComplaintsBookModal';
 import { Footer } from './components/Footer';
 import { PRODUCTS, CATEGORIES } from './data/products';
 import { ArrowRight } from 'lucide-react';
 
 function StoreContent() {
-  const { currentView, setCurrentView, detailProduct, closeProductDetail } = useCart();
+  const { currentView, setCurrentView, navigateToHome, navigateToProduct } = useCart();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('todos');
   const [showFullCatalog, setShowFullCatalog] = useState(false);
@@ -61,7 +61,7 @@ function StoreContent() {
         selectedCategory={selectedCategory}
         setSelectedCategory={(cat) => {
           setSelectedCategory(cat);
-          if (currentView === 'cart') setCurrentView('home');
+          if (currentView !== 'home') navigateToHome();
         }}
       />
 
@@ -70,7 +70,7 @@ function StoreContent() {
         selectedCategory={selectedCategory}
         setSelectedCategory={(cat) => {
           setSelectedCategory(cat);
-          if (currentView === 'cart') setCurrentView('home');
+          if (currentView !== 'home') navigateToHome();
         }}
       />
 
@@ -79,8 +79,13 @@ function StoreContent() {
         <main className="flex-1">
           <CartPage />
         </main>
+      ) : currentView === 'product' ? (
+        /* VISTA 2: PÁGINA INDEPENDIENTE DE DETALLE DE PRODUCTO (PDP) CON SKU ÚNICO */
+        <main className="flex-1">
+          <ProductPage />
+        </main>
       ) : isBrowsingAll ? (
-        /* VISTA 2: CATÁLOGO COMPLETO / BÚSQUEDA */
+        /* VISTA 3: CATÁLOGO COMPLETO / BÚSQUEDA */
         <main className="flex-1">
           <div className="max-w-7xl mx-auto px-4 pt-4">
             <button
@@ -213,14 +218,6 @@ function StoreContent() {
           </div>
 
         </main>
-      )}
-
-      {/* Modal de Detalle / Vista Rápida de Producto Estilo Promart */}
-      {detailProduct && (
-        <ProductDetailModal
-          product={detailProduct}
-          onClose={closeProductDetail}
-        />
       )}
 
       {/* Publicidad Flotante Automática Estilo Promart (Imagen 2) */}

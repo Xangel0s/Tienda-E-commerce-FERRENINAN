@@ -28,9 +28,9 @@ Ferre/
 │   │   ├── Navbar.jsx              # Megamenú, píldoras y teléfono vertical apilado
 │   │   ├── HeroSlider.jsx          # Banners rotativos con videos de obra y planos CAD
 │   │   ├── Benefits.jsx            # Propuestas de valor (Despacho a obra, etc.)
-│   │   ├── ProductCard.jsx         # Tarjeta de producto con precios Promart y modal rápido
+│   │   ├── ProductCard.jsx         # Tarjeta de producto con precios Promart y navegación a PDP
 │   │   ├── ProductCarouselRow.jsx  # Carrusel horizontal con píldoras de filtrado por categoría
-│   │   ├── ProductDetailModal.jsx  # Vista rápida / Ficha técnica con specs y compra
+│   │   ├── ProductPage.jsx         # Página dedicada de Producto (PDP) con SKU, specs y WhatsApp
 │   │   ├── ProductGrid.jsx         # Catálogo completo con filtros y ordenamiento
 │   │   ├── PromoBanner.jsx         # Banner publicitario intersticial para contratistas
 │   │   ├── PromoModal.jsx          # Popup comercial con cupón FERRE10 y sin emojis
