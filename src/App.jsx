@@ -49,36 +49,42 @@ function StoreContent() {
 
   const isBrowsingAll = searchTerm.trim().length > 0 || selectedCategory !== 'todos' || showFullCatalog;
 
-  // Configuración de SEO Dinámico según la vista actual
+  // Configuración de SEO Dinámico según la vista actual (Posicionamiento como el Mejor Proveedor del Rubro)
   const activeCategoryObj = CATEGORIES.find(c => c.id === selectedCategory);
   const activeCategoryName = activeCategoryObj ? activeCategoryObj.name : '';
 
   let seoProps = {
-    title: 'Materiales de Construcción, Ferretería y Acabados en Lima',
-    description: 'FERRENINAN (FERRENINANYA S.A.C.) - Distribuidor mayorista de Cemento Sol, Apu, Drywall Gyplac, Ladrillos Pirámide, Fierros y Pinturas en Lima. Despacho a obra en Jesús María y Breña.',
+    title: 'El Mejor Proveedor y Distribuidor Mayorista de Materiales de Construcción en Lima',
+    description: 'FERRENINAN (FERRENINANYA S.A.C.) - El mejor proveedor de materiales de construcción y distribuidor mayorista en Lima. Suministro garantizado de Cemento Sol, Apu, Andino, Drywall Gyplac, Ladrillos Pirámide, Fierros Aceros Arequipa y servicio oficial de eliminación de desmonte con despacho a pie de obra en Jesús María, Breña y todo Lima Metropolitana.',
+    keywords: 'mejor proveedor de materiales de construccion lima, proveedor para obras y contratistas, distribuidor mayorista materiales de construccion, proveedor cemento sol lima, proveedor drywall gyplac por mayor, servicio de eliminacion de desmonte autorizado lima, suministro para obras de construccion lima',
     canonicalUrl: 'https://ferreninan.com/',
     noindex: false
   };
 
   if (currentView === 'cart') {
     seoProps = {
-      title: 'Mi Carrito de Compras y Cotización | FERRENINAN',
-      description: 'Revisa tu lista de materiales de construcción y solicita tu cotización inmediata con flete por WhatsApp.',
+      title: 'Cotización Mayorista y Carrito de Compras para Obras | FERRENINAN',
+      description: 'Revisa tu lista de materiales de construcción y solicita tu cotización inmediata con precios de distribuidor y flete a obra por WhatsApp.',
       canonicalUrl: 'https://ferreninan.com/?view=cart',
       noindex: true
     };
   } else if (searchTerm.trim().length > 0) {
     seoProps = {
-      title: `Búsqueda: "${searchTerm}" | FERRENINAN Lima`,
-      description: `Resultados de búsqueda para materiales y herramientas relacionadas con "${searchTerm}".`,
+      title: `Búsqueda de Materiales: "${searchTerm}" | Proveedor FERRENINAN Lima`,
+      description: `Resultados y cotización inmediata para materiales de construcción relacionados con "${searchTerm}". Precios por mayor y menor para contratistas.`,
       canonicalUrl: 'https://ferreninan.com/',
       noindex: true
     };
   } else if (selectedCategory !== 'todos' && activeCategoryName) {
+    const isDesmonte = selectedCategory === 'desmonte';
     seoProps = {
-      title: `${activeCategoryName} a Precio Distribuidor | FERRENINAN Lima`,
-      description: `Catálogo de ${activeCategoryName} con precios por mayor y menor para contratistas y maestros de obra. Entregas en Jesús María, Breña y todo Lima.`,
-      keywords: `${activeCategoryName.toLowerCase()}, materiales de construccion lima, ferreteria jesus maria, precios distribuidor`,
+      title: isDesmonte
+        ? 'Servicio Oficial de Eliminación de Desmonte en Lima | Volquetes y Embolsado | FERRENINAN'
+        : `Proveedor Mayorista de ${activeCategoryName} en Lima | Precios Distribuidor | FERRENINAN`,
+      description: isDesmonte
+        ? 'Servicio autorizado y certificado de recojo de desmonte de obra en Lima Metropolitana. Modalidad embolsada o a granel con camiones volquetes.'
+        : `El mejor proveedor de ${activeCategoryName} en Lima con precios directos de distribuidor mayorista para contratistas y maestros de obra. Despacho inmediato a pie de obra en Jesús María, Breña y todo Lima.`,
+      keywords: `${activeCategoryName.toLowerCase()}, proveedor de ${activeCategoryName.toLowerCase()} lima, distribuidor mayorista ${activeCategoryName.toLowerCase()}, materiales de construccion lima, ferreteria jesus maria breña, precios distribuidor`,
       canonicalUrl: `https://ferreninan.com/?cat=${selectedCategory}`,
       noindex: false
     };

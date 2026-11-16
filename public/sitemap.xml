@@ -12,21 +12,68 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- ========================================== -->
-  <!-- 2. CATEGORÍAS PRINCIPALES DEL CATÁLOGO    -->
-  <!-- ========================================== -->
+  <!-- ==================================================== -->
+  <!-- 2. SERVICIOS Y SUMINISTRO PARA PROVEEDORES Y OBRAS   -->
+  <!-- ==================================================== -->
   <url>
-    <loc>https://ferreninan.com/?cat=agregados</loc>
+    <loc>https://ferreninan.com/?cat=desmonte</loc>
     <lastmod>2026-11-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/desmonte_volquete.jpg</image:loc>
+      <image:title>Servicio Autorizado de Eliminación de Desmonte con Camiones Volquetes</image:title>
+      <image:caption>Servicio oficial de recojo de escombros de construcción en Lima</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://ferreninan.com/?cat=cementos</loc>
     <lastmod>2026-11-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <changefreq>daily</changefreq>
+    <priority>0.92</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/cemento_sol.jpg</image:loc>
+      <image:title>Proveedor Mayorista de Cemento Sol, Apu y Andino en Lima</image:title>
+      <image:caption>Distribuidor oficial de cemento para obras con despacho a pie de obra</image:caption>
+    </image:image>
   </url>
+  <url>
+    <loc>https://ferreninan.com/?cat=drywall</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/plancha_gyplac_standard.jpg</image:loc>
+      <image:title>Proveedor Mayorista de Drywall Gyplac y Perfiles Galvanizados</image:title>
+      <image:caption>Suministro de planchas de yeso, parantes y rieles para contratistas</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?cat=agregados</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/arena_fina.jpg</image:loc>
+      <image:title>Proveedor de Arena Fina, Gruesa y Agregados por Bolsa</image:title>
+      <image:caption>Materiales de construcción zarandeados y clasificados para tarrajeo y concreto</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ferreninan.com/?cat=fierros</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://ferreninan.com/images/products/fierro_corrugado.jpg</image:loc>
+      <image:title>Distribuidor de Fierro Corrugado Aceros Arequipa y Alambre Prodac</image:title>
+      <image:caption>Fierro estructural antisísmico Grado 60 para obras en Lima</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ========================================== -->
+  <!-- 3. OTRAS CATEGORÍAS DEL CATÁLOGO           -->
+  <!-- ========================================== -->
   <url>
     <loc>https://ferreninan.com/?cat=pinturas</loc>
     <lastmod>2026-11-16</lastmod>
@@ -34,25 +81,7 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://ferreninan.com/?cat=drywall</loc>
-    <lastmod>2026-11-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://ferreninan.com/?cat=quimicos</loc>
-    <lastmod>2026-11-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://ferreninan.com/?cat=fierros</loc>
-    <lastmod>2026-11-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://ferreninan.com/?cat=desmonte</loc>
     <lastmod>2026-11-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
@@ -77,7 +106,7 @@
   </url>
 
   <!-- ========================================== -->
-  <!-- 3. CATÁLOGO DE PRODUCTOS INDIVIDUALES (PDP) -->
+  <!-- 4. CATÁLOGO DE PRODUCTOS INDIVIDUALES (PDP) -->
   <!-- ========================================== -->
   <url>
     <loc>https://ferreninan.com/?p=cem-1</loc>
@@ -840,7 +869,7 @@
   </url>
 
   <!-- ========================================== -->
-  <!-- 4. PÁGINAS LEGALES E INSTITUCIONALES        -->
+  <!-- 5. PÁGINAS LEGALES E INSTITUCIONALES        -->
   <!-- ========================================== -->
   <url>
     <loc>https://ferreninan.com/?view=reclamaciones</loc>

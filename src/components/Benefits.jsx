@@ -5,26 +5,26 @@ export const Benefits = () => {
   const items = [
     {
       icon: Truck,
-      title: 'Despacho Directo a Obra',
-      description: 'Llevamos tus materiales a tiempo en Lima Metropolitana.',
+      title: 'Despacho Inmediato a Obra',
+      description: 'Proveedor logístico líder con camiones propios y entrega en 24h en Lima Metropolitana.',
       color: 'text-brand-500'
     },
     {
       icon: Percent,
-      title: 'Precios x Mayor y Menor',
-      description: 'Descuentos por volumen para contratistas y maestros de obra.',
+      title: 'Precios de Distribuidor Mayorista',
+      description: 'Descuentos preferenciales por volumen para contratistas, obras y empresas constructoras.',
       color: 'text-brand-600'
     },
     {
       icon: MessageCircle,
-      title: 'Cotización Inmediata WhatsApp',
-      description: 'Envía tu carrito o lista y recibe confirmación al instante.',
+      title: 'Cotización Inmediata y Asesoría',
+      description: 'Atención especializada por WhatsApp con metrados, planos y confirmación de stock.',
       color: 'text-green-600'
     },
     {
       icon: ShieldCheck,
-      title: 'Eliminación de Desmonte Legal',
-      description: 'Recojo embolsado o a granel con botaderos autorizados.',
+      title: 'Eliminación de Desmonte Autorizada',
+      description: 'Servicio oficial embolsado y en volquete con disposición final certificada.',
       color: 'text-blue-600'
     }
   ];

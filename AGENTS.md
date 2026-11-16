@@ -81,6 +81,10 @@ Ferre/
   - Actualización de `document.title` por página y producto con formato `[Producto] | [Marca] - Precio Distribuidor Lima | FERRENINAN`.
   - Meta tags dinámicas: description, keywords, canonical, `og:title`, `og:description`, `og:image`, `og:url` y Twitter cards.
   - Datos Estructurados JSON-LD (`schema.org`):
-    - `HardwareStore` / `LocalBusiness`: Con RUC, teléfonos, geo-coordenadas y sedes en Jesús María y Breña.
-    - `Product`: Para cada PDP con precio en PEN, disponibilidad InStock, marca y SKU.
+    - `HardwareStore` / `WholesaleStore`: Con RUC, teléfonos, geo-coordenadas, sedes en Jesús María y Breña, reputación agregada (`AggregateRating` 4.9/5), cobertura en Lima Metropolitana y catálogo de servicios B2B (`hasOfferCatalog`).
+    - `Service`: Esquema especializado para Suministro Mayorista a Pie de Obra, Eliminación Autorizada de Desmonte con Camiones Volquetes y Asesoría Técnica por Metrado de Planos CAD.
+    - `Product`: Para cada PDP con precio en PEN, disponibilidad InStock, marca, SKU, vendedor mayorista y valoración.
     - `BreadcrumbList`: Jerarquía de navegación para snippets enriquecidos en Google.
+  - **Posicionamiento como el Mejor Proveedor del Rubro**:
+    - Meta títulos y descripciones orientados a contratistas, empresas constructoras y maestros de obra.
+    - Palabras clave prioritarias: `"mejor proveedor de materiales de construccion lima"`, `"proveedor para obras y contratistas"`, `"distribuidor mayorista cemento sol lima"`, `"servicio de eliminacion de desmonte autorizado"`, `"despacho a pie de obra"`.

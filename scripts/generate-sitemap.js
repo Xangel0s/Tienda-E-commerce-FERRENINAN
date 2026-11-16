@@ -18,12 +18,72 @@ let xml = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
 
+  <!-- ==================================================== -->
+  <!-- 2. SERVICIOS Y SUMINISTRO PARA PROVEEDORES Y OBRAS   -->
+  <!-- ==================================================== -->
+  <url>
+    <loc>${DOMAIN}/?cat=desmonte</loc>
+    <lastmod>${TODAY}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>${DOMAIN}/images/products/desmonte_volquete.jpg</image:loc>
+      <image:title>Servicio Autorizado de Eliminación de Desmonte con Camiones Volquetes</image:title>
+      <image:caption>Servicio oficial de recojo de escombros de construcción en Lima</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>${DOMAIN}/?cat=cementos</loc>
+    <lastmod>${TODAY}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.92</priority>
+    <image:image>
+      <image:loc>${DOMAIN}/images/products/cemento_sol.jpg</image:loc>
+      <image:title>Proveedor Mayorista de Cemento Sol, Apu y Andino en Lima</image:title>
+      <image:caption>Distribuidor oficial de cemento para obras con despacho a pie de obra</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>${DOMAIN}/?cat=drywall</loc>
+    <lastmod>${TODAY}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>${DOMAIN}/images/products/plancha_gyplac_standard.jpg</image:loc>
+      <image:title>Proveedor Mayorista de Drywall Gyplac y Perfiles Galvanizados</image:title>
+      <image:caption>Suministro de planchas de yeso, parantes y rieles para contratistas</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>${DOMAIN}/?cat=agregados</loc>
+    <lastmod>${TODAY}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>${DOMAIN}/images/products/arena_fina.jpg</image:loc>
+      <image:title>Proveedor de Arena Fina, Gruesa y Agregados por Bolsa</image:title>
+      <image:caption>Materiales de construcción zarandeados y clasificados para tarrajeo y concreto</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>${DOMAIN}/?cat=fierros</loc>
+    <lastmod>${TODAY}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>${DOMAIN}/images/products/fierro_corrugado.jpg</image:loc>
+      <image:title>Distribuidor de Fierro Corrugado Aceros Arequipa y Alambre Prodac</image:title>
+      <image:caption>Fierro estructural antisísmico Grado 60 para obras en Lima</image:caption>
+    </image:image>
+  </url>
+
   <!-- ========================================== -->
-  <!-- 2. CATEGORÍAS PRINCIPALES DEL CATÁLOGO    -->
+  <!-- 3. OTRAS CATEGORÍAS DEL CATÁLOGO           -->
   <!-- ========================================== -->
 `;
 
-CATEGORIES.filter(c => c.id !== 'todos').forEach(cat => {
+const priorityCats = ['desmonte', 'cementos', 'drywall', 'agregados', 'fierros'];
+CATEGORIES.filter(c => c.id !== 'todos' && !priorityCats.includes(c.id)).forEach(cat => {
   xml += `  <url>
     <loc>${DOMAIN}/?cat=${cat.id}</loc>
     <lastmod>${TODAY}</lastmod>
@@ -35,7 +95,7 @@ CATEGORIES.filter(c => c.id !== 'todos').forEach(cat => {
 
 xml += `
   <!-- ========================================== -->
-  <!-- 3. CATÁLOGO DE PRODUCTOS INDIVIDUALES (PDP) -->
+  <!-- 4. CATÁLOGO DE PRODUCTOS INDIVIDUALES (PDP) -->
   <!-- ========================================== -->
 `;
 
@@ -59,7 +119,7 @@ PRODUCTS.forEach(p => {
 
 xml += `
   <!-- ========================================== -->
-  <!-- 4. PÁGINAS LEGALES E INSTITUCIONALES        -->
+  <!-- 5. PÁGINAS LEGALES E INSTITUCIONALES        -->
   <!-- ========================================== -->
   <url>
     <loc>${DOMAIN}/?view=reclamaciones</loc>
@@ -72,4 +132,4 @@ xml += `
 `;
 
 fs.writeFileSync('public/sitemap.xml', xml, 'utf-8');
-console.log(`✓ Sitemap generado con éxito en public/sitemap.xml con ${PRODUCTS.length} productos indexados.`);
+console.log(`✓ Sitemap generado con éxito en public/sitemap.xml con ${PRODUCTS.length} productos y servicios indexados.`);
