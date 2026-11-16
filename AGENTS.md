@@ -18,26 +18,33 @@ Este documento define la arquitectura, normas de codificación, convenciones de 
 ```
 Ferre/
 ├── public/                 # Assets públicos, logos optimizados, favicon
+│   ├── images/             # Blueprints, SVG fallbacks e imágenes de productos locales
+│   └── videos/             # Bucles de video CC0 MP4 (construcción y demolición)
 ├── src/
-│   ├── assets/             # Imágenes y recursos estáticos
+│   ├── assets/             # Recursos estáticos
 │   ├── components/         # Componentes modulares UI
-│   │   ├── TopBar.jsx      # Barra superior de beneficios y contacto
-│   │   ├── Header.jsx      # Barra de búsqueda, logo y carrito
-│   │   ├── Navbar.jsx      # Megamenú y categorías estilo Promart
-│   │   ├── HeroSlider.jsx  # Banners rotativos de ofertas y desmonte
-│   │   ├── Benefits.jsx    # Propuestas de valor (Despacho a obra, etc.)
-│   │   ├── ProductCard.jsx # Tarjeta de producto con precios y botón WhatsApp
-│   │   ├── ProductGrid.jsx # Catálogo con filtros y ordenamiento
-│   │   ├── CartDrawer.jsx  # Carrito deslizable y checkout a WhatsApp
+│   │   ├── TopBar.jsx              # Barra superior de beneficios y contacto
+│   │   ├── Header.jsx              # Barra de búsqueda con dropdown animado, logo y carrito
+│   │   ├── Navbar.jsx              # Megamenú, píldoras y teléfono vertical apilado
+│   │   ├── HeroSlider.jsx          # Banners rotativos con videos de obra y planos CAD
+│   │   ├── Benefits.jsx            # Propuestas de valor (Despacho a obra, etc.)
+│   │   ├── ProductCard.jsx         # Tarjeta de producto con precios Promart y modal rápido
+│   │   ├── ProductCarouselRow.jsx  # Carrusel horizontal con píldoras de filtrado por categoría
+│   │   ├── ProductDetailModal.jsx  # Vista rápida / Ficha técnica con specs y compra
+│   │   ├── ProductGrid.jsx         # Catálogo completo con filtros y ordenamiento
+│   │   ├── PromoBanner.jsx         # Banner publicitario intersticial para contratistas
+│   │   ├── PromoModal.jsx          # Popup comercial con cupón FERRE10 y sin emojis
+│   │   ├── CartDrawer.jsx          # Drawer lateral rápido de carrito
+│   │   ├── CartPage.jsx            # Página independiente de Checkout y cálculo de flete
 │   │   ├── ComplaintsBookModal.jsx # Libro de Reclamaciones INDECOPI
-│   │   └── Footer.jsx      # Pie de página con datos fiscales y enlaces
+│   │   └── Footer.jsx              # Pie de página con datos fiscales y enlaces
 │   ├── context/
-│   │   └── CartContext.jsx # Estado global del carrito y persistencia
+│   │   └── CartContext.jsx         # Estado global del carrito, vista actual y WhatsApp
 │   ├── data/
-│   │   └── products.js     # Catálogo completo basado en Excel de precios
-│   ├── App.jsx             # Componente raíz
-│   ├── main.jsx            # Punto de entrada Vite
-│   └── index.css           # Estilos base y Tailwind directives
+│   │   └── products.js             # Catálogo oficial de 69 productos con imágenes verificadas
+│   ├── App.jsx                     # Componente raíz y enrutamiento de vistas
+│   ├── main.jsx                    # Punto de entrada Vite
+│   └── index.css                   # Estilos base y Tailwind directives
 ├── index.html
 ├── package.json
 ├── tailwind.config.js
