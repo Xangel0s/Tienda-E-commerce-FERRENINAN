@@ -169,7 +169,7 @@ export const ProductPage = () => {
         description={`${product.name} [SKU: ${product.sku || product.id}]. ${product.description || ''} ${hasPrice ? `Precio oficial: S/ ${product.price.toFixed(2)} por ${product.unit}.` : 'Precio especial a cotizar por volumen.'} Despacho a pie de obra en Jesús María, Breña y todo Lima Metropolitana.`}
         keywords={`${product.name}, ${product.brand}, ${product.sku}, ${categoryName}, comprar ${product.name} lima, ferreteria lima, materiales de construccion`}
         image={product.image}
-        canonicalUrl={`https://ferreninan.com/?p=${product.id}`}
+        canonicalUrl={`https://ferreninanya.com/?p=${product.id}`}
         type="product"
         product={product}
         breadcrumbs={[

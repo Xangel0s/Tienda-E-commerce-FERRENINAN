@@ -1123,7 +1123,7 @@ export const PRODUCTS = [
 export const COMPANY_INFO = {
   name: 'FERRENINAN',
   legalName: 'FERRENINANYA S.A.C.',
-  domain: 'FERRENINAN.com',
+  domain: 'ferreninanya.com',
   ruc: '20600819594',
   phone: '+51 908 747 531',
   phoneClean: '51908747531',

@@ -1,6 +1,6 @@
 # ==============================================================================
 # ROBOTS.TXT - FERRENINAN (FERRENINANYA S.A.C.)
-# Sitio Web Oficial: https://ferreninan.com
+# Sitio Web Oficial: https://ferreninanya.com
 # Contacto Técnico: Ferreterianinanyasac1@hotmail.com
 # ==============================================================================
 
@@ -55,4 +55,4 @@ Allow: /
 # ------------------------------------------------------------------------------
 # 4. Mapa del Sitio XML Oficial (Sitemap)
 # ------------------------------------------------------------------------------
-Sitemap: https://ferreninan.com/sitemap.xml
+Sitemap: https://ferreninanya.com/sitemap.xml

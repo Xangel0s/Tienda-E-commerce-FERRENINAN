@@ -1,7 +1,7 @@
 import fs from 'fs';
 import { PRODUCTS, CATEGORIES, COMPANY_INFO } from '../src/data/products.js';
 
-const DOMAIN = 'https://ferreninan.com';
+const DOMAIN = 'https://ferreninanya.com';
 const TODAY = new Date().toISOString().split('T')[0];
 
 let xml = `<?xml version="1.0" encoding="UTF-8"?>

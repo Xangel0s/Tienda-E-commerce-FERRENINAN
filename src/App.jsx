@@ -57,7 +57,7 @@ function StoreContent() {
     title: 'El Mejor Proveedor y Distribuidor Mayorista de Materiales de Construcción en Lima',
     description: 'FERRENINAN (FERRENINANYA S.A.C.) - El mejor proveedor de materiales de construcción y distribuidor mayorista en Lima. Suministro garantizado de Cemento Sol, Apu, Andino, Drywall Gyplac, Ladrillos Pirámide, Fierros Aceros Arequipa y servicio oficial de eliminación de desmonte con despacho a pie de obra en Jesús María, Breña y todo Lima Metropolitana.',
     keywords: 'mejor proveedor de materiales de construccion lima, proveedor para obras y contratistas, distribuidor mayorista materiales de construccion, proveedor cemento sol lima, proveedor drywall gyplac por mayor, servicio de eliminacion de desmonte autorizado lima, suministro para obras de construccion lima',
-    canonicalUrl: 'https://ferreninan.com/',
+    canonicalUrl: 'https://ferreninanya.com/',
     noindex: false
   };
 
@@ -65,14 +65,14 @@ function StoreContent() {
     seoProps = {
       title: 'Cotización Mayorista y Carrito de Compras para Obras | FERRENINAN',
       description: 'Revisa tu lista de materiales de construcción y solicita tu cotización inmediata con precios de distribuidor y flete a obra por WhatsApp.',
-      canonicalUrl: 'https://ferreninan.com/?view=cart',
+      canonicalUrl: 'https://ferreninanya.com/?view=cart',
       noindex: true
     };
   } else if (searchTerm.trim().length > 0) {
     seoProps = {
       title: `Búsqueda de Materiales: "${searchTerm}" | Proveedor FERRENINAN Lima`,
       description: `Resultados y cotización inmediata para materiales de construcción relacionados con "${searchTerm}". Precios por mayor y menor para contratistas.`,
-      canonicalUrl: 'https://ferreninan.com/',
+      canonicalUrl: 'https://ferreninanya.com/',
       noindex: true
     };
   } else if (selectedCategory !== 'todos' && activeCategoryName) {
@@ -87,7 +87,7 @@ function StoreContent() {
       keywords: isDesmonte
         ? 'limpieza de desmonte, recojo de escombros lima, retiro de desmonte embolsado, volquetes para desmonte lima, limpieza de obras y terrenos, botaderos autorizados lima, peones de carguio desmonte'
         : `${activeCategoryName.toLowerCase()}, proveedor de ${activeCategoryName.toLowerCase()} lima, distribuidor mayorista ${activeCategoryName.toLowerCase()}, materiales de construccion lima, ferreteria jesus maria breña, precios distribuidor`,
-      canonicalUrl: `https://ferreninan.com/?cat=${selectedCategory}`,
+      canonicalUrl: `https://ferreninanya.com/?cat=${selectedCategory}`,
       noindex: false
     };
   }

@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { COMPANY_INFO } from '../data/products';
 
-const SITE_URL = 'https://ferreninan.com';
+const SITE_URL = 'https://ferreninanya.com';
 const DEFAULT_IMAGE = `${SITE_URL}/logo.png`;
 const DEFAULT_TITLE = 'FERRENINAN | El Mejor Proveedor y Distribuidor Mayorista de Materiales de Construcción en Lima';
 const DEFAULT_DESCRIPTION = 'FERRENINAN (FERRENINANYA S.A.C.) es el mejor proveedor y distribuidor mayorista de materiales de construcción y líder en servicios de limpieza de desmonte, recojo de escombros, demolición y transporte en camiones volquetes en Lima. Suministro oficial de Cemento Sol, Apu, Andino, Drywall Gyplac, Ladrillos Pirámide, Fierros Aceros Arequipa, Agregados y herramientas con despacho inmediato a pie de obra en Jesús María, Breña y todo Lima Metropolitana.';

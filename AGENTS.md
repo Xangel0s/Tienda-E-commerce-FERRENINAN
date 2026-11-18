@@ -95,7 +95,7 @@ Ferre/
 
 ## 5. Despliegue Continuo con GitHub Actions y Dominio Personalizado
 - **Workflow**: `.github/workflows/deploy.yml` configurado para compilar y desplegar automáticamente en **GitHub Pages** en cada push a la rama `main`.
-- **Dominio Personalizado**: `public/CNAME` configurado con `ferreninan.com`, emitiendo `dist/CNAME` en cada compilación para mantener activo el enrutamiento DNS del dominio oficial.
+- **Dominio Personalizado**: `public/CNAME` configurado con `ferreninanya.com`, emitiendo `dist/CNAME` en cada compilación para mantener activo el enrutamiento DNS del dominio oficial.
 - **Pipeline de Build**:
   1. `actions/checkout@v4` y `actions/setup-node@v4`.
   2. `npm ci`: Instalación determinista de dependencias.

@@ -76,7 +76,7 @@ export const PromoModal = () => {
           <div className="space-y-3">
             <div className="inline-flex items-center gap-1.5 bg-black/25 backdrop-blur-sm border border-white/20 px-2.5 py-1 rounded-full text-[11px] font-black tracking-wide w-fit">
               <span className="text-yellow-300">EXCLUSIVO EN</span>
-              <span className="text-white font-black">FERRENINAN.com</span>
+              <span className="text-white font-black">FERRENINANYA.com</span>
             </div>
 
             <h3 className="text-lg font-black leading-tight text-white">
