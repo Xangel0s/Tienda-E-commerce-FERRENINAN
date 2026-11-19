@@ -33,6 +33,7 @@ Allow: /
 Allow: /?p=*
 Allow: /?cat=*
 Allow: /images/products/
+Allow: /assets/
 
 User-agent: Googlebot-Image
 # Permitir que Google Imágenes indexe todos los sacos, ladrillos y herramientas oficiales
